@@ -58,53 +58,55 @@
     </xsl:template>
     
     <!-- this template produces a series of <issue> notes with children for <date>, <number>, <img> -->
-    <xsl:template name="tIncrementDaily">
-        <xsl:param name="pDate" select="$pgStartDate"/>
-        <xsl:param name="pIssue" select="$pgStartIssue"/>
-        <xsl:param name="pImgUrl" select="$pgStartImg"/>
-        <!-- many daily newspapers are published only six days a week.  -->
-        <xsl:param name="pWeekdayNotPublished"/>
+    <xsl:template name="t_increment-daily">
+        <xsl:param name="p_date-start"/>
+        <xsl:param name="p_date-stop" select="$pgStopDate"/>
+        <xsl:param name="p_pages" select="$pgPages" as="xs:integer"/>
+        <xsl:param name="p_issue"/>
+        <xsl:param name="p_url-image"/>
+        <!-- many daily newspapers are published only six days a week, this param expects a list of comma-separated weekdays in English  -->
+        <xsl:param name="p_weekdays-published"/>
         <xsl:variable name="vDateJD">
             <xsl:call-template name="funcDateG2JD">
-                <xsl:with-param name="pDateG" select="$pDate"/>
+                <xsl:with-param name="pDateG" select="$p_date-start"/>
             </xsl:call-template>
         </xsl:variable>
-        <xsl:variable name="vDateInc">
+        <xsl:variable name="v_date-incremented">
             <xsl:call-template name="funcDateJD2G">
                 <xsl:with-param name="pJD" select="$vDateJD + 1"/>
             </xsl:call-template>
         </xsl:variable>
-        <xsl:variable name="vDateWeekday" select="format-date(xs:date($pDate),'[FNn]')"/>
-        <xsl:variable name="vDateIncWeekday" select="format-date(xs:date($vDateInc),'[FNn]')"/>
+        <xsl:variable name="v_date-weekday" select="format-date(xs:date($p_date-start),'[FNn]')"/>
+        <xsl:variable name="v_date-incremented-weekday" select="format-date(xs:date($v_date-incremented),'[FNn]')"/>
         <!-- prevent output for weekdays not published -->
-        <xsl:if test="$vDateWeekday != $pWeekdayNotPublished">
+        <xsl:if test="contains($p_weekdays-published,$v_date-weekday)">
             <xsl:element name="issue">
                 <xsl:element name="date">
-                    <xsl:value-of select="$pDate"/>
+                    <xsl:value-of select="$p_date-start"/>
                 </xsl:element>
                 <xsl:element name="number">
-                    <xsl:value-of select="$pIssue"/>
+                    <xsl:value-of select="$p_issue"/>
                 </xsl:element>
-                <xsl:element name="img">
-                    <xsl:value-of select="$pImgUrl"/>
-                </xsl:element>
+                <!--<xsl:element name="img">
+                    <xsl:value-of select="$p_url-image"/>
+                </xsl:element>-->
             </xsl:element>
         </xsl:if>
-        <xsl:if test="$vDateInc &lt; $pgStopDate">
-            <xsl:call-template name="tIncrementDaily">
-                <xsl:with-param name="pDate" select="$vDateInc"/>
-                <xsl:with-param name="pIssue">
+        <xsl:if test="$v_date-incremented &lt; $p_date-stop">
+            <xsl:call-template name="t_increment-daily">
+                <xsl:with-param name="p_date-start" select="$v_date-incremented"/>
+                <xsl:with-param name="p_issue">
                     <xsl:choose>
-                        <xsl:when test="$vDateIncWeekday != $pWeekdayNotPublished">
-                            <xsl:value-of select="$pIssue + 1"/>
+                        <xsl:when test="contains($p_weekdays-published,$v_date-incremented-weekday)">
+                            <xsl:value-of select="$p_issue + 1"/>
                         </xsl:when>
                         <xsl:otherwise>
-                            <xsl:value-of select="$pIssue"/>
+                            <xsl:value-of select="$p_issue"/>
                         </xsl:otherwise>
                     </xsl:choose>
                 </xsl:with-param>
-                <xsl:with-param name="pImgUrl" select="$pImgUrl + $pgPages"/>
-                <xsl:with-param name="pWeekdayNotPublished" select="$pWeekdayNotPublished"/>
+<!--                <xsl:with-param name="p_url-image" select="$p_url-image + $p_pages"/>-->
+                <xsl:with-param name="p_weekdays-published" select="$p_weekdays-published"/>
             </xsl:call-template>
         </xsl:if>
     </xsl:template>
