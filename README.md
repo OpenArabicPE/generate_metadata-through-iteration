@@ -4,7 +4,7 @@ author: Till Grallert
 date: 2017-05-11 22:56:14 +0200
 ---
 
-The main stylesheet in this repository generates bibliographic metadata for periodicals based on an input file and information on the publication schedule.
+The main stylesheet in this repository generates bibliographic metadata for periodicals based on an TEI XML input file and information on the publication schedule. The output is also a TEI XML file with `<biblStruct>` children which can then be converted to MODS or Sente XML for use and import into reference management software.
 
 # workflow
 
