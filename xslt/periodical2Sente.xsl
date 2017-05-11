@@ -8,7 +8,7 @@
     xmlns:tss="http://www.thirdstreetsoftware.com/SenteXML-1.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     >
-    <xsl:output method="xml" version="1.0" xpath-default-namespace="http://www.thirdstreetsoftware.com/SenteXML-1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="no"  name="xml"/>
+    <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="no"  name="xml"/>
     <xsl:output method="text" encoding="UTF-8" omit-xml-declaration="yes"  name="text"/>
     
     <!-- This stylesheet builds Sente XML for scans of periodicals. It does not need html as input -->
@@ -26,29 +26,45 @@
     <xsl:param name="pCitId" select="'quds'"/>
     <xsl:param name="pPublisher"/>
     <xsl:param name="pPublPlace" select="'al-Quds'"/>
+    <!--  -->
+    <xsl:param name="p_editors">
+        <tei:person>
+            <tei:persName xml:lang="ar-Latn-x-ijmes">
+                <tei:forename>Ḥanāniyyā</tei:forename>
+                <tei:surname>Jirjī Ḥabīb</tei:surname>
+            </tei:persName>
+            <tei:idno type="viaf"></tei:idno>
+        </tei:person>
+    </xsl:param>
+    <!-- dates, calendars etc. -->
     <xsl:param name="pgStartDate" select="'1908-09-18'"/>
     <xsl:param name="pgStopDate" select="'1908-10-18'"/>
-    <xsl:param name="pgStartImg" select="1"/>
-    <xsl:param name="pgStartIssue" select="1"/>
-    <xsl:param name="p_volume" select="1"/>
-    <xsl:param name="p_switch-vol-issue" select="false()"/>
-    <xsl:param name="p_pages" select="4"/>
-    <!-- sometimes the computation of Hijri dates is one day off from the local Hijrī -->
-    <xsl:param name="pgDHCorrector" select="0"/>
-    <!-- these two paramaters select the folder containing the image files -->
-    <xsl:param name="pgUrlBase" select="'/BachUni/BachSources/'"/>
-    <xsl:param name="pgUrlVar" select="'al-muqtabas'"/>
     <!-- $p_weekdays-published contains a comma-separated list of weekdays in English -->
     <xsl:param name="p_weekdays-published" select="'Tuesday, Friday'"/>
     <!-- select calendars for output -->
     <xsl:param name="p_cal-islamic" select="true()"/>
     <xsl:param name="p_cal-julian" select="true()"/>
     <xsl:param name="p_cal-ottomanfiscal" select="false()"/>
+    <!-- sometimes the computation of Hijri dates is one day off from the local Hijrī. It is not -->
+<!--    <xsl:param name="pgDHCorrector" select="0"/>-->
+    
+    <!-- issue, pages -->
+    <xsl:param name="pgStartIssue" select="1"/>
+    <xsl:param name="p_volume" select="1"/>
+    <xsl:param name="p_switch-vol-issue" select="false()"/>
+    <xsl:param name="p_pages" select="4"/>
+    
+    <!-- these two paramaters select the folder containing the image files -->
+    <xsl:param name="pgUrlBase" select="'/BachUni/BachSources/'"/>
+    <xsl:param name="pgUrlVar" select="'al-muqtabas'"/>
+    <xsl:param name="pgStartImg" select="1"/>
+    
+   
     
     
     
     <xsl:template match="/">
-        <xsl:result-document href="../xml/_output/{$pCitId}2Sente-from_{replace($pgStartDate,'-','')}-to_{replace($pgStopDate,'-','')}-when_{format-date($vgDate,'[Y01][M01][D01]')}.Sente.xml" method="xml">
+        <xsl:result-document href="../xml/_output/{$pCitId}2Sente-from_{replace($pgStartDate,'-','')}-to_{replace($pgStopDate,'-','')}-when_{format-date($vgDate,'[Y01][M01][D01]')}.Sente.xml" format="xml">
         <xsl:element name="tss:senteContainer">
             <xsl:attribute name="version">1.0</xsl:attribute>
             <xsl:attribute name="xsi:schemaLocation">http://www.thirdstreetsoftware.com/SenteXML-1.0 SenteXML.xsd</xsl:attribute>
@@ -70,13 +86,15 @@
                 <xsl:with-param name="p_date-stop" select="$pgStopDate"/>
                 <xsl:with-param name="p_issue" select="$pgStartIssue"/>
                 <xsl:with-param name="p_pages" select="$p_pages"/>
-                <xsl:with-param name="p_url-image"/>
             </xsl:call-template>
         </xsl:variable>
         <xsl:for-each select="$vRefs/issue">
             <xsl:element name="tss:reference">
                 <xsl:element name="tss:publicationType">
                     <xsl:attribute name="name">Archival Periodical</xsl:attribute>
+                </xsl:element>
+                <xsl:element name="tss:authors">
+                    <xsl:apply-templates select="$p_editors/tei:person" mode="m_tei-to-sente"/>
                 </xsl:element>
                 <xsl:element name="tss:dates">
                     <xsl:element name="tss:date">
@@ -268,5 +286,4 @@
             </xsl:element>
         </xsl:for-each>
     </xsl:template>
-    
 </xsl:stylesheet>
