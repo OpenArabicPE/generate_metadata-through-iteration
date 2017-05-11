@@ -4,11 +4,10 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs"
     xmlns:tei="http://www.tei-c.org/ns/1.0"
     xmlns:html="http://www.w3.org/1999/xhtml"
-    xmlns:kml="http://earth.google.com/kml/2.0"
     xmlns:tss="http://www.thirdstreetsoftware.com/SenteXML-1.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     >
-    <xsl:output method="xml" version="1.0" xpath-default-namespace="http://www.thirdstreetsoftware.com/SenteXML-1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="no"  name="xml"/>
+    <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="no"  name="xml"/>
     <xsl:output method="text" encoding="UTF-8" omit-xml-declaration="yes"  name="text"/>
     
      <xsl:template name="tIncrementUrl2">
@@ -60,10 +59,10 @@
     <!-- this template produces a series of <issue> notes with children for <date>, <number>, <img> -->
     <xsl:template name="t_increment-daily">
         <xsl:param name="p_date-start"/>
-        <xsl:param name="p_date-stop" select="$pgStopDate"/>
-        <xsl:param name="p_pages" select="$pgPages" as="xs:integer"/>
+        <xsl:param name="p_date-stop"/>
+        <xsl:param name="p_pages"/>
         <xsl:param name="p_issue"/>
-        <xsl:param name="p_url-image"/>
+<!--        <xsl:param name="p_url-image"/>-->
         <!-- many daily newspapers are published only six days a week, this param expects a list of comma-separated weekdays in English  -->
         <xsl:param name="p_weekdays-published"/>
         <xsl:variable name="vDateJD">
@@ -95,6 +94,8 @@
         <xsl:if test="$v_date-incremented &lt; $p_date-stop">
             <xsl:call-template name="t_increment-daily">
                 <xsl:with-param name="p_date-start" select="$v_date-incremented"/>
+                <xsl:with-param name="p_date-stop" select="$p_date-stop"/>
+                <xsl:with-param name="p_pages" select="$p_pages"/>
                 <xsl:with-param name="p_issue">
                     <xsl:choose>
                         <xsl:when test="contains($p_weekdays-published,$v_date-incremented-weekday)">
@@ -165,7 +166,7 @@
             <xsl:call-template name="tIncrementFortnightly">
                 <xsl:with-param name="pDate" select="$vDateInc"/>
                 <xsl:with-param name="pIssue" select="$pIssue + 1"/>
-                <xsl:with-param name="pImgUrl" select="$pImgUrl + $pgPages"/>
+                <xsl:with-param name="pImgUrl" select="$pImgUrl + $p_pages"/>
             </xsl:call-template>
         </xsl:if>
     </xsl:template>
@@ -207,9 +208,30 @@
             <xsl:call-template name="tIncrementMonthly">
                 <xsl:with-param name="pDate" select="$vDateInc"/>
                 <xsl:with-param name="pIssue" select="$pIssue + 1"/>
-                <xsl:with-param name="pImgUrl" select="$pImgUrl + $pgPages"/>
+                <xsl:with-param name="pImgUrl" select="$pImgUrl + $p_pages"/>
             </xsl:call-template>
         </xsl:if>
+    </xsl:template>
+    
+    <!-- -->
+    <xsl:template match="tei:person" mode="m_tei-to-sente">
+        <xsl:element name="tss:author">
+            <xsl:attribute name="role" select="'Editor'"/>
+            <xsl:apply-templates select="tei:persName[1]/tei:surname" mode="m_tei-to-sente"/>
+            <xsl:apply-templates select="tei:persName[1]/tei:forename" mode="m_tei-to-sente"/>
+        </xsl:element>
+    </xsl:template>
+    
+    <xsl:template match="tei:surname" mode="m_tei-to-sente">
+        <xsl:element name="tss:surname">
+            <xsl:value-of select="."/>
+        </xsl:element>
+    </xsl:template>
+    
+    <xsl:template match="tei:forename" mode="m_tei-to-sente">
+        <xsl:element name="tss:forenames">
+            <xsl:value-of select="."/>
+        </xsl:element>
     </xsl:template>
     
 </xsl:stylesheet>
