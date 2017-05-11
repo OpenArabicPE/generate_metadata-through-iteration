@@ -15,8 +15,11 @@
    
     <!-- v1: production version; currently adapted to hadiqat -->
     <!-- as the import engine is extremely bugy or rather as duplicate detection is a bit over ambitious, I have to introduce individual article titles to get all references imported. I used the unique call-numbers for this purpose -->
-    <!-- provides citations, date, and currency conversion -->
-    <xsl:include href="/BachUni/projekte/XML/Functions/BachFunctions v3.xsl"/>
+    
+    <!-- provides calendar conversion -->
+    <xsl:include href="https://rawgit.com/tillgrallert/xslt-calendar-conversion/master/date-function.xsl"/>
+    
+    <!-- load functions to increment issues -->
     <xsl:include href="periodical2Sente-functions.xsl"/>
     
     <xsl:variable name="vgDate" select="current-date()"/>
