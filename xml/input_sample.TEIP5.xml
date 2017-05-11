@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Title</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Publication Information</p>
+         </publicationStmt>
+         <sourceDesc>
+             <tei:biblStruct xml:lang="en">
+                 <tei:monogr xml:lang="en">
+                     <tei:title level="j" xml:lang="ar">المقتبس</tei:title>
+                     <tei:title level="j" type="sub" xml:lang="ar">مجلة تبحث في التربية والتعليم
+                         والاجتماع والاقتصاد والاداب والتاريخ والآثار واللغة و تدبير المنزل
+                         والصحة والكتب وحضارة العرب والغرب</tei:title>
+                     <tei:title level="j" type="sub" xml:lang="ar">تصدر في كل شهر عربي بدمشق</tei:title>
+                     <tei:title level="j" xml:lang="ar-Latn-x-ijmes">[Majallat] al-Muqtabas</tei:title>
+                     <tei:title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Majalla tabḥath fī
+                         al-tarbiyya wa-l-taʿlīm wa-l-ijtimāʿ wa-l-iqtiṣād wa-l-adab wa-l-tārīkh
+                         wa-l-āthār wa-l-lugha wa tadbīr al-manzil wa-l-ṣaḥḥa wa-l-kutub wa
+                         ḥaḍāra al-ʿarab wa ḥadāra al-gharb</tei:title>
+                     <tei:title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">tuṣadir fī kull shar
+                         ʿarabī bi-Dimashq</tei:title>
+                     <tei:title level="j" xml:lang="fr">Al-Moktabas</tei:title>
+                     <tei:title level="j" type="sub" xml:lang="fr">Revue mensuelle paraissant à Damas
+                         (Syrie)</tei:title>
+                     <tei:title level="j" type="sub" xml:lang="fr">Pédagogie, sociologie, économie
+                         politique, littérature, histoire, archéologie, philologie, ménagerie,
+                         hygiène, bibliographie, civilisation arabe et occidentale</tei:title>
+                     <tei:editor ref="viaf:32272677" xml:lang="en">
+                         <tei:persName xml:lang="ar">
+                             <tei:forename xml:lang="ar">محمد</tei:forename>
+                             <tei:surname xml:lang="ar">كرد علي</tei:surname>
+                         </tei:persName>
+                         <tei:persName xml:lang="ar-Latn-x-ijmes">
+                             <tei:forename xml:lang="ar-Latn-x-ijmes">Muḥammad</tei:forename>
+                             <tei:surname xml:lang="ar-Latn-x-ijmes">Kurd ʿAlī</tei:surname>
+                         </tei:persName>
+                     </tei:editor>
+                     <tei:imprint xml:lang="en">
+                         <tei:publisher xml:lang="en">
+                             <tei:orgName xml:lang="ar">مطبعة المقتبس</tei:orgName> 
+                             <tei:orgName notAfter="1914" notBefore="1908" xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Muqtabas</tei:orgName> 
+                         </tei:publisher>
+                         <tei:pubPlace xml:lang="en"> 
+                             <tei:placeName xml:lang="ar">دمشق</tei:placeName>
+                             <tei:placeName xml:lang="ar-Latn-x-ijmes">Dimashq</tei:placeName> 
+                             <tei:placeName xml:lang="en">Damascus</tei:placeName> 
+                         </tei:pubPlace>
+                         <tei:date type="official" from="1908-09-18" to="1908-10-18" xml:lang="ar-Latn-x-ijmes" when-custom="1329-01-01" datingMethod="#cal_islamic" calendar="#cal_islamic" when="1911-01-02">1 Muḥ 1329</tei:date>
+                     </tei:imprint>
+                     <tei:biblScope from="6" to="6" unit="volume"/>
+                     <tei:biblScope from="1" to="1" unit="issue"/>
+                     <tei:biblScope unit="page" from="1" to="4"/>
+                 </tei:monogr>
+                 <tei:idno type="oclc" xml:lang="en">4770057679</tei:idno>
+                 <tei:idno type="oclc" xml:lang="en">79440195</tei:idno>
+                 <tei:idno type="aucr" xml:lang="en">07201136864</tei:idno>
+                 <tei:idno type="shamela" xml:lang="en">26523</tei:idno>
+                 <tei:idno type="zenodo" xml:lang="en">45922152</tei:idno>
+             </tei:biblStruct>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+      <body>
+         <p>Some text here.</p>
+      </body>
+  </text>
+</TEI>
