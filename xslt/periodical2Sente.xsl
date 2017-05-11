@@ -21,45 +21,56 @@
     
     <xsl:variable name="vgDate" select="current-date()"/>
     
-    <xsl:param name="pPublicationTitle" select="'al-Muqtabas: Jarīdat Yawmiyya Siyāsiyya Iqtiṣādiyya Ijtimāʿiyya'"/>
-    <xsl:param name="pShortTitle" select="'Jarīdat al-Muqtabas'"/>
-    <xsl:param name="pCitId" select="'muqtabas'"/>
+    <xsl:param name="pPublicationTitle" select="'al-Quds: Jarīda ʿilmiyya adabiyya akhbāriyya'"/>
+    <xsl:param name="pShortTitle" select="'Quds'"/>
+    <xsl:param name="pCitId" select="'quds'"/>
     <xsl:param name="pPublisher"/>
-    <xsl:param name="pPublPlace" select="'Dimashq'"/>
-    <xsl:param name="pgStartDate" select="'1910-07-25'"/>
-    <xsl:param name="pgStopDate" select="'1910-12-31'"/>
+    <xsl:param name="pPublPlace" select="'al-Quds'"/>
+    <xsl:param name="pgStartDate" select="'1908-09-18'"/>
+    <xsl:param name="pgStopDate" select="'1908-10-18'"/>
     <xsl:param name="pgStartImg" select="1"/>
-    <xsl:param name="pgStartIssue" select="430"/>
-    <xsl:param name="pgVolume" select="2"/>
-    <xsl:param name="p_switch-vol-issue" select="true()"/>
-    <xsl:param name="pgPages" select="4"/>
+    <xsl:param name="pgStartIssue" select="1"/>
+    <xsl:param name="p_volume" select="1"/>
+    <xsl:param name="p_switch-vol-issue" select="false()"/>
+    <xsl:param name="p_pages" select="4"/>
     <!-- sometimes the computation of Hijri dates is one day off from the local Hijrī -->
     <xsl:param name="pgDHCorrector" select="0"/>
     <!-- these two paramaters select the folder containing the image files -->
     <xsl:param name="pgUrlBase" select="'/BachUni/BachSources/'"/>
     <xsl:param name="pgUrlVar" select="'al-muqtabas'"/>
-    <xsl:param name="pWeekdayNotPublished" select="'Friday'"/>
+    <!-- $p_weekdays-published contains a comma-separated list of weekdays in English -->
+    <xsl:param name="p_weekdays-published" select="'Tuesday, Friday'"/>
+    <!-- select calendars for output -->
+    <xsl:param name="p_cal-islamic" select="true()"/>
+    <xsl:param name="p_cal-julian" select="true()"/>
+    <xsl:param name="p_cal-ottomanfiscal" select="false()"/>
+    
     
     
     <xsl:template match="/">
-        <xsl:result-document href="periodical2Sente {replace($pgStartDate,'-','')}-{replace($pgStopDate,'-','')} {format-date($vgDate,'[Y01][M01][D01]')}.xml" method="xml">
+        <xsl:result-document href="../xml/_output/{$pCitId}2Sente-from_{replace($pgStartDate,'-','')}-to_{replace($pgStopDate,'-','')}-when_{format-date($vgDate,'[Y01][M01][D01]')}.Sente.xml" method="xml">
         <xsl:element name="tss:senteContainer">
             <xsl:attribute name="version">1.0</xsl:attribute>
             <xsl:attribute name="xsi:schemaLocation">http://www.thirdstreetsoftware.com/SenteXML-1.0 SenteXML.xsd</xsl:attribute>
             <xsl:element name="tss:library">
                 <xsl:element name="tss:references">
-                    <xsl:call-template name="tReferencesM4"/>
+                    <xsl:call-template name="t_references-sente"/>
                 </xsl:element>
             </xsl:element>
         </xsl:element>
         </xsl:result-document>
     </xsl:template>
      
-    <xsl:template name="tReferencesM4">
+    <xsl:template name="t_references-sente">
         <!-- for al-Hasna it must be monthly -->
         <xsl:variable name="vRefs">
-            <xsl:call-template name="tIncrementDaily">
-                <xsl:with-param name="pWeekdayNotPublished" select="$pWeekdayNotPublished"/>
+            <xsl:call-template name="t_increment-daily">
+                <xsl:with-param name="p_weekdays-published" select="$p_weekdays-published"/>
+                <xsl:with-param name="p_date-start" select="$pgStartDate"/>
+                <xsl:with-param name="p_date-stop" select="$pgStopDate"/>
+                <xsl:with-param name="p_issue" select="$pgStartIssue"/>
+                <xsl:with-param name="p_pages" select="$p_pages"/>
+                <xsl:with-param name="p_url-image"/>
             </xsl:call-template>
         </xsl:variable>
         <xsl:for-each select="$vRefs/issue">
@@ -111,7 +122,7 @@
                         <xsl:when test="$p_switch-vol-issue=true()">
                             <xsl:element name="tss:characteristic">
                                 <xsl:attribute name="name">issue</xsl:attribute>
-                                <xsl:value-of select="$pgVolume"/>
+                                <xsl:value-of select="$p_volume"/>
                             </xsl:element>
                             <xsl:element name="tss:characteristic">
                                 <xsl:attribute name="name">volume</xsl:attribute>
@@ -121,7 +132,7 @@
                         <xsl:otherwise>
                             <xsl:element name="tss:characteristic">
                                 <xsl:attribute name="name">volume</xsl:attribute>
-                                <xsl:value-of select="$pgVolume"/>
+                                <xsl:value-of select="$p_volume"/>
                             </xsl:element>
                             <xsl:element name="tss:characteristic">
                                 <xsl:attribute name="name">issue</xsl:attribute>
@@ -135,7 +146,7 @@
                     </xsl:element>
                     <xsl:element name="tss:characteristic">
                         <xsl:attribute name="name">pages</xsl:attribute>
-                        <xsl:value-of select="concat('1-',$pgPages)"/>
+                        <xsl:value-of select="concat('1-',$p_pages)"/>
                     </xsl:element>
                     <xsl:element name="tss:characteristic">
                         <xsl:attribute name="name">publicationCountry</xsl:attribute>
@@ -145,55 +156,66 @@
                         <xsl:attribute name="name">publisher</xsl:attribute>
                         <xsl:value-of select="$pPublisher"/>
                     </xsl:element>
-                    <xsl:element name="tss:characteristic">
-                        <xsl:attribute name="name">Date Hijri</xsl:attribute>
-                        <xsl:variable name="vDateH">
-                            <xsl:call-template name="funcDateG2H">
-                                <xsl:with-param name="pDateG" select="./date"/>
-                            </xsl:call-template> 
-                       </xsl:variable>
-                        <xsl:variable name="vDateHFormatted">
-                            <xsl:call-template name="funcDateFormatTei">
-                                <xsl:with-param name="pDate" select="$vDateH"/>
-                                <xsl:with-param name="pCal" select="'H'"/>
-                                <xsl:with-param name="pOutput" select="'formatted'"/>
-                                <xsl:with-param name="pWeekday" select="false()"/>
-                            </xsl:call-template>
-                        </xsl:variable>
-                        <xsl:value-of select="$vDateHFormatted"/>
-                    </xsl:element>
-                    <xsl:element name="tss:characteristic">
-                        <xsl:attribute name="name">Date Rumi</xsl:attribute>
-                        <!-- one has to select either mali or rumi here -->
-                        <xsl:variable name="vDateM">
-                            <xsl:call-template name="funcDateG2M">
-                                <xsl:with-param name="pDateG" select="./date"/>
-                            </xsl:call-template> 
-                        </xsl:variable>
-                        <xsl:variable name="vDateMFormatted">
-                            <xsl:call-template name="funcDateFormatTei">
-                                <xsl:with-param name="pDate" select="$vDateM"/>
-                                <xsl:with-param name="pCal" select="'M'"/>
-                                <xsl:with-param name="pOutput" select="'formatted'"/>
-                                <xsl:with-param name="pWeekday" select="false()"/>
-                            </xsl:call-template>
-                        </xsl:variable>
-                        <xsl:variable name="vDateJ">
-                            <xsl:call-template name="funcDateG2J">
-                                <xsl:with-param name="pDateG" select="./date"/>
-                            </xsl:call-template> 
-                        </xsl:variable>
-                        <xsl:variable name="vDateJFormatted">
-                            <xsl:call-template name="funcDateFormatTei">
-                                <xsl:with-param name="pDate" select="$vDateJ"/>
-                                <xsl:with-param name="pCal" select="'J'"/>
-                                <xsl:with-param name="pOutput" select="'formatted'"/>
-                                <xsl:with-param name="pWeekday" select="false()"/>
-                            </xsl:call-template>
-                        </xsl:variable>
-                        <!-- one has to select either mali (M) or rumi (J) here -->
-                        <xsl:value-of select="$vDateMFormatted"/>
-                    </xsl:element>
+                    <!--  toggle Islamic date-->
+                    <xsl:if test="$p_cal-islamic = true()">
+                        <xsl:element name="tss:characteristic">
+                            <xsl:attribute name="name">Date Hijri</xsl:attribute>
+                            <xsl:variable name="vDateH">
+                                <xsl:call-template name="funcDateG2H">
+                                    <xsl:with-param name="pDateG" select="./date"/>
+                                </xsl:call-template> 
+                            </xsl:variable>
+                            <xsl:variable name="vDateHFormatted">
+                                <xsl:call-template name="funcDateFormatTei">
+                                    <xsl:with-param name="pDate" select="$vDateH"/>
+                                    <xsl:with-param name="pCal" select="'H'"/>
+                                    <xsl:with-param name="pOutput" select="'formatted'"/>
+                                    <xsl:with-param name="pWeekday" select="false()"/>
+                                </xsl:call-template>
+                            </xsl:variable>
+                            <xsl:value-of select="$vDateHFormatted"/>
+                        </xsl:element>
+                    </xsl:if>
+                    <!-- toggle Julian (*rūmī*) date -->
+                    <xsl:if test="$p_cal-julian = true()">
+                        <xsl:element name="tss:characteristic">
+                            <xsl:attribute name="name">Date Rumi</xsl:attribute>
+                            <xsl:variable name="vDateJ">
+                                <xsl:call-template name="funcDateG2J">
+                                    <xsl:with-param name="pDateG" select="./date"/>
+                                </xsl:call-template> 
+                            </xsl:variable>
+                            <xsl:variable name="vDateJFormatted">
+                                <xsl:call-template name="funcDateFormatTei">
+                                    <xsl:with-param name="pDate" select="$vDateJ"/>
+                                    <xsl:with-param name="pCal" select="'J'"/>
+                                    <xsl:with-param name="pOutput" select="'formatted'"/>
+                                    <xsl:with-param name="pWeekday" select="false()"/>
+                                </xsl:call-template>
+                            </xsl:variable>
+                            <xsl:value-of select="$vDateJFormatted"/>
+                        </xsl:element>
+                    </xsl:if>
+                    <!-- toggle Ottoman fiscal (*mālī*) date -->
+                    <xsl:if test="$p_cal-ottomanfiscal = true()">
+                        <xsl:element name="tss:characteristic">
+                            <xsl:attribute name="name">Date Rumi</xsl:attribute>
+                            <xsl:variable name="vDateM">
+                                <xsl:call-template name="funcDateG2M">
+                                    <xsl:with-param name="pDateG" select="./date"/>
+                                </xsl:call-template> 
+                            </xsl:variable>
+                            <xsl:variable name="vDateMFormatted">
+                                <xsl:call-template name="funcDateFormatTei">
+                                    <xsl:with-param name="pDate" select="$vDateM"/>
+                                    <xsl:with-param name="pCal" select="'M'"/>
+                                    <xsl:with-param name="pOutput" select="'formatted'"/>
+                                    <xsl:with-param name="pWeekday" select="false()"/>
+                                </xsl:call-template>
+                            </xsl:variable>
+                            <xsl:value-of select="$vDateMFormatted"/>
+                        </xsl:element>
+                    </xsl:if>
                     
                     <!--<xsl:element name="tss:characteristic">
                         <xsl:attribute name="name">Repository</xsl:attribute>
@@ -209,7 +231,7 @@
                     </xsl:element>-->
                     <xsl:element name="tss:characteristic">
                         <xsl:attribute name="name">Citation identifier</xsl:attribute>
-                        <xsl:value-of select="concat($pCitId,'_',$pgVolume,'-',./number)"/>
+                        <xsl:value-of select="concat($pCitId,'_',$p_volume,'-',./number)"/>
                     </xsl:element>
                    <!-- <xsl:element name="tss:characteristic">
                         <xsl:attribute name="name">URL</xsl:attribute>
@@ -240,7 +262,7 @@
                     </xsl:element>
                     <xsl:element name="tss:keyword">
                         <xsl:attribute name="assigner">Sente User Sebastian</xsl:attribute>
-                        <xsl:text>monthly</xsl:text>
+                        <xsl:text>daily</xsl:text>
                     </xsl:element>
                 </xsl:element>
             </xsl:element>
