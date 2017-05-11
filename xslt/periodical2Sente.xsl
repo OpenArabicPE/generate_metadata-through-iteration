@@ -4,7 +4,6 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs"
     xmlns:tei="http://www.tei-c.org/ns/1.0"
     xmlns:html="http://www.w3.org/1999/xhtml"
-    xmlns:kml="http://earth.google.com/kml/2.0"
     xmlns:tss="http://www.thirdstreetsoftware.com/SenteXML-1.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     >
