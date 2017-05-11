@@ -15,8 +15,8 @@
         <xsl:variable name="vRefs">
             <xsl:call-template name="t_increment-daily">
                 <xsl:with-param name="p_weekdays-published" select="$p_weekdays-published"/>
-                <xsl:with-param name="p_date-start" select="$pgStartDate"/>
-                <xsl:with-param name="p_date-stop" select="$pgStopDate"/>
+                <xsl:with-param name="p_date-start" select="$p_date-start"/>
+                <xsl:with-param name="p_date-stop" select="$p_date-stop"/>
                 <xsl:with-param name="p_issue" select="$pgStartIssue"/>
                 <xsl:with-param name="p_pages" select="$p_pages"/>
             </xsl:call-template>
@@ -32,7 +32,7 @@
                     <xsl:attribute name="name">Archival Periodical</xsl:attribute>
                 </xsl:element>
                 <xsl:element name="tss:authors">
-                    <xsl:apply-templates select="$p_editors/tei:person" mode="m_tei-to-sente"/>
+                    <xsl:apply-templates select="$p_editors/tei:editor" mode="m_tei-to-sente"/>
                 </xsl:element>
                 <xsl:element name="tss:dates">
                     <xsl:element name="tss:date">
@@ -68,11 +68,11 @@
                     </xsl:element>
                     <xsl:element name="tss:characteristic">
                         <xsl:attribute name="name">publicationTitle</xsl:attribute>
-                        <xsl:value-of select="$pPublicationTitle"/>
+                        <xsl:value-of select="$p_title-publication"/>
                     </xsl:element>
                     <xsl:element name="tss:characteristic">
                         <xsl:attribute name="name">Short Titel</xsl:attribute>
-                        <xsl:value-of select="$pShortTitle"/>
+                        <xsl:value-of select="$p_title-short"/>
                     </xsl:element>
                     <xsl:choose>
                         <xsl:when test="$p_switch-vol-issue=true()">
@@ -106,11 +106,11 @@
                     </xsl:element>
                     <xsl:element name="tss:characteristic">
                         <xsl:attribute name="name">publicationCountry</xsl:attribute>
-                        <xsl:value-of select="$pPublPlace"/>
+                        <xsl:value-of select="$p_pubPlace"/>
                     </xsl:element>
                     <xsl:element name="tss:characteristic">
                         <xsl:attribute name="name">publisher</xsl:attribute>
-                        <xsl:value-of select="$pPublisher"/>
+                        <xsl:value-of select="$p_publisher"/>
                     </xsl:element>
                     <!--  toggle Islamic date-->
                     <xsl:if test="$p_cal-islamic = true()">
@@ -187,7 +187,7 @@
                     </xsl:element>-->
                     <xsl:element name="tss:characteristic">
                         <xsl:attribute name="name">Citation identifier</xsl:attribute>
-                        <xsl:value-of select="concat($pCitId,'_',$p_volume,'-',./number)"/>
+                        <xsl:value-of select="concat($p_citationID,'_',$p_volume,'-',./number)"/>
                     </xsl:element>
                     <!-- <xsl:element name="tss:characteristic">
                         <xsl:attribute name="name">URL</xsl:attribute>
@@ -331,7 +331,7 @@
     </xsl:template>
     
     <xsl:template name="tIncrementFortnightly">
-        <xsl:param name="pDate" select="$pgStartDate"/>
+        <xsl:param name="pDate" select="$p_date-start"/>
         <xsl:param name="pIssue" select="$pgStartIssue"/>
         <xsl:param name="pImgUrl" select="$pgStartImg"/>
         <xsl:variable name="vDayInc">
@@ -380,7 +380,7 @@
                 <xsl:value-of select="$pImgUrl"/>
             </xsl:element>
         </xsl:element>
-        <xsl:if test="$vDateInc lt $pgStopDate">
+        <xsl:if test="$vDateInc lt $p_date-stop">
             <xsl:call-template name="tIncrementFortnightly">
                 <xsl:with-param name="pDate" select="$vDateInc"/>
                 <xsl:with-param name="pIssue" select="$pIssue + 1"/>
@@ -389,7 +389,7 @@
         </xsl:if>
     </xsl:template>
     <xsl:template name="tIncrementMonthly">
-        <xsl:param name="pDate" select="$pgStartDate"/>
+        <xsl:param name="pDate" select="$p_date-start"/>
         <xsl:param name="pIssue" select="$pgStartIssue"/>
         <xsl:param name="pImgUrl" select="$pgStartImg"/>
         <xsl:variable name="vMonthInc" select="number(tokenize($pDate,'-')[2]) + 1"/>
@@ -422,7 +422,7 @@
                 <xsl:value-of select="$pImgUrl"/>
             </xsl:element>
         </xsl:element>
-        <xsl:if test="$vDateInc lt $pgStopDate">
+        <xsl:if test="$vDateInc lt $p_date-stop">
             <xsl:call-template name="tIncrementMonthly">
                 <xsl:with-param name="pDate" select="$vDateInc"/>
                 <xsl:with-param name="pIssue" select="$pIssue + 1"/>
@@ -432,7 +432,7 @@
     </xsl:template>
     
     <!-- -->
-    <xsl:template match="tei:person" mode="m_tei-to-sente">
+    <xsl:template match="tei:editor" mode="m_tei-to-sente">
         <xsl:element name="tss:author">
             <xsl:attribute name="role" select="'Editor'"/>
             <xsl:apply-templates select="tei:persName[1]/tei:surname" mode="m_tei-to-sente"/>
