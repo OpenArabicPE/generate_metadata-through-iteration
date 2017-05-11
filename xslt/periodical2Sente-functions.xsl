@@ -111,44 +111,6 @@
         </xsl:if>
     </xsl:template>
     
-    <!-- this template produces a series of <issue> notes with children for <date>, <number>, <img> -->
-    <xsl:template name="tIncrementWeekly">
-        <xsl:param name="pDate" select="$pgStartDate"/>
-        <xsl:param name="pIssue" select="$pgStartIssue"/>
-        <xsl:param name="pImgUrl" select="$pgStartImg"/>
-        <xsl:variable name="vDateJD">
-            <xsl:call-template name="funcDateG2JD">
-                <xsl:with-param name="pDateG" select="$pDate"/>
-            </xsl:call-template>
-        </xsl:variable>
-        <xsl:variable name="vDateInc">
-            <xsl:call-template name="funcDateJD2G">
-                <xsl:with-param name="pJD" select="$vDateJD + 7"/>
-            </xsl:call-template>
-        </xsl:variable>
-        <xsl:variable name="vIssueInc">
-            <xsl:value-of select="$pIssue + 1"/>
-        </xsl:variable>
-        <xsl:element name="issue">
-            <xsl:element name="date">
-                <xsl:value-of select="$pDate"/>
-            </xsl:element>
-            <xsl:element name="number">
-                <xsl:value-of select="$pIssue"/>
-            </xsl:element>
-            <xsl:element name="img">
-                <xsl:value-of select="$pImgUrl"/>
-            </xsl:element>
-        </xsl:element>
-        <xsl:if test="$vDateInc lt $pgStopDate">
-            <xsl:call-template name="tIncrementWeekly">
-                <xsl:with-param name="pDate" select="$vDateInc"/>
-                <xsl:with-param name="pIssue" select="$pIssue + 1"/>
-                <xsl:with-param name="pImgUrl" select="$pImgUrl + $pgPages"/>
-            </xsl:call-template>
-        </xsl:if>
-    </xsl:template>
-    
     <xsl:template name="tIncrementFortnightly">
         <xsl:param name="pDate" select="$pgStartDate"/>
         <xsl:param name="pIssue" select="$pgStartIssue"/>
