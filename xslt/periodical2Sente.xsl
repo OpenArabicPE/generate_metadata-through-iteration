@@ -59,10 +59,7 @@
     <xsl:param name="pgUrlVar" select="'al-muqtabas'"/>
     <xsl:param name="pgStartImg" select="1"/>
     
-   
-    
-    
-    
+    <!-- generate Sente XML -->
     <xsl:template match="/">
         <xsl:result-document href="../xml/_output/{$pCitId}2Sente-from_{replace($pgStartDate,'-','')}-to_{replace($pgStopDate,'-','')}-when_{format-date($vgDate,'[Y01][M01][D01]')}.Sente.xml" format="xml">
         <xsl:element name="tss:senteContainer">
