@@ -52,6 +52,7 @@
         <xsl:param name="p_date-start" select="$p_input//tei:monogr/tei:imprint/tei:date[@type='official']/@from"/>
         <xsl:param name="p_date-stop" select="$p_input//tei:monogr/tei:imprint/tei:date[@type='official']/@to"/>
         <xsl:param name="p_issue" select="$p_input//tei:monogr/tei:biblScope[@unit='issue']/@from"/>
+        <xsl:param name="p_volume" select="$p_input//tei:monogr/tei:biblScope[@unit='volume']/@from"/>
         <xsl:param name="p_step" select="$p_input/descendant-or-self::tei:biblStruct/tei:note[@type='param'][@n='p_step']"/>
         <xsl:param name="p_weekdays-published" select="$p_input/descendant-or-self::tei:biblStruct/tei:note[@type='param'][@n='p_weekdays-published']"/>
         <xsl:variable name="vDateJD">
@@ -80,6 +81,7 @@
                         <!-- information that needs to be incremented -->
                         <xsl:with-param name="p_date" select="$p_date-start"/>
                         <xsl:with-param name="p_issue" select="$p_issue"/>
+                        <xsl:with-param name="p_volume" select="$p_volume"/>
                     </xsl:call-template>
                 </xsl:if>
                 <xsl:if test="$v_date-incremented &lt; $p_date-stop">
@@ -94,6 +96,17 @@
                                 </xsl:when>
                                 <xsl:otherwise>
                                     <xsl:value-of select="$p_issue"/>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </xsl:with-param>
+                        <xsl:with-param name="p_volume">
+                            <xsl:choose>
+                                <!-- if the issue number can be divided by the number of total issues per year, a new volume should begin -->
+                                <xsl:when test="number($p_issue) mod (52 * number(count(tokenize($p_weekdays-published,',')))) = 0">
+                                    <xsl:value-of select="$p_volume +1"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:value-of select="$p_volume"/>
                                 </xsl:otherwise>
                             </xsl:choose>
                         </xsl:with-param>
@@ -113,6 +126,7 @@
         <xsl:param name="p_input"/>
         <xsl:param name="p_date"/>
         <xsl:param name="p_issue"/>
+        <xsl:param name="p_volume"/>
         <tei:biblStruct xml:lang="en">
             <tei:monogr xml:lang="en">
                 <!-- title -->
@@ -180,8 +194,9 @@
                         </tei:date>
                     </xsl:if>
                 </tei:imprint>
-                <xsl:apply-templates select="$p_input//tei:monogr/tei:biblScope[not(@unit='issue')]"/>
+                <tei:biblScope from="{$p_volume}" to="{$p_volume}" unit="volume"/>
                 <tei:biblScope from="{$p_issue}" to="{$p_issue}" unit="issue"/>
+                <xsl:apply-templates select="$p_input//tei:monogr/tei:biblScope[@unit='page']"/>
             </tei:monogr>
             <xsl:apply-templates select="$p_input/descendant-or-self::tei:biblStruct/tei:ref"/>
             <xsl:apply-templates select="$p_input/descendant-or-self::tei:biblStruct/tei:note"/>
