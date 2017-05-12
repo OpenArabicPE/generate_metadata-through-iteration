@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     version="2.0"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs xsi"
     xmlns:tei="http://www.tei-c.org/ns/1.0"
-    xmlns:html="http://www.w3.org/1999/xhtml"
-    xmlns:tss="http://www.thirdstreetsoftware.com/SenteXML-1.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     >
     <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="no"  name="xml"/>
@@ -17,16 +15,8 @@
     
     <xsl:variable name="v_date-today" select="current-date()"/>
     
-    <!--  $p_step sets incremental steps for the input to be iterated upon. Values are:
-        - daily: this includes any publication cycle that is at least weekly
-        - fortnightly:
-        - monthly: -->
-<!--    <xsl:param name="p_step" select="'daily'"/>-->
-    <!-- $p_weekdays-published contains a comma-separated list of weekdays in English -->
-<!--    <xsl:param name="p_weekdays-published" select="'Tuesday, Friday'"/>-->
-    
     <!-- debugging -->
-    <xsl:param name="p_verbose" select="true()"/>
+    <xsl:param name="p_verbose" select="false()"/>
     
     <!-- identity transformation -->
     <xsl:template match="@* | node()">
