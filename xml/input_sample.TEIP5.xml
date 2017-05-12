@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!--<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>-->
+<?xml-model href="https://rawgit.com/OpenArabicPE/OpenArabicPE_ODD/v0.1/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
 	schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0">
@@ -12,58 +13,73 @@
             <p>Publication Information</p>
          </publicationStmt>
          <sourceDesc>
-             <tei:biblStruct xml:lang="en">
-                 <tei:monogr xml:lang="en">
-                     <tei:title level="j" xml:lang="ar">المقتبس</tei:title>
-                     <tei:title level="j" type="sub" xml:lang="ar">مجلة تبحث في التربية والتعليم
+             <biblStruct xml:lang="en">
+                 <monogr xml:lang="en">
+                     <title level="j" xml:lang="ar">المقتبس</title>
+                     <title level="j" type="sub" xml:lang="ar">مجلة تبحث في التربية والتعليم
                          والاجتماع والاقتصاد والاداب والتاريخ والآثار واللغة و تدبير المنزل
-                         والصحة والكتب وحضارة العرب والغرب</tei:title>
-                     <tei:title level="j" type="sub" xml:lang="ar">تصدر في كل شهر عربي بدمشق</tei:title>
-                     <tei:title level="j" xml:lang="ar-Latn-x-ijmes">[Majallat] al-Muqtabas</tei:title>
-                     <tei:title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Majalla tabḥath fī
+                         والصحة والكتب وحضارة العرب والغرب</title>
+                     <title level="j" type="sub" xml:lang="ar">تصدر في كل شهر عربي بدمشق</title>
+                     <title level="j" xml:lang="ar-Latn-x-ijmes">[Majallat] al-Muqtabas</title>
+                     <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Majalla tabḥath fī
                          al-tarbiyya wa-l-taʿlīm wa-l-ijtimāʿ wa-l-iqtiṣād wa-l-adab wa-l-tārīkh
                          wa-l-āthār wa-l-lugha wa tadbīr al-manzil wa-l-ṣaḥḥa wa-l-kutub wa
-                         ḥaḍāra al-ʿarab wa ḥadāra al-gharb</tei:title>
-                     <tei:title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">tuṣadir fī kull shar
-                         ʿarabī bi-Dimashq</tei:title>
-                     <tei:title level="j" xml:lang="fr">Al-Moktabas</tei:title>
-                     <tei:title level="j" type="sub" xml:lang="fr">Revue mensuelle paraissant à Damas
-                         (Syrie)</tei:title>
-                     <tei:title level="j" type="sub" xml:lang="fr">Pédagogie, sociologie, économie
+                         ḥaḍāra al-ʿarab wa ḥadāra al-gharb</title>
+                     <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">tuṣadir fī kull shar
+                         ʿarabī bi-Dimashq</title>
+                     <title level="j" xml:lang="fr">Al-Moktabas</title>
+                     <title level="j" type="sub" xml:lang="fr">Revue mensuelle paraissant à Damas
+                         (Syrie)</title>
+                     <title level="j" type="sub" xml:lang="fr">Pédagogie, sociologie, économie
                          politique, littérature, histoire, archéologie, philologie, ménagerie,
-                         hygiène, bibliographie, civilisation arabe et occidentale</tei:title>
-                     <tei:editor ref="viaf:32272677" xml:lang="en">
-                         <tei:persName xml:lang="ar">
-                             <tei:forename xml:lang="ar">محمد</tei:forename>
-                             <tei:surname xml:lang="ar">كرد علي</tei:surname>
-                         </tei:persName>
-                         <tei:persName xml:lang="ar-Latn-x-ijmes">
-                             <tei:forename xml:lang="ar-Latn-x-ijmes">Muḥammad</tei:forename>
-                             <tei:surname xml:lang="ar-Latn-x-ijmes">Kurd ʿAlī</tei:surname>
-                         </tei:persName>
-                     </tei:editor>
-                     <tei:imprint xml:lang="en">
-                         <tei:publisher xml:lang="en">
-                             <tei:orgName xml:lang="ar">مطبعة المقتبس</tei:orgName> 
-                             <tei:orgName notAfter="1914" notBefore="1908" xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Muqtabas</tei:orgName> 
-                         </tei:publisher>
-                         <tei:pubPlace xml:lang="en"> 
-                             <tei:placeName xml:lang="ar">دمشق</tei:placeName>
-                             <tei:placeName xml:lang="ar-Latn-x-ijmes">Dimashq</tei:placeName> 
-                             <tei:placeName xml:lang="en">Damascus</tei:placeName> 
-                         </tei:pubPlace>
-                         <tei:date type="official" from="1908-09-18" to="1908-10-18" xml:lang="ar-Latn-x-ijmes" when-custom="1329-01-01" datingMethod="#cal_islamic" calendar="#cal_islamic" when="1911-01-02">1 Muḥ 1329</tei:date>
-                     </tei:imprint>
-                     <tei:biblScope from="6" to="6" unit="volume"/>
-                     <tei:biblScope from="1" to="1" unit="issue"/>
-                     <tei:biblScope unit="page" from="1" to="4"/>
-                 </tei:monogr>
-                 <tei:idno type="oclc" xml:lang="en">4770057679</tei:idno>
-                 <tei:idno type="oclc" xml:lang="en">79440195</tei:idno>
-                 <tei:idno type="aucr" xml:lang="en">07201136864</tei:idno>
-                 <tei:idno type="shamela" xml:lang="en">26523</tei:idno>
-                 <tei:idno type="zenodo" xml:lang="en">45922152</tei:idno>
-             </tei:biblStruct>
+                         hygiène, bibliographie, civilisation arabe et occidentale</title>
+                     <!-- use as many identifiers as appropriate -->
+                     <idno type="oclc" xml:lang="en">4770057679</idno>
+                     <idno type="oclc" xml:lang="en">79440195</idno>
+                     <idno type="aucr" xml:lang="en">07201136864</idno>
+                     <idno type="shamela" xml:lang="en">26523</idno>
+                     <idno type="zenodo" xml:lang="en">45922152</idno>
+                     <editor ref="viaf:32272677" xml:lang="en">
+                         <persName xml:lang="ar">
+                             <forename xml:lang="ar">محمد</forename>
+                             <surname xml:lang="ar">كرد علي</surname>
+                         </persName>
+                         <persName xml:lang="ar-Latn-x-ijmes">
+                             <forename xml:lang="ar-Latn-x-ijmes">Muḥammad</forename>
+                             <surname xml:lang="ar-Latn-x-ijmes">Kurd ʿAlī</surname>
+                         </persName>
+                     </editor>
+                     <imprint xml:lang="en">
+                         <publisher xml:lang="en">
+                             <orgName xml:lang="ar">مطبعة المقتبس</orgName> 
+                             <orgName notAfter="1914" notBefore="1908" xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Muqtabas</orgName> 
+                         </publisher>
+                         <pubPlace xml:lang="en"> 
+                             <placeName xml:lang="ar">دمشق</placeName>
+                             <placeName xml:lang="ar-Latn-x-ijmes">Dimashq</placeName> 
+                             <placeName xml:lang="en">Damascus</placeName> 
+                         </pubPlace>
+                         <!-- use @from and @to to designate the timespan you want to generate bibliographic metadata for -->
+                         <!-- to designate different calendars in the masthead, add <date @type='official'> nodes pointing to them -->
+                         <date type="official" from="1908-09-18" to="1908-10-18" xml:lang="ar-Latn-x-ijmes" when-custom="1329-01-01" datingMethod="#cal_islamic" calendar="#cal_islamic" when="1911-01-02">1 Muḥ 1329</date>
+                         <date type="official" datingMethod="#cal_julian"/>
+                         <date type="official" datingMethod="#cal_ottomanfiscal"/>
+                     </imprint>
+                     <biblScope from="6" to="6" unit="volume"/>
+                     <biblScope from="1" to="1" unit="issue"/>
+                     <biblScope unit="page" from="1" to="4"/>                     
+                 </monogr>
+                 <!-- this can be used to provide a base URL for digital surrogates, the file naming scheme must be provided through additional means -->
+                 <ref type="url"></ref>
+                 <!-- additional parameters  -->
+                 <!-- $p_weekdays-published contains a comma-separated list of weekdays in English -->
+                 <note type="param" n="p_weekdays-published">Tuesday, Friday</note>
+                 <!--  $p_step sets incremental steps for the input to be iterated upon. Values are:
+        - daily: this includes any publication cycle that is at least weekly
+        - fortnightly:
+        - monthly: -->
+                 <note type="param" n="p_step">daily</note>
+             </biblStruct>
          </sourceDesc>
       </fileDesc>
   </teiHeader>
