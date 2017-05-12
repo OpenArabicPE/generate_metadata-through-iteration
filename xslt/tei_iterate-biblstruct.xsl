@@ -17,18 +17,16 @@
     
     <xsl:variable name="v_date-today" select="current-date()"/>
     
-    <!-- param to select the target language -->
-    <xsl:param name="p_language" select="'ar-Latn-x-ijmes'"/>
     <!--  $p_step sets incremental steps for the input to be iterated upon. Values are:
         - daily: this includes any publication cycle that is at least weekly
         - fortnightly:
         - monthly: -->
-    <xsl:param name="p_step" select="'daily'"/>
+<!--    <xsl:param name="p_step" select="'daily'"/>-->
     <!-- $p_weekdays-published contains a comma-separated list of weekdays in English -->
-    <xsl:param name="p_weekdays-published" select="'Tuesday, Friday'"/>
+<!--    <xsl:param name="p_weekdays-published" select="'Tuesday, Friday'"/>-->
     
     <!-- debugging -->
-    <xsl:param name="p_verbose" select="false()"/>
+    <xsl:param name="p_verbose" select="true()"/>
     
     <!-- identity transformation -->
     <xsl:template match="@* | node()">
@@ -61,11 +59,11 @@
     <xsl:template name="t_iterate-tei">
         <xsl:param name="p_input"/>
         <!-- the following parameters are based on the input and incremented by this template -->
-        <xsl:param name="p_date-start" select="$p_input//tei:date[@type='official']/@from"/>
-        <xsl:param name="p_date-stop" select="$p_input//tei:date[@type='official']/@to"/>
+        <xsl:param name="p_date-start" select="$p_input//tei:monogr/tei:imprint/tei:date[@type='official']/@from"/>
+        <xsl:param name="p_date-stop" select="$p_input//tei:monogr/tei:imprint/tei:date[@type='official']/@to"/>
         <xsl:param name="p_issue" select="$p_input//tei:monogr/tei:biblScope[@unit='issue']/@from"/>
-        <xsl:param name="p_step" select="$p_input//tei:monogr/tei:note[@type='param'][@n='p_step']"/>
-        <xsl:param name="p_weekdays-published" select="$p_input//tei:monogr/tei:note[@type='param'][@n='p_weekdays-published']"/>
+        <xsl:param name="p_step" select="$p_input/descendant-or-self::tei:biblStruct/tei:note[@type='param'][@n='p_step']"/>
+        <xsl:param name="p_weekdays-published" select="$p_input/descendant-or-self::tei:biblStruct/tei:note[@type='param'][@n='p_weekdays-published']"/>
         <xsl:variable name="vDateJD">
             <xsl:call-template name="funcDateG2JD">
                 <xsl:with-param name="pDateG" select="$p_date-start"/>
@@ -136,13 +134,37 @@
                 <tei:imprint xml:lang="en">
                     <xsl:apply-templates select="$p_input//tei:monogr/tei:imprint/tei:publisher"/>
                     <xsl:apply-templates select="$p_input//tei:monogr/tei:imprint/tei:pubPlace"/>
-                    <tei:date type="computed" when="{$p_date}"/>
+                    <!-- add calendars depending on the input -->
+                    <xsl:if test="$p_input//tei:monogr/tei:imprint/tei:date[@datingMethod='#cal_islamic']">
+                        <xsl:variable name="v_date-hijri">
+                            <xsl:call-template name="funcDateG2H">
+                                <xsl:with-param name="pDateG" select="$p_date"/>
+                            </xsl:call-template>
+                        </xsl:variable>
+                        <tei:date type="computed" when="{$p_date}" datingMethod="#cal_islamic" calendar="#cal_islamic" when-custom="{$v_date-hijri}">
+                            <xsl:value-of select="format-number(number( month-from-date($v_date-hijri)),'0')"/>
+                            <xsl:text> </xsl:text>
+                            <xsl:call-template name="funcDateMonthNameNumber">
+                                <xsl:with-param name="pDate" select="$v_date-hijri"/>
+                                <xsl:with-param name="pLang" select="'HIjmesFull'"/>
+                                <xsl:with-param name="pMode" select="'name'"/>
+                            </xsl:call-template>
+                            <xsl:text> </xsl:text>
+                            <xsl:value-of select="format-number(number( year-from-date($v_date-hijri)),'0')"/>
+                        </tei:date>
+                        <!--<xsl:call-template name="funcDateFormatTei">
+                            <xsl:with-param name="pDate" select="$v_date-hijri"/>
+                            <xsl:with-param name="pCal" select="'H'"/>
+                            <xsl:with-param name="pOutput" select="'formatted'"/>
+                            <xsl:with-param name="pWeekday" select="false()"/>
+                        </xsl:call-template>-->
+                    </xsl:if>
                 </tei:imprint>
                 <xsl:apply-templates select="$p_input//tei:monogr/tei:biblScope[not(@unit='issue')]"/>
                 <tei:biblScope from="{$p_issue}" to="{$p_issue}" unit="issue"/>
             </tei:monogr>
-            <xsl:apply-templates select="$p_input//tei:biblStruct/tei:ref"/>
-            <xsl:apply-templates select="$p_input//tei:biblStruct/tei:note"/>
+            <xsl:apply-templates select="$p_input/descendant-or-self::tei:biblStruct/tei:ref"/>
+            <xsl:apply-templates select="$p_input/descendant-or-self::tei:biblStruct/tei:note"/>
         </tei:biblStruct>
     </xsl:template>
 </xsl:stylesheet>
