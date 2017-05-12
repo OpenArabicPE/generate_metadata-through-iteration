@@ -141,7 +141,7 @@
                                 <xsl:with-param name="pDateG" select="$p_date"/>
                             </xsl:call-template>
                         </xsl:variable>
-                        <tei:date type="computed" when="{$p_date}" datingMethod="#cal_islamic" calendar="#cal_islamic" when-custom="{$v_date-hijri}">
+                        <tei:date type="computed" when="{$p_date}" datingMethod="#cal_islamic" calendar="#cal_islamic" when-custom="{$v_date-hijri}" xml:lang="ar-Latn-x-ijmes">
                             <xsl:value-of select="format-number(number( month-from-date($v_date-hijri)),'0')"/>
                             <xsl:text> </xsl:text>
                             <xsl:call-template name="funcDateMonthNameNumber">
@@ -152,12 +152,24 @@
                             <xsl:text> </xsl:text>
                             <xsl:value-of select="format-number(number( year-from-date($v_date-hijri)),'0')"/>
                         </tei:date>
-                        <!--<xsl:call-template name="funcDateFormatTei">
-                            <xsl:with-param name="pDate" select="$v_date-hijri"/>
-                            <xsl:with-param name="pCal" select="'H'"/>
-                            <xsl:with-param name="pOutput" select="'formatted'"/>
-                            <xsl:with-param name="pWeekday" select="false()"/>
-                        </xsl:call-template>-->
+                    </xsl:if>
+                    <xsl:if test="$p_input//tei:monogr/tei:imprint/tei:date[@datingMethod='#cal_julian']">
+                        <xsl:variable name="v_date-julian">
+                            <xsl:call-template name="funcDateG2J">
+                                <xsl:with-param name="pDateG" select="$p_date"/>
+                            </xsl:call-template>
+                        </xsl:variable>
+                        <tei:date type="computed" when="{$p_date}" datingMethod="#cal_julian" calendar="#cal_julian" when-custom="{$v_date-julian}" xml:lang="ar-Latn-x-ijmes">
+                            <xsl:value-of select="format-number(number( month-from-date($v_date-julian)),'0')"/>
+                            <xsl:text> </xsl:text>
+                            <xsl:call-template name="funcDateMonthNameNumber">
+                                <xsl:with-param name="pDate" select="$v_date-julian"/>
+                                <xsl:with-param name="pLang" select="'JIjmes'"/>
+                                <xsl:with-param name="pMode" select="'name'"/>
+                            </xsl:call-template>
+                            <xsl:text> </xsl:text>
+                            <xsl:value-of select="format-number(number( year-from-date($v_date-julian)),'0')"/>
+                        </tei:date>
                     </xsl:if>
                 </tei:imprint>
                 <xsl:apply-templates select="$p_input//tei:monogr/tei:biblScope[not(@unit='issue')]"/>
