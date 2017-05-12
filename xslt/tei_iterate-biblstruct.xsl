@@ -51,8 +51,8 @@
             <xsl:element name="tei:listBibl">
                 <xsl:call-template name="t_iterate-tei">
                     <xsl:with-param name="p_input" select="ancestor::tei:TEI/descendant::tei:biblStruct[1]"/>
-                    <xsl:with-param name="p_step" select="$p_step"/>
-                    <xsl:with-param name="p_weekdays-published" select="$p_weekdays-published"/>
+<!--                    <xsl:with-param name="p_step" select="$p_step"/>-->
+<!--                    <xsl:with-param name="p_weekdays-published" select="$p_weekdays-published"/>-->
                 </xsl:call-template>
             </xsl:element>
         </xsl:copy>
@@ -60,12 +60,12 @@
     
     <xsl:template name="t_iterate-tei">
         <xsl:param name="p_input"/>
-        <xsl:param name="p_weekdays-published"/>
         <!-- the following parameters are based on the input and incremented by this template -->
         <xsl:param name="p_date-start" select="$p_input//tei:date[@type='official']/@from"/>
         <xsl:param name="p_date-stop" select="$p_input//tei:date[@type='official']/@to"/>
         <xsl:param name="p_issue" select="$p_input//tei:monogr/tei:biblScope[@unit='issue']/@from"/>
-        <xsl:param name="p_step"/>
+        <xsl:param name="p_step" select="$p_input//tei:monogr/tei:note[@type='param'][@n='p_step']"/>
+        <xsl:param name="p_weekdays-published" select="$p_input//tei:monogr/tei:note[@type='param'][@n='p_weekdays-published']"/>
         <xsl:variable name="vDateJD">
             <xsl:call-template name="funcDateG2JD">
                 <xsl:with-param name="pDateG" select="$p_date-start"/>
@@ -84,7 +84,7 @@
                 <xsl:if test="contains($p_weekdays-published,$v_date-weekday)">
                     <xsl:if test="$p_verbose = true()">
                         <xsl:message>
-                            <xsl:text>was published on </xsl:text><xsl:value-of select="$p_date-start"/>
+                            <xsl:text>#</xsl:text><xsl:value-of select="$p_issue"/><xsl:text> was published on </xsl:text><xsl:value-of select="$p_date-start"/>
                         </xsl:message>
                     </xsl:if>
                     <xsl:call-template name="t_boilerplate-biblstruct">
@@ -129,6 +129,8 @@
             <tei:monogr xml:lang="en">
                 <!-- title -->
                 <xsl:apply-templates select="$p_input//tei:monogr/tei:title"/>
+                <!-- idnos on journal level -->
+                <xsl:apply-templates select="$p_input//tei:monogr/tei:idno"/>
                 <!-- editor -->
                 <xsl:apply-templates select="$p_input//tei:monogr/tei:editor"/>
                 <tei:imprint xml:lang="en">
@@ -139,7 +141,8 @@
                 <xsl:apply-templates select="$p_input//tei:monogr/tei:biblScope[not(@unit='issue')]"/>
                 <tei:biblScope from="{$p_issue}" to="{$p_issue}" unit="issue"/>
             </tei:monogr>
-            <xsl:apply-templates select="$p_input//tei:idno"/>
+            <xsl:apply-templates select="$p_input//tei:biblStruct/tei:ref"/>
+            <xsl:apply-templates select="$p_input//tei:biblStruct/tei:note"/>
         </tei:biblStruct>
     </xsl:template>
 </xsl:stylesheet>
