@@ -11,7 +11,9 @@
    <!-- this stylesheets rus on a tei:biblStruct as input -->
     
     <!-- provides calendar conversion -->
-    <xsl:include href="https://rawgit.com/tillgrallert/xslt-calendar-conversion/master/date-function.xsl"/>
+<!--    <xsl:include href="https://rawgit.com/tillgrallert/xslt-calendar-conversion/master/date-function.xsl"/>-->
+    <xsl:include href="https://cdn.rawgit.com/tillgrallert/xslt-calendar-conversion/master/date-function.xsl"/>
+    <xsl:include href="al-quds_find-links-to-facsimile.xsl"/>
     
     <xsl:variable name="v_date-today" select="current-date()"/>
     
@@ -99,16 +101,17 @@
                                 </xsl:otherwise>
                             </xsl:choose>
                         </xsl:with-param>
-                        <xsl:with-param name="p_volume">
-                            <xsl:choose>
-                                <!-- if the issue number can be divided by the number of total issues per year, a new volume should begin -->
+                        <xsl:with-param name="p_volume" select="$p_volume">
+                            <!-- this method is far too unreliable -->
+                            <!--<xsl:choose>
+                                <!-\- if the issue number can be divided by the number of total issues per year, a new volume should begin -\->
                                 <xsl:when test="number($p_issue) mod (52 * number(count(tokenize($p_weekdays-published,',')))) = 0">
                                     <xsl:value-of select="$p_volume +1"/>
                                 </xsl:when>
                                 <xsl:otherwise>
                                     <xsl:value-of select="$p_volume"/>
                                 </xsl:otherwise>
-                            </xsl:choose>
+                            </xsl:choose>-->
                         </xsl:with-param>
                         <xsl:with-param name="p_step" select="$p_step"/>
                         <xsl:with-param name="p_weekdays-published" select="$p_weekdays-published"/>
@@ -122,11 +125,13 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
+    
     <xsl:template name="t_boilerplate-biblstruct">
         <xsl:param name="p_input"/>
         <xsl:param name="p_date"/>
         <xsl:param name="p_issue"/>
         <xsl:param name="p_volume"/>
+        <xsl:param name="p_url" select="concat($p_input/descendant-or-self::tei:biblStruct/tei:ref[@type='url']/@target,'issue-',$p_issue)"/>
         <tei:biblStruct xml:lang="en">
             <tei:monogr xml:lang="en">
                 <!-- title -->
@@ -198,7 +203,19 @@
                 <tei:biblScope from="{$p_issue}" to="{$p_issue}" unit="issue"/>
                 <xsl:apply-templates select="$p_input//tei:monogr/tei:biblScope[@unit='page']"/>
             </tei:monogr>
-            <xsl:apply-templates select="$p_input/descendant-or-self::tei:biblStruct/tei:ref"/>
+<!--            <xsl:apply-templates select="$p_input/descendant-or-self::tei:biblStruct/tei:ref"/>-->
+            <!-- links for al-Quds -->
+            <tei:ref type="url">
+                <xsl:attribute name="target"  select="$p_url"/>
+            </tei:ref>
+            <!-- the HTML served by al-Quds is not well-formed and cannot be used for transformations -->
+            <tei:ref type="url">
+                <xsl:attribute name="target">
+                    <xsl:call-template name="t_facsimile-url">
+                        <xsl:with-param name="p_input-url" select="$p_url"/>
+                    </xsl:call-template>
+                </xsl:attribute>
+            </tei:ref>
             <xsl:apply-templates select="$p_input/descendant-or-self::tei:biblStruct/tei:note"/>
         </tei:biblStruct>
     </xsl:template>
