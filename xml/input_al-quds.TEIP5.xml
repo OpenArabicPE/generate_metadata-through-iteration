@@ -16,47 +16,49 @@
              <biblStruct xml:lang="en">
                     <monogr xml:lang="en">
                         <title level="j" xml:lang="ar">القدس</title>
-                        <title level="j" type="sub" xml:lang="ar">جريدة علمية ادبية اخبارية</title>
                         <title level="j" type="sub" xml:lang="ar"
-                            >تصدر يومي الثلاثا والجمعة من كل اسبوع</title>
+                            >جريدة علمية ادبية سياسية اخبارية يومية</title>
+                        <title level="j" type="sub" xml:lang="ar"
+                            >تصدر موقت يومي الثلاثا والجمعة من كل اسبوع</title>
                         <title level="j" xml:lang="ar-Latn-x-ijmes">al-Quds</title>
                         <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes"
-                            >Jarīda ʿilmiyya adabiyya akhbāriyya</title>
+                            >Jarīda ʿilmiyya adabiyya siyāsiyya akhbāriyya yamiyya</title>
                         <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes"
-                            >tuṣadir yawmay al-thulāthā wa al-jumaʿa min kull usbūʿ</title>
+                            >tuṣadir muwaqqat yawmay al-thulāthā wa al-jumaʿa min kull usbūʿ</title>
                         <title level="j" xml:lang="fr">Al-Kouds</title>
                         <title level="j" type="sub" xml:lang="fr">Journal bi-hebdomadaire</title>
                         <!-- use as many identifiers as appropriate -->
                         <idno type="oclc" xml:lang="en"/>
-                        <editor xml:lang="en"> <persName xml:lang="ar">
-                            <forename>جرحي حبيب</forename> <surname>حنانيا</surname> </persName>
-                            <persName xml:lang="ar-Latn-x-ijmes"> <forename>Jirjī Ḥabīb</forename>
-                            <surname>Ḥanāniyyā</surname> </persName><persName xml:lang="fr"
-                            ><forename>George I. Habib</forename>
-                            <surname>Hanania</surname></persName> </editor>
+                        <editor xml:lang="en"> <persName xml:lang="ar"> <forename>جرحي</forename>
+                            <surname>حبيب حنانيا</surname> </persName> <persName
+                            xml:lang="ar-Latn-x-ijmes"> <forename>Jirjī</forename>
+                            <surname>Ḥabīb Ḥanāniyā</surname> </persName><persName xml:lang="fr"
+                            ><forename>George I.</forename>
+                            <surname>Habib Hanania</surname></persName> </editor>
                         <imprint xml:lang="en">
-                            <publisher xml:lang="en"> <orgName xml:lang="ar">مطبعة القدس</orgName>
-                                <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Quds</orgName> </publisher>
+                            <publisher xml:lang="en"> <orgName xml:lang="ar"
+                                >مطبعة جرجي حبيب حنانيا</orgName> <orgName
+                                xml:lang="ar-Latn-x-ijmes">Maṭbaʿa Jirji Ḥabīb Ḥanāniyā</orgName> </publisher>
                             <pubPlace xml:lang="en"> <placeName xml:lang="ar">القدس</placeName>
                                 <placeName xml:lang="ar-Latn-x-ijmes">al-Quds</placeName> <placeName
                                 xml:lang="en">Jerusalem</placeName><placeName xml:lang="fr"
                                 >Jérusalem</placeName> </pubPlace>
                             <!-- use @from and @to to designate the timespan you want to generate bibliographic metadata for -->
                             <!-- to designate different calendars in the masthead, add <date @type='official'> nodes pointing to them -->
-                            <date type="official" from="1908-09-18" to="1908-10-18"
+                            <date type="official" from="1911-12-19" to="1911-12-31"
                                 datingMethod="#cal_islamic"/>
                             <date type="official" datingMethod="#cal_julian"/>
                             <!--                         <date type="official" datingMethod="#cal_ottomanfiscal"/>-->
                         </imprint>
-                        <biblScope from="1" to="1" unit="volume"/>
-                        <biblScope from="1" to="1" unit="issue"/>
+                        <biblScope from="4" to="6" unit="volume"/>
+                        <biblScope from="277" to="391" unit="issue"/>
                         <biblScope unit="page" from="1" to="4"/>
                     </monogr>
                     <!-- this can be used to provide a base URL for digital surrogates, the file naming scheme must be provided through additional means -->
-                    <ref type="url">http://www.palestine.mei.columbia.edu/alquds-issues/2017/</ref>
+                 <ref type="url" target="http://www.palestine.mei.columbia.edu/alquds-issues/2017/2/23/"/>
                     <!-- additional parameters  -->
                     <!-- $p_weekdays-published contains a comma-separated list of weekdays in English -->
-                    <note type="param" n="p_weekdays-published">Tuesday, Friday</note>
+                    <note type="param" n="p_weekdays-published">Tuesday</note>
                     <!--  $p_step sets incremental steps for the input to be iterated upon. Values are:
         - daily: this includes any publication cycle that is at least weekly
         - fortnightly:
