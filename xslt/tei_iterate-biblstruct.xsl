@@ -131,6 +131,7 @@
         <xsl:param name="p_date"/>
         <xsl:param name="p_issue"/>
         <xsl:param name="p_volume"/>
+        <!-- $p_url is dysfunctional for Thamarāt al-Funūn  -->
         <xsl:param name="p_url" select="concat($p_input/descendant-or-self::tei:biblStruct/tei:ref[@type='url']/@target,'issue-',$p_issue)"/>
         <tei:biblStruct xml:lang="en">
             <tei:monogr xml:lang="en">
@@ -203,19 +204,19 @@
                 <tei:biblScope from="{$p_issue}" to="{$p_issue}" unit="issue"/>
                 <xsl:apply-templates select="$p_input//tei:monogr/tei:biblScope[@unit='page']"/>
             </tei:monogr>
-<!--            <xsl:apply-templates select="$p_input/descendant-or-self::tei:biblStruct/tei:ref"/>-->
+            <xsl:apply-templates select="$p_input/descendant-or-self::tei:biblStruct/tei:ref"/>
             <!-- links for al-Quds -->
-            <tei:ref type="url">
+            <!--<tei:ref type="url">
                 <xsl:attribute name="target"  select="$p_url"/>
             </tei:ref>
-            <!-- the HTML served by al-Quds is not well-formed and cannot be used for transformations -->
+            <!-\- the HTML served by al-Quds is not well-formed and cannot be used for transformations -\->
             <tei:ref type="url">
                 <xsl:attribute name="target">
                     <xsl:call-template name="t_facsimile-url">
                         <xsl:with-param name="p_input-url" select="$p_url"/>
                     </xsl:call-template>
                 </xsl:attribute>
-            </tei:ref>
+            </tei:ref>-->
             <xsl:apply-templates select="$p_input/descendant-or-self::tei:biblStruct/tei:note"/>
         </tei:biblStruct>
     </xsl:template>
