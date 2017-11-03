@@ -8,15 +8,17 @@
     <xsl:variable name="v_source-url" select="base-uri()"/>
     
     <xsl:template match="/">
-        <xsl:apply-templates select="descendant::tei:biblStruct" mode="m_generate-tei"/>
+        <xsl:apply-templates select="descendant::tei:text/descendant::tei:biblStruct" mode="m_generate-tei"/>
     </xsl:template>
     
     <xsl:template match="tei:biblStruct" mode="m_generate-tei">
         <xsl:variable name="v_oclc" select="tei:monogr/tei:idno[@type='oclc'][1]"/>
         <xsl:variable name="v_issue" select="tei:monogr/tei:biblScope[@unit='issue']/@from"/>
         <xsl:variable name="v_id" select="if(@xml:id) then(@xml:id) else(generate-id())"/>
-        <xsl:result-document href="../_output/oclc_{$v_oclc}-i_{$v_issue}">
+        <xsl:result-document href="../_output/oclc_{$v_oclc}-i_{$v_issue}.TEIP5.xml">
+            <!-- link schema and TEI boilerlplate -->
             <tei:TEI>
+                <!-- add @next and @prev -->
                 <xsl:call-template name="t_generate-teiHeader">
                     <xsl:with-param name="p_input" select="."/>
                 </xsl:call-template>
@@ -28,9 +30,10 @@
     
     <xsl:template name="t_generate-teiHeader">
         <xsl:param name="p_input"/>
-        <tei:Header>
+        <tei:teiHeader>
             <tei:fileDesc>
                 <tei:titleStmt></tei:titleStmt>
+                <!-- responsibilities -->
                 <tei:publicationStmt></tei:publicationStmt>
                 <tei:sourceDesc>
                     <xsl:copy-of select="$p_input"/>
@@ -39,7 +42,7 @@
             <tei:revisionDesc>
                 <tei:change when="{format-date(current-date(),'[Y0001]-[M01]-[D01]')}">Created this file by automatic conversion of <tei:gi>biblStruct</tei:gi> from <xsl:value-of select="$v_source-url"/>.</tei:change>
             </tei:revisionDesc>
-        </tei:Header>
+        </tei:teiHeader>
     </xsl:template>
     
 </xsl:stylesheet>
