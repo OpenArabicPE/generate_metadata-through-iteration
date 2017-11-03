@@ -15,7 +15,7 @@
         <xsl:param name="p_references"/>
         <xsl:param name="p_publication"/>
         <xsl:param name="p_file-name"/>
-        <xsl:result-document href="../xslfo/{$p_publication}-{$p_file-name}.fo">
+        <xsl:result-document href="../_output/xslfo/{$p_publication}-{$p_file-name}.fo">
             <fo:root>
                 <fo:layout-master-set>
                     <fo:simple-page-master master-name="A4" page-height="297mm" page-width="210mm">
