@@ -26,7 +26,7 @@
             <!-- link schema and TEI boilerplate -->
             <xsl:text disable-output-escaping="yes">&lt;?xml-model href="https://rawgit.com/OpenArabicPE/OpenArabicPE_ODD/v0.1/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?&gt;</xsl:text>
             <xsl:text disable-output-escaping="yes">&lt;?xml-stylesheet type="text/xsl" href="../xslt-boilerplate/teibp_parameters.xsl"?&gt;</xsl:text>
-            <tei:TEI>
+            <tei:TEI xml:id="{concat('oclc_',$v_oclc,'-i_',$v_issue)}">
                 <!-- add @next and @prev: these link to xml:id ! -->
                 <xsl:if test="$v_issue &gt; 1">
                     <xsl:attribute name="prev" select="concat('oclc_',$v_oclc,'-i_',$v_issue - 1)"/>
@@ -115,16 +115,25 @@
             <xsl:attribute name="xml:id" select="concat($v_id-facs,$p_page-start)"/>
             <xsl:if test="$p_file-local = true()">
                 <!-- the addition of files should depend on the actual availability of file -->
-                <xsl:element name="tei:graphic">
-                    <xsl:attribute name="xml:id" select="concat($v_id-facs,$p_page-start,'-g_1')"/>
-                    <xsl:attribute name="url" select="concat($p_path-file,format-number($p_page-start,'0'),'.jpg')"/>
-                    <xsl:attribute name="mimeType" select="'image/jpeg'"/>
-                </xsl:element>
-                <xsl:element name="tei:graphic">
-                    <xsl:attribute name="xml:id" select="concat($v_id-facs,$p_page-start,'-g_2')"/>
-                    <xsl:attribute name="url" select="concat($p_path-file,format-number($p_page-start,'0'),'-color.jpg')"/>
-                    <xsl:attribute name="mimeType" select="'image/jpeg'"/>
-                </xsl:element>
+                <xsl:variable name="v_image-url" select="concat($p_path-file,format-number($p_page-start,'0'),'.jpg')"/>
+                <xsl:if test="fs:exists(fs:new(resolve-uri($v_image-url, base-uri(.))))" xmlns:fs="java.io.File">
+                    <xsl:message>
+                        <xsl:value-of select="$v_image-url"/><xsl:text> exists</xsl:text>
+                    </xsl:message>
+                    <xsl:element name="tei:graphic">
+                        <xsl:attribute name="xml:id" select="concat($v_id-facs,$p_page-start,'-g_1')"/>
+                        <xsl:attribute name="url" select="$v_image-url"/>
+                        <xsl:attribute name="mimeType" select="'image/jpeg'"/>
+                    </xsl:element>
+                </xsl:if>
+                <xsl:variable name="v_image-url" select="concat($p_path-file,format-number($p_page-start,'0'),'-color.jpg')"/>
+                <xsl:if test="fs:exists(fs:new(resolve-uri($v_image-url, base-uri(.))))" xmlns:fs="java.io.File">
+                    <xsl:element name="tei:graphic">
+                        <xsl:attribute name="xml:id" select="concat($v_id-facs,$p_page-start,'-g_2')"/>
+                        <xsl:attribute name="url" select="$v_image-url"/>
+                        <xsl:attribute name="mimeType" select="'image/jpeg'"/>
+                    </xsl:element>
+                </xsl:if>
             </xsl:if>
         </xsl:element>
         <xsl:if test="$p_page-start lt $p_page-stop">
