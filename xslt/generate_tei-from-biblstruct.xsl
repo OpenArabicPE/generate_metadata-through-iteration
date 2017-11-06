@@ -37,14 +37,16 @@
                     <xsl:with-param name="p_input" select="."/>
                     <xsl:with-param name="p_file-name" select="$v_file-name"/>
                 </xsl:call-template>
-                <xsl:call-template name="t_generate-facsimile">
-                    <xsl:with-param name="p_page-start" select="number(tei:monogr/tei:biblScope[@unit='page']/@from)"/>
-                    <xsl:with-param name="p_page-stop" select="number(tei:monogr/tei:biblScope[@unit='page']/@to)"/>
-                    <xsl:with-param name="p_path-file">
-                        <xsl:value-of select="concat('../images/issues/oclc_',$v_oclc,'-i_',$v_issue,'-p_')"/>
-                    </xsl:with-param>
-                </xsl:call-template>
-                <tei:text>
+                <tei:facsimile>
+                    <xsl:call-template name="t_generate-facsimile">
+                        <xsl:with-param name="p_page-start" select="number(tei:monogr/tei:biblScope[@unit='page']/@from)"/>
+                        <xsl:with-param name="p_page-stop" select="number(tei:monogr/tei:biblScope[@unit='page']/@to)"/>
+                        <xsl:with-param name="p_path-file">
+                            <xsl:value-of select="concat('../images/issues/oclc_',$v_oclc,'-i_',$v_issue,'-p_')"/>
+                        </xsl:with-param>
+                    </xsl:call-template>
+                </tei:facsimile>
+                <tei:text xml:lang="ar">
                     <xsl:call-template name="t_generate-pb">
                         <xsl:with-param name="p_page-start" select="number(tei:monogr/tei:biblScope[@unit='page']/@from)"/>
                         <xsl:with-param name="p_page-stop" select="number(tei:monogr/tei:biblScope[@unit='page']/@from)"/>
