@@ -25,13 +25,13 @@
         <xsl:result-document href="../_output/xml/{$v_file-name}.TEIP5.xml">
             <!-- link schema and TEI boilerplate -->
             <xsl:text disable-output-escaping="yes">&lt;?xml-model href="https://rawgit.com/OpenArabicPE/OpenArabicPE_ODD/v0.1/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?&gt;</xsl:text>
-            <xsl:text disable-output-escaping="yes">&lt;?xml-stylesheet type="text/xsl" href="../xslt-boilerplate/teibp_parameters.xsl"?&gt;</xsl:text>
+            <xsl:text disable-output-escaping="yes">&lt;?xml-stylesheet type="text/xsl" href="../boilerplate/xslt/teibp_parameters.xsl"?&gt;</xsl:text>
             <tei:TEI xml:id="{concat('oclc_',$v_oclc,'-i_',$v_issue)}">
-                <!-- add @next and @prev: these link to xml:id ! -->
+                <!-- add @next and @prev: data type is data.pointer, which means a full URI. In our case this should link to a XML file -->
                 <xsl:if test="$v_issue &gt; 1">
-                    <xsl:attribute name="prev" select="concat('oclc_',$v_oclc,'-i_',$v_issue - 1)"/>
+                    <xsl:attribute name="prev" select="concat('oclc_',$v_oclc,'-i_',$v_issue - 1,'.TEIP5.xml')"/>
                 </xsl:if>
-                <xsl:attribute name="next" select="concat('oclc_',$v_oclc,'-i_',$v_issue + 1)"/>
+                <xsl:attribute name="next" select="concat('oclc_',$v_oclc,'-i_',$v_issue + 1,'.TEIP5.xml')"/>
                 <!-- generate teiHeader -->
                 <xsl:call-template name="t_generate-teiHeader">
                     <xsl:with-param name="p_input" select="."/>
@@ -117,9 +117,9 @@
                 <!-- the addition of files should depend on the actual availability of file -->
                 <xsl:variable name="v_image-url" select="concat($p_path-file,format-number($p_page-start,'0'),'.jpg')"/>
                 <xsl:if test="fs:exists(fs:new(resolve-uri($v_image-url, base-uri(.))))" xmlns:fs="java.io.File">
-                    <xsl:message>
+                    <!--<xsl:message>
                         <xsl:value-of select="$v_image-url"/><xsl:text> exists</xsl:text>
-                    </xsl:message>
+                    </xsl:message>-->
                     <xsl:element name="tei:graphic">
                         <xsl:attribute name="xml:id" select="concat($v_id-facs,$p_page-start,'-g_1')"/>
                         <xsl:attribute name="url" select="$v_image-url"/>
