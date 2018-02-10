@@ -38,13 +38,21 @@
                     <xsl:with-param name="p_file-name" select="$v_file-name"/>
                 </xsl:call-template>
                 <tei:facsimile>
-                    <xsl:call-template name="t_generate-facsimile">
+                    <!-- check if links to images are available in @facs -->
+                    <xsl:choose>
+                        <xsl:when test="@facs!=''">
+                            <xsl:apply-templates select="@facs" mode="m_att.facs-to-surface"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:call-template name="t_generate-facsimile">
                         <xsl:with-param name="p_page-start" select="number(tei:monogr/tei:biblScope[@unit='page']/@from)"/>
                         <xsl:with-param name="p_page-stop" select="number(tei:monogr/tei:biblScope[@unit='page']/@to)"/>
                         <xsl:with-param name="p_path-file">
                             <xsl:value-of select="concat('../images/issues/oclc_',$v_oclc,'-i_',$v_issue,'-p_')"/>
                         </xsl:with-param>
                     </xsl:call-template>
+                        </xsl:otherwise>
+                    </xsl:choose>
                 </tei:facsimile>
                 <tei:text xml:lang="ar">
                     <xsl:call-template name="t_generate-pb">
@@ -145,6 +153,18 @@
         </xsl:if>
     </xsl:template>
     
+    <xsl:template match="@facs" mode="m_att.facs-to-surface">
+        <xsl:element name="tei:surface">
+            <xsl:attribute name="xml:id" select="concat($v_id-facs,position())"/>
+            <xsl:element name="tei:graphic">
+                        <xsl:attribute name="xml:id" select="concat($v_id-facs,position(),'-g_1')"/>
+                        <xsl:attribute name="url" select="."/>
+                        <xsl:attribute name="mimeType" select="'image/jpeg'"/>
+                    </xsl:element>
+        </xsl:element>
+    </xsl:template>
+    
+    <!-- generate the page breaks / beginnings and link them to the facsimiles -->
     <xsl:template name="t_generate-pb">
         <xsl:param name="p_page-start"/>
         <xsl:param name="p_page-stop"/>
