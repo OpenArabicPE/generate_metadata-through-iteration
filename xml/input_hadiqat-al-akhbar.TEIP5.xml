@@ -16,11 +16,9 @@
                 <biblStruct xml:lang="en">
                     <monogr xml:lang="en">
                         <title level="j" xml:lang="ar">حديقة الاخبار</title>
-                        <title level="j" type="sub" xml:lang="ar">جرنال مدني علمي متجري
-                            تاريخي</title>
+                        <title level="j" type="sub" xml:lang="ar">جرنال مدني علمي متجري تاريخي</title>
                         <title level="j" xml:lang="ar-Latn-x-ijmes">Ḥadīqat al-Akhbār</title>
-                        <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jurnāl madanī ʿilmī
-                            matjarī tārīkhī</title>
+                        <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jurnāl madanī ʿilmī matjarī tārīkhī</title>
                         <!-- use as many identifiers as appropriate -->
                         <idno type="oclc" xml:lang="en">792755425</idno>
                         <idno type="oclc" xml:lang="en">745205670</idno>
