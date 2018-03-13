@@ -13,7 +13,7 @@
     <!-- provides calendar conversion -->
 <!--    <xsl:include href="https://rawgit.com/tillgrallert/xslt-calendar-conversion/master/date-function.xsl"/>-->
     <xsl:include href="https://cdn.rawgit.com/tillgrallert/xslt-calendar-conversion/master/date-function.xsl"/>
-    <xsl:include href="al-quds_find-links-to-facsimile.xsl"/>
+<!--    <xsl:include href="al-quds_find-links-to-facsimile.xsl"/>-->
     
     <xsl:variable name="v_date-today" select="current-date()"/>
     
@@ -131,6 +131,7 @@
         <xsl:param name="p_date"/>
         <xsl:param name="p_issue"/>
         <xsl:param name="p_volume"/>
+        <!-- $p_url is dysfunctional for Thamarāt al-Funūn  -->
         <xsl:param name="p_url" select="concat($p_input/descendant-or-self::tei:biblStruct/tei:ref[@type='url']/@target,'issue-',$p_issue)"/>
         <tei:biblStruct xml:lang="en">
             <tei:monogr xml:lang="en">
@@ -144,6 +145,21 @@
                     <xsl:apply-templates select="$p_input//tei:monogr/tei:imprint/tei:publisher"/>
                     <xsl:apply-templates select="$p_input//tei:monogr/tei:imprint/tei:pubPlace"/>
                     <!-- add calendars depending on the input -->
+                    <!-- Gregorian -->
+                    <xsl:if test="$p_input//tei:monogr/tei:imprint/tei:date[@datingMethod='#cal_gregorian']">
+                        <tei:date type="{$p_input//tei:monogr/tei:imprint/tei:date[@datingMethod='#cal_gregorian']/@type}" when="{$p_date}" datingMethod="#cal_gregorian" calendar="#cal_gregorian" xml:lang="ar-Latn-x-ijmes">
+                            <xsl:value-of select="format-date($p_date,'[D1]')"/>
+                            <xsl:text> </xsl:text>
+                            <xsl:call-template name="funcDateMonthNameNumber">
+                                <xsl:with-param name="pDate" select="$p_date"/>
+                                <xsl:with-param name="pLang" select="'GEnFull'"/>
+                                <xsl:with-param name="pMode" select="'name'"/>
+                            </xsl:call-template>
+                            <xsl:text> </xsl:text>
+                            <xsl:value-of select="format-date($p_date,'[Y1]')"/>
+                        </tei:date>
+                    </xsl:if>
+                    <!-- Islamic Hijri -->
                     <xsl:if test="$p_input//tei:monogr/tei:imprint/tei:date[@datingMethod='#cal_islamic']">
                         <xsl:variable name="v_date-hijri">
                             <xsl:call-template name="funcDateG2H">
@@ -151,7 +167,8 @@
                             </xsl:call-template>
                         </xsl:variable>
                         <tei:date type="computed" when="{$p_date}" datingMethod="#cal_islamic" calendar="#cal_islamic" when-custom="{$v_date-hijri}" xml:lang="ar-Latn-x-ijmes">
-                            <xsl:value-of select="format-date($v_date-hijri,'[D1]')"/>
+<!--                            <xsl:value-of select="format-date($v_date-hijri,'[D1]')"/>-->
+                            <xsl:value-of select="format-number(number(tokenize($v_date-hijri,'-')[3]),'0')"/>
                             <xsl:text> </xsl:text>
                             <xsl:call-template name="funcDateMonthNameNumber">
                                 <xsl:with-param name="pDate" select="$v_date-hijri"/>
@@ -159,43 +176,50 @@
                                 <xsl:with-param name="pMode" select="'name'"/>
                             </xsl:call-template>
                             <xsl:text> </xsl:text>
-                            <xsl:value-of select="format-date($v_date-hijri,'[Y1]')"/>
+                            <xsl:value-of select="format-number(number(tokenize($v_date-hijri,'-')[1]),'0')"/>
+<!--                            <xsl:value-of select="format-date($v_date-hijri,'[Y1]')"/>-->
                         </tei:date>
                     </xsl:if>
+                    <!-- Julian or Rūmī -->
                     <xsl:if test="$p_input//tei:monogr/tei:imprint/tei:date[@datingMethod='#cal_julian']">
                         <xsl:variable name="v_date-julian">
                             <xsl:call-template name="funcDateG2J">
                                 <xsl:with-param name="pDateG" select="$p_date"/>
                             </xsl:call-template>
                         </xsl:variable>
-                        <tei:date type="computed" when="{$p_date}" datingMethod="#cal_julian" calendar="#cal_julian" when-custom="{$v_date-julian}" xml:lang="ar-Latn-x-ijmes">
-                            <xsl:value-of select="format-date($v_date-julian,'[D1]')"/>
+                        <tei:date type="{$p_input//tei:monogr/tei:imprint/tei:date[@datingMethod='#cal_julian']/@type}" when="{$p_date}" datingMethod="#cal_julian" calendar="#cal_julian" when-custom="{$v_date-julian}" xml:lang="ar-Latn-x-ijmes">
+                            <xsl:value-of select="format-number(number(tokenize($v_date-julian,'-')[3]),'0')"/>
+<!--                            <xsl:value-of select="format-date($v_date-julian,'[D1]')"/>-->
                             <xsl:text> </xsl:text>
                             <xsl:call-template name="funcDateMonthNameNumber">
                                 <xsl:with-param name="pDate" select="$v_date-julian"/>
-                                <xsl:with-param name="pLang" select="'JIjmes'"/>
+                                <xsl:with-param name="pLang" select="'JIjmesFull'"/>
                                 <xsl:with-param name="pMode" select="'name'"/>
                             </xsl:call-template>
                             <xsl:text> </xsl:text>
-                            <xsl:value-of select="format-date($v_date-julian,'[Y1]')"/>
+                            <xsl:value-of select="format-number(number(tokenize($v_date-julian,'-')[1]),'0')"/>
+<!--                            <xsl:value-of select="format-date($v_date-julian,'[Y1]')"/>-->
                         </tei:date>
                     </xsl:if>
+                    <!-- Ottoman fiscal, mālī calendar -->
                     <xsl:if test="$p_input//tei:monogr/tei:imprint/tei:date[@datingMethod='#cal_ottomanfiscal']">
                         <xsl:variable name="v_date-mali">
                             <xsl:call-template name="funcDateG2M">
                                 <xsl:with-param name="pDateG" select="$p_date"/>
                             </xsl:call-template>
                         </xsl:variable>
-                        <tei:date type="computed" when="{$p_date}" datingMethod="#cal_ottomanfiscal" calendar="#cal_ottomanfiscal" when-custom="{$v_date-mali}" xml:lang="ar-Latn-x-ijmes">
-                            <xsl:value-of select="format-date($v_date-mali,'[D1]')"/>
+                        <tei:date type="{$p_input//tei:monogr/tei:imprint/tei:date[@datingMethod='#cal_ottomanfiscal']/@type}" when="{$p_date}" datingMethod="#cal_ottomanfiscal" calendar="#cal_ottomanfiscal" when-custom="{$v_date-mali}" xml:lang="ar-Latn-x-ijmes">
+                            <xsl:value-of select="format-number(number(tokenize($v_date-mali,'-')[3]),'0')"/>
+<!--                            <xsl:value-of select="format-date($v_date-mali,'[D1]')"/>-->
                             <xsl:text> </xsl:text>
                             <xsl:call-template name="funcDateMonthNameNumber">
                                 <xsl:with-param name="pDate" select="$v_date-mali"/>
-                                <xsl:with-param name="pLang" select="'MIjmes'"/>
+                                <xsl:with-param name="pLang" select="'MIjmesFull'"/>
                                 <xsl:with-param name="pMode" select="'name'"/>
                             </xsl:call-template>
                             <xsl:text> </xsl:text>
-                            <xsl:value-of select="format-date($v_date-mali,'[Y1]')"/>
+                            <xsl:value-of select="format-number(number(tokenize($v_date-mali,'-')[1]),'0')"/>
+<!--                            <xsl:value-of select="format-date($v_date-mali,'[Y1]')"/>-->
                         </tei:date>
                     </xsl:if>
                 </tei:imprint>
@@ -203,19 +227,19 @@
                 <tei:biblScope from="{$p_issue}" to="{$p_issue}" unit="issue"/>
                 <xsl:apply-templates select="$p_input//tei:monogr/tei:biblScope[@unit='page']"/>
             </tei:monogr>
-<!--            <xsl:apply-templates select="$p_input/descendant-or-self::tei:biblStruct/tei:ref"/>-->
+            <xsl:apply-templates select="$p_input/descendant-or-self::tei:biblStruct/tei:ref"/>
             <!-- links for al-Quds -->
-            <tei:ref type="url">
+            <!--<tei:ref type="url">
                 <xsl:attribute name="target"  select="$p_url"/>
             </tei:ref>
-            <!-- the HTML served by al-Quds is not well-formed and cannot be used for transformations -->
+            <!-\- the HTML served by al-Quds is not well-formed and cannot be used for transformations -\->
             <tei:ref type="url">
                 <xsl:attribute name="target">
                     <xsl:call-template name="t_facsimile-url">
                         <xsl:with-param name="p_input-url" select="$p_url"/>
                     </xsl:call-template>
                 </xsl:attribute>
-            </tei:ref>
+            </tei:ref>-->
             <xsl:apply-templates select="$p_input/descendant-or-self::tei:biblStruct/tei:note"/>
         </tei:biblStruct>
     </xsl:template>
