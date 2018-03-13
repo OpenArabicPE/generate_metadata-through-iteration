@@ -144,6 +144,11 @@
                     <xsl:apply-templates select="$p_input//tei:monogr/tei:imprint/tei:publisher"/>
                     <xsl:apply-templates select="$p_input//tei:monogr/tei:imprint/tei:pubPlace"/>
                     <!-- add calendars depending on the input -->
+                    <xsl:if test="$p_input//tei:monogr/tei:imprint/tei:date[@datingMethod='#cal_gregorian']">
+                        <tei:date type="computed" when="{$p_date}" datingMethod="#cal_gregorian" calendar="#cal_gregorian" xml:lang="ar-Latn-x-ijmes">
+                            <xsl:value-of select="format-date($p_date,'[D1] [MNn] [Y0001]')"/>
+                        </tei:date>
+                    </xsl:if>
                     <xsl:if test="$p_input//tei:monogr/tei:imprint/tei:date[@datingMethod='#cal_islamic']">
                         <xsl:variable name="v_date-hijri">
                             <xsl:call-template name="funcDateG2H">
