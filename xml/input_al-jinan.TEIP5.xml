@@ -71,7 +71,7 @@
                     <note n="p_step" type="param">fortnightly</note>
                     <!-- $p_weekdays-published contains a comma-separated list of weekdays in English -->
                     <!-- other notes -->
-                    <note>al-Jinān is part of Gale's Early Arabic Printed Books from the British Library <ref target="http://link.galegroup.com/apps/pub/9GMI/EAPB?sid=gale_marc&u=29002"/></note>
+                    <note>al-Jinān is part of Gale's Early Arabic Printed Books from the British Library <ref target="http://link.galegroup.com/apps/pub/9GMI/EAPB?sid=gale_marc&amp;u=29002"/></note>
                 </biblStruct>
             </sourceDesc>
         </fileDesc>
