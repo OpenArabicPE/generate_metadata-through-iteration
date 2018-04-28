@@ -8,17 +8,18 @@
     <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="no"  name="xml"/>
     <xsl:output method="text" encoding="UTF-8" omit-xml-declaration="yes"  name="text"/>
    
-   <!-- this stylesheets rus on a tei:biblStruct as input -->
+   <!-- this stylesheets runs on a tei:biblStruct as input -->
     
     <!-- provides calendar conversion -->
 <!--    <xsl:include href="https://rawgit.com/tillgrallert/xslt-calendar-conversion/master/date-function.xsl"/>-->
-    <xsl:include href="https://cdn.rawgit.com/tillgrallert/xslt-calendar-conversion/master/date-function.xsl"/>
+<!--    <xsl:include href="https://cdn.rawgit.com/tillgrallert/xslt-calendar-conversion/master/date-function.xsl"/>-->
+    <xsl:include href="../../../xslt-calendar-conversion/date-function.xsl"/>
 <!--    <xsl:include href="al-quds_find-links-to-facsimile.xsl"/>-->
     
     <xsl:variable name="v_date-today" select="current-date()"/>
     
     <!-- debugging -->
-    <xsl:param name="p_verbose" select="false()"/>
+    <xsl:param name="p_verbose" select="true()"/>
     
     <!-- identity transformation -->
     <xsl:template match="@* | node()">
@@ -51,8 +52,8 @@
     <xsl:template name="t_iterate-tei">
         <xsl:param name="p_input"/>
         <!-- the following parameters are based on the input and incremented by this template -->
-        <xsl:param name="p_date-start" select="$p_input//tei:monogr/tei:imprint/tei:date[@type='official']/@from"/>
-        <xsl:param name="p_date-stop" select="$p_input//tei:monogr/tei:imprint/tei:date[@type='official']/@to"/>
+        <xsl:param name="p_date-start" select="if($p_input//tei:monogr/tei:imprint/tei:date[@type='official'][1]/@from) then($p_input//tei:monogr/tei:imprint/tei:date[@type='official'][1]/@from) else($p_input//tei:monogr/tei:imprint/tei:date[@type='official'][1]/@from-custom)"/>
+        <xsl:param name="p_date-stop" select="if($p_input//tei:monogr/tei:imprint/tei:date[@type='official'][1]/@to) then($p_input//tei:monogr/tei:imprint/tei:date[@type='official'][1]/@to) else($p_input//tei:monogr/tei:imprint/tei:date[@type='official'][1]/@to-custom)"/>
         <xsl:param name="p_issue" select="$p_input//tei:monogr/tei:biblScope[@unit='issue']/@from"/>
         <xsl:param name="p_volume" select="$p_input//tei:monogr/tei:biblScope[@unit='volume']/@from"/>
         <xsl:param name="p_step" select="$p_input/descendant-or-self::tei:biblStruct/tei:note[@type='param'][@n='p_step']"/>
@@ -101,6 +102,85 @@
                                 </xsl:otherwise>
                             </xsl:choose>
                         </xsl:with-param>
+                        <xsl:with-param name="p_volume" select="$p_volume">
+                            <!-- this method is far too unreliable -->
+                            <!--<xsl:choose>
+                                <!-\- if the issue number can be divided by the number of total issues per year, a new volume should begin -\->
+                                <xsl:when test="number($p_issue) mod (52 * number(count(tokenize($p_weekdays-published,',')))) = 0">
+                                    <xsl:value-of select="$p_volume +1"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:value-of select="$p_volume"/>
+                                </xsl:otherwise>
+                            </xsl:choose>-->
+                        </xsl:with-param>
+                        <xsl:with-param name="p_step" select="$p_step"/>
+                        <xsl:with-param name="p_weekdays-published" select="$p_weekdays-published"/>
+                    </xsl:call-template>
+                </xsl:if>
+            </xsl:when>
+            <!-- monthly increments -->
+            <xsl:when test="$p_step = 'monthly'">
+                <!-- generated a $v_date-incremented -->
+                <xsl:variable name="v_date-incremented">
+                    <xsl:variable name="v_month" select="number(tokenize($p_date-start,'-')[2])"/>
+                    <xsl:variable name="v_month-incremented">
+                        <xsl:choose>
+                            <xsl:when test="$v_month &lt; 12">
+                                <xsl:value-of select="$v_month + 1"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:value-of select="$v_month -11"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:variable>
+                    <xsl:variable name="v_year-incremented">
+                        <xsl:choose>
+                            <xsl:when test="$v_month &lt; 12">
+                                <xsl:value-of select="tokenize($p_date-start,'-')[1]"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:value-of select="number(tokenize($p_date-start,'-')[1]) +1"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:variable>
+                        <xsl:variable name="v_day" select="tokenize($p_date-start,'-')[3]"/>
+                    <xsl:value-of select="concat($v_year-incremented,'-',format-number($v_month-incremented,'00'),'-',$v_day)"/>
+                </xsl:variable>
+                <!-- check if $p_date-start needs conversion to Gregorian -->
+                <xsl:variable name="v_date-start">
+                    <xsl:choose>
+                        <xsl:when test="$p_input//tei:monogr/tei:imprint/tei:date[@type='official'][1]/@from-custom and $p_input//tei:monogr/tei:imprint/tei:date[@type='official'][1]/@datingMethod='#cal_islamic'">
+                                <xsl:call-template name="funcDateH2G">
+                                    <xsl:with-param name="pDateH" select="$p_date-start"/>
+                                </xsl:call-template>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:message terminate="yes">
+                    <xsl:text>This value of $p_step has not been implemented for the value of @datingMethod</xsl:text>
+                </xsl:message>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:variable>
+                <!-- generate output -->
+                <xsl:if test="$p_verbose = true()">
+                        <xsl:message terminate="no">
+                            <xsl:text>#</xsl:text><xsl:value-of select="$p_issue"/><xsl:text> was published on </xsl:text><xsl:value-of select="$p_date-start"/>
+                        </xsl:message>
+                    </xsl:if>
+                <xsl:call-template name="t_boilerplate-biblstruct">
+                        <xsl:with-param name="p_input" select="$p_input"/>
+                        <!-- information that needs to be incremented -->
+                        <xsl:with-param name="p_date" select="$v_date-start"/>
+                        <xsl:with-param name="p_issue" select="$p_issue"/>
+                        <xsl:with-param name="p_volume" select="$p_volume"/>
+                    </xsl:call-template>
+                <xsl:if test="$v_date-incremented &lt; $p_date-stop">
+                    <xsl:call-template name="t_iterate-tei">
+                        <xsl:with-param name="p_input" select="$p_input"/>
+                        <xsl:with-param name="p_date-start" select="$v_date-incremented"/>
+                        <xsl:with-param name="p_date-stop" select="$p_date-stop"/>
+                        <xsl:with-param name="p_issue" select="$p_issue + 1"/>
                         <xsl:with-param name="p_volume" select="$p_volume">
                             <!-- this method is far too unreliable -->
                             <!--<xsl:choose>
