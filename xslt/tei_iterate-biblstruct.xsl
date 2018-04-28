@@ -12,7 +12,8 @@
     
     <!-- provides calendar conversion -->
 <!--    <xsl:include href="https://rawgit.com/tillgrallert/xslt-calendar-conversion/master/date-function.xsl"/>-->
-    <xsl:include href="https://cdn.rawgit.com/tillgrallert/xslt-calendar-conversion/master/date-function.xsl"/>
+<!--    <xsl:include href="https://cdn.rawgit.com/tillgrallert/xslt-calendar-conversion/master/date-function.xsl"/>-->
+    <xsl:include href="../../../xslt-calendar-conversion/date-function.xsl"/>
 <!--    <xsl:include href="al-quds_find-links-to-facsimile.xsl"/>-->
     
     <xsl:variable name="v_date-today" select="current-date()"/>
@@ -146,6 +147,21 @@
                         <xsl:variable name="v_day" select="tokenize($p_date-start,'-')[3]"/>
                     <xsl:value-of select="concat($v_year-incremented,'-',format-number($v_month-incremented,'00'),'-',$v_day)"/>
                 </xsl:variable>
+                <!-- check if $p_date-start needs conversion to Gregorian -->
+                <xsl:variable name="v_date-start">
+                    <xsl:choose>
+                        <xsl:when test="$p_input//tei:monogr/tei:imprint/tei:date[@type='official'][1]/@from-custom and $p_input//tei:monogr/tei:imprint/tei:date[@type='official'][1]/@datingMethod='#cal_islamic'">
+                                <xsl:call-template name="funcDateH2G">
+                                    <xsl:with-param name="pDateH" select="$p_date-start"/>
+                                </xsl:call-template>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:message terminate="yes">
+                    <xsl:text>This value of $p_step has not been implemented for the value of @datingMethod</xsl:text>
+                </xsl:message>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:variable>
                 <!-- generate output -->
                 <xsl:if test="$p_verbose = true()">
                         <xsl:message terminate="no">
@@ -155,7 +171,7 @@
                 <xsl:call-template name="t_boilerplate-biblstruct">
                         <xsl:with-param name="p_input" select="$p_input"/>
                         <!-- information that needs to be incremented -->
-                        <xsl:with-param name="p_date" select="$p_date-start"/>
+                        <xsl:with-param name="p_date" select="$v_date-start"/>
                         <xsl:with-param name="p_issue" select="$p_issue"/>
                         <xsl:with-param name="p_volume" select="$p_volume"/>
                     </xsl:call-template>
