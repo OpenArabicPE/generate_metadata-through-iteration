@@ -8,7 +8,7 @@
     <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="no"  name="xml"/>
     <xsl:output method="text" encoding="UTF-8" omit-xml-declaration="yes"  name="text"/>
    
-   <!-- this stylesheets rus on a tei:biblStruct as input -->
+   <!-- this stylesheets runs on a tei:biblStruct as input -->
     
     <!-- provides calendar conversion -->
 <!--    <xsl:include href="https://rawgit.com/tillgrallert/xslt-calendar-conversion/master/date-function.xsl"/>-->
