@@ -12,7 +12,8 @@
     
     <!-- provides calendar conversion -->
 <!--    <xsl:include href="https://rawgit.com/tillgrallert/xslt-calendar-conversion/master/date-function.xsl"/>-->
-    <xsl:include href="https://cdn.rawgit.com/tillgrallert/xslt-calendar-conversion/master/date-function.xsl"/>
+<!--    <xsl:include href="https://cdn.rawgit.com/tillgrallert/xslt-calendar-conversion/master/date-function.xsl"/>-->
+    <xsl:include href="../../../xslt-calendar-conversion/date-function.xsl"/>
 <!--    <xsl:include href="al-quds_find-links-to-facsimile.xsl"/>-->
     
     <xsl:variable name="v_date-today" select="current-date()"/>
@@ -147,7 +148,7 @@
                     <!-- add calendars depending on the input -->
                     <!-- Gregorian -->
                     <xsl:if test="$p_input//tei:monogr/tei:imprint/tei:date[@datingMethod='#cal_gregorian']">
-                        <tei:date type="{$p_input//tei:monogr/tei:imprint/tei:date[@datingMethod='#cal_gregorian']/@type}" when="{$p_date}" datingMethod="#cal_gregorian" calendar="#cal_gregorian" xml:lang="ar-Latn-x-ijmes">
+                        <tei:date type="{$p_input//tei:monogr/tei:imprint/tei:date[@datingMethod='#cal_gregorian']/@type}" when="{$p_date}" datingMethod="#cal_gregorian" calendar="#cal_gregorian" xml:lang="en">
                             <xsl:value-of select="format-date($p_date,'[D1]')"/>
                             <xsl:text> </xsl:text>
                             <xsl:call-template name="funcDateMonthNameNumber">
