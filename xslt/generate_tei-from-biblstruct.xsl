@@ -24,7 +24,9 @@
         <xsl:variable name="v_file-name" select="concat('oclc_',$v_oclc,'-i_',$v_issue)"/>
         <xsl:result-document href="../_output/xml/{$v_file-name}.TEIP5.xml">
             <!-- link schema and TEI boilerplate -->
-            <xsl:text disable-output-escaping="yes">&lt;?xml-model href="https://rawgit.com/OpenArabicPE/OpenArabicPE_ODD/v0.1/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?&gt;</xsl:text>
+            <xsl:text disable-output-escaping="yes">&lt;?xml-model href="https://rawgit.com/OpenArabicPE/OpenArabicPE_ODD/master/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?></xsl:text>
+            <xsl:text disable-output-escaping="yes">&lt;?xml-model href="https://rawgit.com/OpenArabicPE/OpenArabicPE_ODD/master/schema/tei_periodical.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?></xsl:text>
+            <xsl:text disable-output-escaping="yes">&lt;?xml-model href="https://rawgit.com/OpenArabicPE/OpenArabicPE_ODD/master/schema/tei_periodical.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?></xsl:text>
             <xsl:text disable-output-escaping="yes">&lt;?xml-stylesheet type="text/xsl" href="../boilerplate/xslt/teibp_parameters.xsl"?&gt;</xsl:text>
             <tei:TEI xml:id="{concat('oclc_',$v_oclc,'-i_',$v_issue)}">
                 <!-- add @next and @prev: data type is data.pointer, which means a full URI. In our case this should link to a XML file -->
@@ -52,11 +54,11 @@
                         <xsl:with-param name="p_page-stop" select="number(tei:monogr/tei:biblScope[@unit='page']/@from)"/>
                     </xsl:call-template>
                     <tei:body>
+                        <tei:div type="item"></tei:div>
                         <xsl:call-template name="t_generate-pb">
                             <xsl:with-param name="p_page-start" select="number(tei:monogr/tei:biblScope[@unit='page']/@from)+1"/>
                             <xsl:with-param name="p_page-stop" select="number(tei:monogr/tei:biblScope[@unit='page']/@to)"/>
                         </xsl:call-template>
-<!--                        <tei:p>No content</tei:p>-->
                     </tei:body>
                 </tei:text>
             </tei:TEI>
