@@ -56,6 +56,9 @@
         <xsl:param name="p_volume" select="$p_input//tei:monogr/tei:biblScope[@unit='volume']/@from"/>
         <xsl:param name="p_step" select="$p_input/descendant-or-self::tei:biblStruct/tei:note[@type='param'][@n='p_step']"/>
         <xsl:param name="p_weekdays-published" select="$p_input/descendant-or-self::tei:biblStruct/tei:note[@type='param'][@n='p_weekdays-published']"/>
+        <xsl:param name="p_page-from" select="$p_input//tei:monogr/tei:biblScope[@unit='page']/@from"/>
+        <xsl:param name="p_page-to" select="$p_input//tei:monogr/tei:biblScope[@unit='page']/@to"/>
+        <xsl:param name="p_pages" select="$p_page-to - $p_page-from +1"/>
         <xsl:variable name="vDateJD" select="oape:date-convert-gregorian-to-julian-day($p_date-onset)"/>
         <xsl:choose>
             <xsl:when test="$p_step='daily'">
@@ -74,6 +77,8 @@
                         <xsl:with-param name="p_date" select="$p_date-onset"/>
                         <xsl:with-param name="p_issue" select="$p_issue"/>
                         <xsl:with-param name="p_volume" select="$p_volume"/>
+                        <xsl:with-param name="p_page-from" select="$p_page-from"/>
+                        <xsl:with-param name="p_page-to" select="$p_page-to"/>
                     </xsl:call-template>
                 </xsl:if>
                 <xsl:if test="$v_date-incremented &lt; $p_date-terminus">
@@ -105,6 +110,8 @@
                         </xsl:with-param>
                         <xsl:with-param name="p_step" select="$p_step"/>
                         <xsl:with-param name="p_weekdays-published" select="$p_weekdays-published"/>
+                        <xsl:with-param name="p_page-from" select="$p_page-from"/>
+                        <xsl:with-param name="p_page-to" select="$p_page-to"/>
                     </xsl:call-template>
                 </xsl:if>
             </xsl:when>
@@ -121,6 +128,8 @@
                         <xsl:with-param name="p_date" select="$p_date-onset"/>
                         <xsl:with-param name="p_issue" select="$p_issue"/>
                         <xsl:with-param name="p_volume" select="$p_volume"/>
+                        <xsl:with-param name="p_page-from" select="$p_page-from"/>
+                        <xsl:with-param name="p_page-to" select="$p_page-to"/>
                     </xsl:call-template>
                 <xsl:if test="$v_date-incremented &lt; $p_date-terminus">
                     <xsl:call-template name="t_iterate-tei">
@@ -131,6 +140,9 @@
                         <xsl:with-param name="p_volume" select="$p_volume"/>
                         <xsl:with-param name="p_step" select="$p_step"/>
                         <xsl:with-param name="p_weekdays-published" select="$p_weekdays-published"/>
+                        <!-- increment pagination -->
+                        <xsl:with-param name="p_page-from" select="$p_page-to + 1"/>
+                        <xsl:with-param name="p_page-to" select="$p_page-to + $p_pages"/>
                     </xsl:call-template>
                 </xsl:if>
             </xsl:when>
@@ -148,6 +160,8 @@
         <xsl:param name="p_date"/>
         <xsl:param name="p_issue"/>
         <xsl:param name="p_volume"/>
+        <xsl:param name="p_page-from"/>
+        <xsl:param name="p_page-to"/>
         <!-- $p_url is dysfunctional for Thamarāt al-Funūn  -->
         <xsl:param name="p_url" select="concat($p_input/descendant-or-self::tei:biblStruct/tei:ref[@type='url']/@target,'issue-',$p_issue)"/>
         <tei:biblStruct xml:lang="en">
@@ -228,7 +242,7 @@
                 </tei:imprint>
                 <tei:biblScope from="{$p_volume}" to="{$p_volume}" unit="volume"/>
                 <tei:biblScope from="{$p_issue}" to="{$p_issue}" unit="issue"/>
-                <xsl:apply-templates select="$p_input//tei:monogr/tei:biblScope[@unit='page']"/>
+                <tei:biblScope from="{$p_page-from}" to="{$p_page-to}" unit="page"/>
             </tei:monogr>
             <xsl:apply-templates select="$p_input/descendant-or-self::tei:biblStruct/tei:ref"/>
             <!-- links for al-Quds -->
@@ -246,4 +260,6 @@
             <xsl:apply-templates select="$p_input/descendant-or-self::tei:biblStruct/tei:note"/>
         </tei:biblStruct>
     </xsl:template>
+    
+    <!-- pages -->
 </xsl:stylesheet>
