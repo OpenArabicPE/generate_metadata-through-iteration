@@ -56,6 +56,7 @@
         <xsl:param name="p_volume" select="$p_input//tei:monogr/tei:biblScope[@unit='volume']/@from"/>
         <xsl:param name="p_step" select="$p_input/descendant-or-self::tei:biblStruct/tei:note[@type='param'][@n='p_step']"/>
         <xsl:param name="p_weekdays-published" select="$p_input/descendant-or-self::tei:biblStruct/tei:note[@type='param'][@n='p_weekdays-published']"/>
+        <xsl:param name="p_days-of-the-month" select="$p_input/descendant-or-self::tei:biblStruct/tei:note[@type='param'][@n='p_days-of-the-month']"/>
         <xsl:param name="p_page-from" select="$p_input//tei:monogr/tei:biblScope[@unit='page']/@from"/>
         <xsl:param name="p_page-to" select="$p_input//tei:monogr/tei:biblScope[@unit='page']/@to"/>
         <xsl:param name="p_pages" select="$p_page-to - $p_page-from +1"/>
@@ -147,7 +148,62 @@
                 </xsl:if>
             </xsl:when>
             <!-- monthly should be implemented: incremented by date of the month, such as every fifth of the month or every 5th, 11th and 26th of a month -->
-            <!--<xsl:when test="$p_step = 'monthly'"></xsl:when>-->
+            <xsl:when test="$p_step = 'monthly'">
+                <xsl:variable name="v_date-incremented" select="oape:date-convert-julian-day-to-gregorian($vDateJD + 1)"/>
+                <xsl:variable name="v_day-of-the-month-input" select="format-date(xs:date($p_date-onset),'[D01]')"/>
+                <xsl:variable name="v_day-of-the-month-incremented" select="format-date(xs:date($v_date-incremented),'[D01]')"/>
+                <!-- prevent output for days of the month not published -->
+                <xsl:if test="contains($p_days-of-the-month, $v_day-of-the-month-input)">
+                    <xsl:if test="$p_verbose = true()">
+                        <xsl:message>
+                            <xsl:text>#</xsl:text><xsl:value-of select="$p_issue"/><xsl:text> was published on </xsl:text><xsl:value-of select="$p_date-onset"/>
+                        </xsl:message>
+                    </xsl:if>
+                    <xsl:call-template name="t_boilerplate-biblstruct">
+                        <xsl:with-param name="p_input" select="$p_input"/>
+                        <xsl:with-param name="p_date" select="$p_date-onset"/>
+                        <xsl:with-param name="p_issue" select="$p_issue"/>
+                        <xsl:with-param name="p_volume" select="$p_volume"/>
+                        <xsl:with-param name="p_page-from" select="$p_page-from"/>
+                        <xsl:with-param name="p_page-to" select="$p_page-to"/>
+                    </xsl:call-template>
+                </xsl:if>
+                <xsl:if test="$v_date-incremented &lt; $p_date-terminus">
+                    <xsl:call-template name="t_iterate-tei">
+                        <xsl:with-param name="p_input" select="$p_input"/>
+                        <xsl:with-param name="p_date-onset" select="$v_date-incremented"/>
+                        <xsl:with-param name="p_date-terminus" select="$p_date-terminus"/>
+                        <xsl:with-param name="p_issue">
+                            <!-- increment issue number only if the periodical was published -->
+                            <xsl:choose>
+                                <xsl:when test="contains($p_days-of-the-month, $v_day-of-the-month-incremented)">
+                                    <xsl:value-of select="$p_issue + 1"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:value-of select="$p_issue"/>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </xsl:with-param>
+                        <xsl:with-param name="p_volume" select="$p_volume">
+                            <!-- this method is far too unreliable -->
+                            <!--<xsl:choose>
+                                <!-\- if the issue number can be divided by the number of total issues per year, a new volume should begin -\->
+                                <xsl:when test="number($p_issue) mod (52 * number(count(tokenize($p_weekdays-published,',')))) = 0">
+                                    <xsl:value-of select="$p_volume +1"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:value-of select="$p_volume"/>
+                                </xsl:otherwise>
+                            </xsl:choose>-->
+                        </xsl:with-param>
+                        <xsl:with-param name="p_step" select="$p_step"/>
+                        <xsl:with-param name="p_weekdays-published" select="$p_weekdays-published"/>
+                        <!-- increment pagination -->
+                        <xsl:with-param name="p_page-from" select="$p_page-to + 1"/>
+                        <xsl:with-param name="p_page-to" select="$p_page-to + $p_pages"/>
+                    </xsl:call-template>
+                </xsl:if>
+            </xsl:when>
             <xsl:otherwise>
                 <xsl:message terminate="yes">
                     <xsl:text>This value of $p_step has not been implemented</xsl:text>
