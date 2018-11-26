@@ -115,7 +115,7 @@
                     </xsl:call-template>
                 </xsl:if>
             </xsl:when>
-            <!-- fortnightly has not been implemented! -->
+            <!-- fortnightly has been implemented! -->
             <xsl:when test="$p_step = 'fortnightly'">
                 <xsl:variable name="v_date-incremented" select="oape:date-convert-julian-day-to-gregorian($vDateJD + 14)"/>
                  <xsl:if test="$p_verbose = true()">
@@ -146,7 +146,8 @@
                     </xsl:call-template>
                 </xsl:if>
             </xsl:when>
-            <!-- monthly has not been implemented! -->
+            <!-- monthly should be implemented: incremented by date of the month, such as every fifth of the month or every 5th, 11th and 26th of a month -->
+            <!--<xsl:when test="$p_step = 'monthly'"></xsl:when>-->
             <xsl:otherwise>
                 <xsl:message terminate="yes">
                     <xsl:text>This value of $p_step has not been implemented</xsl:text>
