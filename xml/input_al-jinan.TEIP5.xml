@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>-->
-<?xml-model href="https://rawgit.com/OpenArabicPE/OpenArabicPE_ODD/v0.1/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
   schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0">
@@ -63,13 +63,14 @@
                     <!-- this can be used to provide a base URL for digital surrogates, the file naming scheme must be provided through additional means -->
                     <!--          <ref target="http://www.palestine.mei.columbia.edu/alquds-issues/2017/2/23/" type="url"/>-->
                     <!-- additional parameters  -->
-                    <note n="p_weekdays-published" type="param">Monday</note>
                     <!--  $p_step sets incremental steps for the input to be iterated upon. Values are:
         - daily: this includes any publication cycle that is at least weekly
         - fortnightly: assumes continued pagination
         - monthly: -->
-                    <note n="p_step" type="param">fortnightly</note>
-                    <!-- $p_weekdays-published contains a comma-separated list of weekdays in English -->
+                    <note n="p_step" type="param">monthly</note>
+                     <!-- $p_weekdays-published contains a comma-separated list of weekdays in English -->
+                    <note n="p_weekdays-published" type="param">Monday</note>
+                    <note n="p_days-of-the-month" type="param">01,15</note>
                     <!-- other notes -->
                     <note>al-Jinān is part of Gale's Early Arabic Printed Books from the British Library <ref target="http://link.galegroup.com/apps/pub/9GMI/EAPB?sid=gale_marc&amp;u=29002"/></note>
                 </biblStruct>
