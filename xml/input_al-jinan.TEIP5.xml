@@ -66,7 +66,7 @@
                     <note n="p_weekdays-published" type="param">Monday</note>
                     <!--  $p_step sets incremental steps for the input to be iterated upon. Values are:
         - daily: this includes any publication cycle that is at least weekly
-        - fortnightly:
+        - fortnightly: assumes continued pagination
         - monthly: -->
                     <note n="p_step" type="param">fortnightly</note>
                     <!-- $p_weekdays-published contains a comma-separated list of weekdays in English -->
