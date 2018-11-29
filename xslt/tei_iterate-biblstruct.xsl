@@ -184,23 +184,31 @@
                                 </xsl:otherwise>
                             </xsl:choose>
                         </xsl:with-param>
-                        <xsl:with-param name="p_volume" select="$p_volume">
-                            <!-- this method is far too unreliable -->
-                            <!--<xsl:choose>
-                                <!-\- if the issue number can be divided by the number of total issues per year, a new volume should begin -\->
-                                <xsl:when test="number($p_issue) mod (52 * number(count(tokenize($p_weekdays-published,',')))) = 0">
-                                    <xsl:value-of select="$p_volume +1"/>
-                                </xsl:when>
-                                <xsl:otherwise>
-                                    <xsl:value-of select="$p_volume"/>
-                                </xsl:otherwise>
-                            </xsl:choose>-->
-                        </xsl:with-param>
+                        <xsl:with-param name="p_volume" select="$p_volume"/>
                         <xsl:with-param name="p_step" select="$p_step"/>
                         <xsl:with-param name="p_weekdays-published" select="$p_weekdays-published"/>
                         <!-- increment pagination -->
-                        <xsl:with-param name="p_page-from" select="$p_page-to + 1"/>
-                        <xsl:with-param name="p_page-to" select="$p_page-to + $p_pages"/>
+                        <xsl:with-param name="p_page-from">
+                            <!-- increment page number only if the periodical was published -->
+                            <xsl:choose>
+                                <xsl:when test="contains($p_days-of-the-month, $v_day-of-the-month-incremented)">
+                                    <xsl:value-of select="$p_page-to + 1"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:value-of select="$p_page-from"/>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </xsl:with-param>
+                        <xsl:with-param name="p_page-to">
+                            <xsl:choose>
+                                <xsl:when test="contains($p_days-of-the-month, $v_day-of-the-month-incremented)">
+                                    <xsl:value-of select="$p_page-to + $p_pages"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:value-of select="$p_page-to"/>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </xsl:with-param>
                     </xsl:call-template>
                 </xsl:if>
             </xsl:when>
