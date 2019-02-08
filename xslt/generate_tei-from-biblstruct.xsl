@@ -18,7 +18,7 @@
     </xsl:template>
     
     <xsl:template match="tei:biblStruct" mode="m_generate-tei">
-        <xsl:variable name="v_oclc" select="tei:monogr/tei:idno[@type='oclc'][1]"/>
+        <xsl:variable name="v_oclc" select="tei:monogr/tei:idno[@type='OCLC'][1]"/>
         <xsl:variable name="v_issue" select="number(tei:monogr/tei:biblScope[@unit='issue']/@from)"/>
         <xsl:variable name="v_volume" select="number(tei:monogr/tei:biblScope[@unit='volume']/@from)"/>
         <xsl:variable name="v_id" select="if(@xml:id) then(@xml:id) else(generate-id())"/>

@@ -19,17 +19,17 @@
                         <title level="j" xml:lang="ar-Latn-x-ijmes">al-Jinān</title>
                         <!-- use as many identifiers as appropriate -->
                         <!-- Gale edition -->
-                        <idno type="oclc" xml:lang="en">987291181</idno> 
+                        <idno type="OCLC" xml:lang="en">987291181</idno> 
                         <!-- HathiTrust -->
-                        <idno type="oclc" xml:lang="en">672061050</idno>
+                        <idno type="OCLC" xml:lang="en">672061050</idno>
                         <!-- Google, vol. 9 -->
-                        <idno type="oclc" xml:lang="en">656797477</idno>
+                        <idno type="OCLC" xml:lang="en">656797477</idno>
                         <!-- Harrassowitz: Microfiche -->
-                        <idno type="oclc" xml:lang="en">7565762</idno>
-                        <idno type="oclc" xml:lang="en">792755530</idno>
-                        <idno type="oclc" xml:lang="en">792755914</idno>
-                        <idno type="oclc" xml:lang="en">1681102</idno>
-                        <idno type="oclc" xml:lang="en">22757559</idno>
+                        <idno type="OCLC" xml:lang="en">7565762</idno>
+                        <idno type="OCLC" xml:lang="en">792755530</idno>
+                        <idno type="OCLC" xml:lang="en">792755914</idno>
+                        <idno type="OCLC" xml:lang="en">1681102</idno>
+                        <idno type="OCLC" xml:lang="en">22757559</idno>
                         <editor xml:lang="en" ref="viaf:79119650">
                             <persName xml:lang="ar"><forename>بطرس</forename> <surname>البستاني</surname> </persName>
                             <persName xml:lang="ar-Latn-x-ijmes"><forename>Buṭrus</forename> <surname>al-Bustānī</surname></persName> 
