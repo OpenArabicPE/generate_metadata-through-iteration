@@ -7517,6 +7517,1983 @@
                <note n="p_days-of-the-month" type="param">01,15</note>
             </tei:biblStruct>
             <!-- #144 was never published -->
+            <tei:biblStruct xml:lang="en">
+               <tei:monogr xml:lang="en">
+                  <title level="j" xml:lang="ar">الاتحاد العثماني</title>
+                  <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ittiḥād al-ʿUthmānī</title>
+                  <title level="j" type="sub">جريدة يومية سياسية ادبية اجتماعية عمرانية</title>
+                  <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya adabiyya ijtimāʿiyya ʿumrāniyya</title>
+                  <idno type="OCLC" xml:lang="en">42900564</idno>
+                  <idno type="OCLC" xml:lang="en">506290085</idno>
+                  <idno type="OCLC" xml:lang="en">792755286</idno>
+                  <editor xml:lang="en">
+                            <persName xml:lang="ar">
+                                <forename>احمد</forename>
+                                <forename>حسن</forename>
+                                <surname>طبارة</surname>
+                            </persName>
+                            <persName xml:lang="ar-Latn-x-ijmes">
+                                <forename>Aḥmad</forename>
+                                <forename>Ḥasan</forename>
+                                <surname>Ṭabbāra</surname>
+                            </persName>
+                        </editor>
+                  <tei:imprint xml:lang="en">
+                     <publisher xml:lang="en">
+                                <orgName xml:lang="ar">مطبعة الاهلية</orgName>
+                                <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Ahliyya</orgName>
+                            </publisher>
+                     <pubPlace xml:lang="en">
+                                <placeName xml:lang="ar">بيروت</placeName>
+                                <placeName xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
+                                <placeName xml:lang="en">Beirut</placeName>
+                                <placeName xml:lang="fr">Beyrouth</placeName>
+                            </pubPlace>
+                     <tei:date when="1909-03-15" xml:lang="en">15 March 1909, Monday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-03-15"
+                               when-custom="1327-02-22"
+                               calendar="#cal_islamic"
+                               datingMethod="#cal_islamic">22 Ṣafār 1327, Monday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-03-15"
+                               when-custom="1909-03-02"
+                               calendar="#cal_julian"
+                               datingMethod="#cal_julian">2 Ādhār 1909, Monday</tei:date>
+                  </tei:imprint>
+                  <tei:biblScope from="1" to="1" unit="volume"/>
+                  <tei:biblScope from="145" to="145" unit="issue"/>
+                  <tei:biblScope from="1" to="4" unit="page"/>
+               </tei:monogr>
+               <note n="p_step" type="param">daily</note>
+               <note n="p_weekdays-published" type="param">Monday, Tuesday, Wednesday, Thursday, Friday, Saturday</note>
+               <note n="p_days-of-the-month" type="param">01,15</note>
+            </tei:biblStruct>
+            <tei:biblStruct xml:lang="en">
+               <tei:monogr xml:lang="en">
+                  <title level="j" xml:lang="ar">الاتحاد العثماني</title>
+                  <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ittiḥād al-ʿUthmānī</title>
+                  <title level="j" type="sub">جريدة يومية سياسية ادبية اجتماعية عمرانية</title>
+                  <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya adabiyya ijtimāʿiyya ʿumrāniyya</title>
+                  <idno type="OCLC" xml:lang="en">42900564</idno>
+                  <idno type="OCLC" xml:lang="en">506290085</idno>
+                  <idno type="OCLC" xml:lang="en">792755286</idno>
+                  <editor xml:lang="en">
+                            <persName xml:lang="ar">
+                                <forename>احمد</forename>
+                                <forename>حسن</forename>
+                                <surname>طبارة</surname>
+                            </persName>
+                            <persName xml:lang="ar-Latn-x-ijmes">
+                                <forename>Aḥmad</forename>
+                                <forename>Ḥasan</forename>
+                                <surname>Ṭabbāra</surname>
+                            </persName>
+                        </editor>
+                  <tei:imprint xml:lang="en">
+                     <publisher xml:lang="en">
+                                <orgName xml:lang="ar">مطبعة الاهلية</orgName>
+                                <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Ahliyya</orgName>
+                            </publisher>
+                     <pubPlace xml:lang="en">
+                                <placeName xml:lang="ar">بيروت</placeName>
+                                <placeName xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
+                                <placeName xml:lang="en">Beirut</placeName>
+                                <placeName xml:lang="fr">Beyrouth</placeName>
+                            </pubPlace>
+                     <tei:date when="1909-03-16" xml:lang="en">16 March 1909, Tuesday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-03-16"
+                               when-custom="1327-02-23"
+                               calendar="#cal_islamic"
+                               datingMethod="#cal_islamic">23 Ṣafār 1327, Tuesday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-03-16"
+                               when-custom="1909-03-03"
+                               calendar="#cal_julian"
+                               datingMethod="#cal_julian">3 Ādhār 1909, Tuesday</tei:date>
+                  </tei:imprint>
+                  <tei:biblScope from="1" to="1" unit="volume"/>
+                  <tei:biblScope from="146" to="146" unit="issue"/>
+                  <tei:biblScope from="1" to="4" unit="page"/>
+               </tei:monogr>
+               <note n="p_step" type="param">daily</note>
+               <note n="p_weekdays-published" type="param">Monday, Tuesday, Wednesday, Thursday, Friday, Saturday</note>
+               <note n="p_days-of-the-month" type="param">01,15</note>
+            </tei:biblStruct>
+            <tei:biblStruct xml:lang="en">
+               <tei:monogr xml:lang="en">
+                  <title level="j" xml:lang="ar">الاتحاد العثماني</title>
+                  <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ittiḥād al-ʿUthmānī</title>
+                  <title level="j" type="sub">جريدة يومية سياسية ادبية اجتماعية عمرانية</title>
+                  <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya adabiyya ijtimāʿiyya ʿumrāniyya</title>
+                  <idno type="OCLC" xml:lang="en">42900564</idno>
+                  <idno type="OCLC" xml:lang="en">506290085</idno>
+                  <idno type="OCLC" xml:lang="en">792755286</idno>
+                  <editor xml:lang="en">
+                            <persName xml:lang="ar">
+                                <forename>احمد</forename>
+                                <forename>حسن</forename>
+                                <surname>طبارة</surname>
+                            </persName>
+                            <persName xml:lang="ar-Latn-x-ijmes">
+                                <forename>Aḥmad</forename>
+                                <forename>Ḥasan</forename>
+                                <surname>Ṭabbāra</surname>
+                            </persName>
+                        </editor>
+                  <tei:imprint xml:lang="en">
+                     <publisher xml:lang="en">
+                                <orgName xml:lang="ar">مطبعة الاهلية</orgName>
+                                <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Ahliyya</orgName>
+                            </publisher>
+                     <pubPlace xml:lang="en">
+                                <placeName xml:lang="ar">بيروت</placeName>
+                                <placeName xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
+                                <placeName xml:lang="en">Beirut</placeName>
+                                <placeName xml:lang="fr">Beyrouth</placeName>
+                            </pubPlace>
+                     <tei:date when="1909-03-17" xml:lang="en">17 March 1909, Wednesday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-03-17"
+                               when-custom="1327-02-24"
+                               calendar="#cal_islamic"
+                               datingMethod="#cal_islamic">24 Ṣafār 1327, Wednesday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-03-17"
+                               when-custom="1909-03-04"
+                               calendar="#cal_julian"
+                               datingMethod="#cal_julian">4 Ādhār 1909, Wednesday</tei:date>
+                  </tei:imprint>
+                  <tei:biblScope from="1" to="1" unit="volume"/>
+                  <tei:biblScope from="147" to="147" unit="issue"/>
+                  <tei:biblScope from="1" to="4" unit="page"/>
+               </tei:monogr>
+               <note n="p_step" type="param">daily</note>
+               <note n="p_weekdays-published" type="param">Monday, Tuesday, Wednesday, Thursday, Friday, Saturday</note>
+               <note n="p_days-of-the-month" type="param">01,15</note>
+            </tei:biblStruct>
+            <tei:biblStruct xml:lang="en">
+               <tei:monogr xml:lang="en">
+                  <title level="j" xml:lang="ar">الاتحاد العثماني</title>
+                  <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ittiḥād al-ʿUthmānī</title>
+                  <title level="j" type="sub">جريدة يومية سياسية ادبية اجتماعية عمرانية</title>
+                  <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya adabiyya ijtimāʿiyya ʿumrāniyya</title>
+                  <idno type="OCLC" xml:lang="en">42900564</idno>
+                  <idno type="OCLC" xml:lang="en">506290085</idno>
+                  <idno type="OCLC" xml:lang="en">792755286</idno>
+                  <editor xml:lang="en">
+                            <persName xml:lang="ar">
+                                <forename>احمد</forename>
+                                <forename>حسن</forename>
+                                <surname>طبارة</surname>
+                            </persName>
+                            <persName xml:lang="ar-Latn-x-ijmes">
+                                <forename>Aḥmad</forename>
+                                <forename>Ḥasan</forename>
+                                <surname>Ṭabbāra</surname>
+                            </persName>
+                        </editor>
+                  <tei:imprint xml:lang="en">
+                     <publisher xml:lang="en">
+                                <orgName xml:lang="ar">مطبعة الاهلية</orgName>
+                                <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Ahliyya</orgName>
+                            </publisher>
+                     <pubPlace xml:lang="en">
+                                <placeName xml:lang="ar">بيروت</placeName>
+                                <placeName xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
+                                <placeName xml:lang="en">Beirut</placeName>
+                                <placeName xml:lang="fr">Beyrouth</placeName>
+                            </pubPlace>
+                     <tei:date when="1909-03-18" xml:lang="en">18 March 1909, Thursday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-03-18"
+                               when-custom="1327-02-25"
+                               calendar="#cal_islamic"
+                               datingMethod="#cal_islamic">25 Ṣafār 1327, Thursday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-03-18"
+                               when-custom="1909-03-05"
+                               calendar="#cal_julian"
+                               datingMethod="#cal_julian">5 Ādhār 1909, Thursday</tei:date>
+                  </tei:imprint>
+                  <tei:biblScope from="1" to="1" unit="volume"/>
+                  <tei:biblScope from="148" to="148" unit="issue"/>
+                  <tei:biblScope from="1" to="4" unit="page"/>
+               </tei:monogr>
+               <note n="p_step" type="param">daily</note>
+               <note n="p_weekdays-published" type="param">Monday, Tuesday, Wednesday, Thursday, Friday, Saturday</note>
+               <note n="p_days-of-the-month" type="param">01,15</note>
+            </tei:biblStruct>
+            <tei:biblStruct xml:lang="en">
+               <tei:monogr xml:lang="en">
+                  <title level="j" xml:lang="ar">الاتحاد العثماني</title>
+                  <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ittiḥād al-ʿUthmānī</title>
+                  <title level="j" type="sub">جريدة يومية سياسية ادبية اجتماعية عمرانية</title>
+                  <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya adabiyya ijtimāʿiyya ʿumrāniyya</title>
+                  <idno type="OCLC" xml:lang="en">42900564</idno>
+                  <idno type="OCLC" xml:lang="en">506290085</idno>
+                  <idno type="OCLC" xml:lang="en">792755286</idno>
+                  <editor xml:lang="en">
+                            <persName xml:lang="ar">
+                                <forename>احمد</forename>
+                                <forename>حسن</forename>
+                                <surname>طبارة</surname>
+                            </persName>
+                            <persName xml:lang="ar-Latn-x-ijmes">
+                                <forename>Aḥmad</forename>
+                                <forename>Ḥasan</forename>
+                                <surname>Ṭabbāra</surname>
+                            </persName>
+                        </editor>
+                  <tei:imprint xml:lang="en">
+                     <publisher xml:lang="en">
+                                <orgName xml:lang="ar">مطبعة الاهلية</orgName>
+                                <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Ahliyya</orgName>
+                            </publisher>
+                     <pubPlace xml:lang="en">
+                                <placeName xml:lang="ar">بيروت</placeName>
+                                <placeName xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
+                                <placeName xml:lang="en">Beirut</placeName>
+                                <placeName xml:lang="fr">Beyrouth</placeName>
+                            </pubPlace>
+                     <tei:date when="1909-03-19" xml:lang="en">19 March 1909, Friday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-03-19"
+                               when-custom="1327-02-26"
+                               calendar="#cal_islamic"
+                               datingMethod="#cal_islamic">26 Ṣafār 1327, Friday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-03-19"
+                               when-custom="1909-03-06"
+                               calendar="#cal_julian"
+                               datingMethod="#cal_julian">6 Ādhār 1909, Friday</tei:date>
+                  </tei:imprint>
+                  <tei:biblScope from="1" to="1" unit="volume"/>
+                  <tei:biblScope from="149" to="149" unit="issue"/>
+                  <tei:biblScope from="1" to="4" unit="page"/>
+               </tei:monogr>
+               <note n="p_step" type="param">daily</note>
+               <note n="p_weekdays-published" type="param">Monday, Tuesday, Wednesday, Thursday, Friday, Saturday</note>
+               <note n="p_days-of-the-month" type="param">01,15</note>
+            </tei:biblStruct>
+            <tei:biblStruct xml:lang="en">
+               <tei:monogr xml:lang="en">
+                  <title level="j" xml:lang="ar">الاتحاد العثماني</title>
+                  <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ittiḥād al-ʿUthmānī</title>
+                  <title level="j" type="sub">جريدة يومية سياسية ادبية اجتماعية عمرانية</title>
+                  <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya adabiyya ijtimāʿiyya ʿumrāniyya</title>
+                  <idno type="OCLC" xml:lang="en">42900564</idno>
+                  <idno type="OCLC" xml:lang="en">506290085</idno>
+                  <idno type="OCLC" xml:lang="en">792755286</idno>
+                  <editor xml:lang="en">
+                            <persName xml:lang="ar">
+                                <forename>احمد</forename>
+                                <forename>حسن</forename>
+                                <surname>طبارة</surname>
+                            </persName>
+                            <persName xml:lang="ar-Latn-x-ijmes">
+                                <forename>Aḥmad</forename>
+                                <forename>Ḥasan</forename>
+                                <surname>Ṭabbāra</surname>
+                            </persName>
+                        </editor>
+                  <tei:imprint xml:lang="en">
+                     <publisher xml:lang="en">
+                                <orgName xml:lang="ar">مطبعة الاهلية</orgName>
+                                <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Ahliyya</orgName>
+                            </publisher>
+                     <pubPlace xml:lang="en">
+                                <placeName xml:lang="ar">بيروت</placeName>
+                                <placeName xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
+                                <placeName xml:lang="en">Beirut</placeName>
+                                <placeName xml:lang="fr">Beyrouth</placeName>
+                            </pubPlace>
+                     <tei:date when="1909-03-20" xml:lang="en">20 March 1909, Saturday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-03-20"
+                               when-custom="1327-02-27"
+                               calendar="#cal_islamic"
+                               datingMethod="#cal_islamic">27 Ṣafār 1327, Saturday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-03-20"
+                               when-custom="1909-03-07"
+                               calendar="#cal_julian"
+                               datingMethod="#cal_julian">7 Ādhār 1909, Saturday</tei:date>
+                  </tei:imprint>
+                  <tei:biblScope from="1" to="1" unit="volume"/>
+                  <tei:biblScope from="150" to="150" unit="issue"/>
+                  <tei:biblScope from="1" to="4" unit="page"/>
+               </tei:monogr>
+               <note n="p_step" type="param">daily</note>
+               <note n="p_weekdays-published" type="param">Monday, Tuesday, Wednesday, Thursday, Friday, Saturday</note>
+               <note n="p_days-of-the-month" type="param">01,15</note>
+            </tei:biblStruct>
+            <tei:biblStruct xml:lang="en">
+               <tei:monogr xml:lang="en">
+                  <title level="j" xml:lang="ar">الاتحاد العثماني</title>
+                  <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ittiḥād al-ʿUthmānī</title>
+                  <title level="j" type="sub">جريدة يومية سياسية ادبية اجتماعية عمرانية</title>
+                  <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya adabiyya ijtimāʿiyya ʿumrāniyya</title>
+                  <idno type="OCLC" xml:lang="en">42900564</idno>
+                  <idno type="OCLC" xml:lang="en">506290085</idno>
+                  <idno type="OCLC" xml:lang="en">792755286</idno>
+                  <editor xml:lang="en">
+                            <persName xml:lang="ar">
+                                <forename>احمد</forename>
+                                <forename>حسن</forename>
+                                <surname>طبارة</surname>
+                            </persName>
+                            <persName xml:lang="ar-Latn-x-ijmes">
+                                <forename>Aḥmad</forename>
+                                <forename>Ḥasan</forename>
+                                <surname>Ṭabbāra</surname>
+                            </persName>
+                        </editor>
+                  <tei:imprint xml:lang="en">
+                     <publisher xml:lang="en">
+                                <orgName xml:lang="ar">مطبعة الاهلية</orgName>
+                                <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Ahliyya</orgName>
+                            </publisher>
+                     <pubPlace xml:lang="en">
+                                <placeName xml:lang="ar">بيروت</placeName>
+                                <placeName xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
+                                <placeName xml:lang="en">Beirut</placeName>
+                                <placeName xml:lang="fr">Beyrouth</placeName>
+                            </pubPlace>
+                     <tei:date when="1909-03-22" xml:lang="en">22 March 1909, Monday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-03-22"
+                               when-custom="1327-02-29"
+                               calendar="#cal_islamic"
+                               datingMethod="#cal_islamic">29 Ṣafār 1327, Monday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-03-22"
+                               when-custom="1909-03-09"
+                               calendar="#cal_julian"
+                               datingMethod="#cal_julian">9 Ādhār 1909, Monday</tei:date>
+                  </tei:imprint>
+                  <tei:biblScope from="1" to="1" unit="volume"/>
+                  <tei:biblScope from="151" to="151" unit="issue"/>
+                  <tei:biblScope from="1" to="4" unit="page"/>
+               </tei:monogr>
+               <note n="p_step" type="param">daily</note>
+               <note n="p_weekdays-published" type="param">Monday, Tuesday, Wednesday, Thursday, Friday, Saturday</note>
+               <note n="p_days-of-the-month" type="param">01,15</note>
+            </tei:biblStruct>
+            <tei:biblStruct xml:lang="en">
+               <tei:monogr xml:lang="en">
+                  <title level="j" xml:lang="ar">الاتحاد العثماني</title>
+                  <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ittiḥād al-ʿUthmānī</title>
+                  <title level="j" type="sub">جريدة يومية سياسية ادبية اجتماعية عمرانية</title>
+                  <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya adabiyya ijtimāʿiyya ʿumrāniyya</title>
+                  <idno type="OCLC" xml:lang="en">42900564</idno>
+                  <idno type="OCLC" xml:lang="en">506290085</idno>
+                  <idno type="OCLC" xml:lang="en">792755286</idno>
+                  <editor xml:lang="en">
+                            <persName xml:lang="ar">
+                                <forename>احمد</forename>
+                                <forename>حسن</forename>
+                                <surname>طبارة</surname>
+                            </persName>
+                            <persName xml:lang="ar-Latn-x-ijmes">
+                                <forename>Aḥmad</forename>
+                                <forename>Ḥasan</forename>
+                                <surname>Ṭabbāra</surname>
+                            </persName>
+                        </editor>
+                  <tei:imprint xml:lang="en">
+                     <publisher xml:lang="en">
+                                <orgName xml:lang="ar">مطبعة الاهلية</orgName>
+                                <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Ahliyya</orgName>
+                            </publisher>
+                     <pubPlace xml:lang="en">
+                                <placeName xml:lang="ar">بيروت</placeName>
+                                <placeName xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
+                                <placeName xml:lang="en">Beirut</placeName>
+                                <placeName xml:lang="fr">Beyrouth</placeName>
+                            </pubPlace>
+                     <tei:date when="1909-03-23" xml:lang="en">23 March 1909, Tuesday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-03-23"
+                               when-custom="1327-03-01"
+                               calendar="#cal_islamic"
+                               datingMethod="#cal_islamic">1 Rabīʿ al-awwal 1327, Tuesday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-03-23"
+                               when-custom="1909-03-10"
+                               calendar="#cal_julian"
+                               datingMethod="#cal_julian">10 Ādhār 1909, Tuesday</tei:date>
+                  </tei:imprint>
+                  <tei:biblScope from="1" to="1" unit="volume"/>
+                  <tei:biblScope from="152" to="152" unit="issue"/>
+                  <tei:biblScope from="1" to="4" unit="page"/>
+               </tei:monogr>
+               <note n="p_step" type="param">daily</note>
+               <note n="p_weekdays-published" type="param">Monday, Tuesday, Wednesday, Thursday, Friday, Saturday</note>
+               <note n="p_days-of-the-month" type="param">01,15</note>
+            </tei:biblStruct>
+            <tei:biblStruct xml:lang="en">
+               <tei:monogr xml:lang="en">
+                  <title level="j" xml:lang="ar">الاتحاد العثماني</title>
+                  <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ittiḥād al-ʿUthmānī</title>
+                  <title level="j" type="sub">جريدة يومية سياسية ادبية اجتماعية عمرانية</title>
+                  <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya adabiyya ijtimāʿiyya ʿumrāniyya</title>
+                  <idno type="OCLC" xml:lang="en">42900564</idno>
+                  <idno type="OCLC" xml:lang="en">506290085</idno>
+                  <idno type="OCLC" xml:lang="en">792755286</idno>
+                  <editor xml:lang="en">
+                            <persName xml:lang="ar">
+                                <forename>احمد</forename>
+                                <forename>حسن</forename>
+                                <surname>طبارة</surname>
+                            </persName>
+                            <persName xml:lang="ar-Latn-x-ijmes">
+                                <forename>Aḥmad</forename>
+                                <forename>Ḥasan</forename>
+                                <surname>Ṭabbāra</surname>
+                            </persName>
+                        </editor>
+                  <tei:imprint xml:lang="en">
+                     <publisher xml:lang="en">
+                                <orgName xml:lang="ar">مطبعة الاهلية</orgName>
+                                <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Ahliyya</orgName>
+                            </publisher>
+                     <pubPlace xml:lang="en">
+                                <placeName xml:lang="ar">بيروت</placeName>
+                                <placeName xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
+                                <placeName xml:lang="en">Beirut</placeName>
+                                <placeName xml:lang="fr">Beyrouth</placeName>
+                            </pubPlace>
+                     <tei:date when="1909-03-24" xml:lang="en">24 March 1909, Wednesday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-03-24"
+                               when-custom="1327-03-02"
+                               calendar="#cal_islamic"
+                               datingMethod="#cal_islamic">2 Rabīʿ al-awwal 1327, Wednesday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-03-24"
+                               when-custom="1909-03-11"
+                               calendar="#cal_julian"
+                               datingMethod="#cal_julian">11 Ādhār 1909, Wednesday</tei:date>
+                  </tei:imprint>
+                  <tei:biblScope from="1" to="1" unit="volume"/>
+                  <tei:biblScope from="153" to="153" unit="issue"/>
+                  <tei:biblScope from="1" to="4" unit="page"/>
+               </tei:monogr>
+               <note n="p_step" type="param">daily</note>
+               <note n="p_weekdays-published" type="param">Monday, Tuesday, Wednesday, Thursday, Friday, Saturday</note>
+               <note n="p_days-of-the-month" type="param">01,15</note>
+            </tei:biblStruct>
+            <tei:biblStruct xml:lang="en">
+               <tei:monogr xml:lang="en">
+                  <title level="j" xml:lang="ar">الاتحاد العثماني</title>
+                  <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ittiḥād al-ʿUthmānī</title>
+                  <title level="j" type="sub">جريدة يومية سياسية ادبية اجتماعية عمرانية</title>
+                  <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya adabiyya ijtimāʿiyya ʿumrāniyya</title>
+                  <idno type="OCLC" xml:lang="en">42900564</idno>
+                  <idno type="OCLC" xml:lang="en">506290085</idno>
+                  <idno type="OCLC" xml:lang="en">792755286</idno>
+                  <editor xml:lang="en">
+                            <persName xml:lang="ar">
+                                <forename>احمد</forename>
+                                <forename>حسن</forename>
+                                <surname>طبارة</surname>
+                            </persName>
+                            <persName xml:lang="ar-Latn-x-ijmes">
+                                <forename>Aḥmad</forename>
+                                <forename>Ḥasan</forename>
+                                <surname>Ṭabbāra</surname>
+                            </persName>
+                        </editor>
+                  <tei:imprint xml:lang="en">
+                     <publisher xml:lang="en">
+                                <orgName xml:lang="ar">مطبعة الاهلية</orgName>
+                                <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Ahliyya</orgName>
+                            </publisher>
+                     <pubPlace xml:lang="en">
+                                <placeName xml:lang="ar">بيروت</placeName>
+                                <placeName xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
+                                <placeName xml:lang="en">Beirut</placeName>
+                                <placeName xml:lang="fr">Beyrouth</placeName>
+                            </pubPlace>
+                     <tei:date when="1909-03-25" xml:lang="en">25 March 1909, Thursday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-03-25"
+                               when-custom="1327-03-03"
+                               calendar="#cal_islamic"
+                               datingMethod="#cal_islamic">3 Rabīʿ al-awwal 1327, Thursday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-03-25"
+                               when-custom="1909-03-12"
+                               calendar="#cal_julian"
+                               datingMethod="#cal_julian">12 Ādhār 1909, Thursday</tei:date>
+                  </tei:imprint>
+                  <tei:biblScope from="1" to="1" unit="volume"/>
+                  <tei:biblScope from="154" to="154" unit="issue"/>
+                  <tei:biblScope from="1" to="4" unit="page"/>
+               </tei:monogr>
+               <note n="p_step" type="param">daily</note>
+               <note n="p_weekdays-published" type="param">Monday, Tuesday, Wednesday, Thursday, Friday, Saturday</note>
+               <note n="p_days-of-the-month" type="param">01,15</note>
+            </tei:biblStruct>
+            <tei:biblStruct xml:lang="en">
+               <tei:monogr xml:lang="en">
+                  <title level="j" xml:lang="ar">الاتحاد العثماني</title>
+                  <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ittiḥād al-ʿUthmānī</title>
+                  <title level="j" type="sub">جريدة يومية سياسية ادبية اجتماعية عمرانية</title>
+                  <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya adabiyya ijtimāʿiyya ʿumrāniyya</title>
+                  <idno type="OCLC" xml:lang="en">42900564</idno>
+                  <idno type="OCLC" xml:lang="en">506290085</idno>
+                  <idno type="OCLC" xml:lang="en">792755286</idno>
+                  <editor xml:lang="en">
+                            <persName xml:lang="ar">
+                                <forename>احمد</forename>
+                                <forename>حسن</forename>
+                                <surname>طبارة</surname>
+                            </persName>
+                            <persName xml:lang="ar-Latn-x-ijmes">
+                                <forename>Aḥmad</forename>
+                                <forename>Ḥasan</forename>
+                                <surname>Ṭabbāra</surname>
+                            </persName>
+                        </editor>
+                  <tei:imprint xml:lang="en">
+                     <publisher xml:lang="en">
+                                <orgName xml:lang="ar">مطبعة الاهلية</orgName>
+                                <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Ahliyya</orgName>
+                            </publisher>
+                     <pubPlace xml:lang="en">
+                                <placeName xml:lang="ar">بيروت</placeName>
+                                <placeName xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
+                                <placeName xml:lang="en">Beirut</placeName>
+                                <placeName xml:lang="fr">Beyrouth</placeName>
+                            </pubPlace>
+                     <tei:date when="1909-03-26" xml:lang="en">26 March 1909, Friday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-03-26"
+                               when-custom="1327-03-04"
+                               calendar="#cal_islamic"
+                               datingMethod="#cal_islamic">4 Rabīʿ al-awwal 1327, Friday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-03-26"
+                               when-custom="1909-03-13"
+                               calendar="#cal_julian"
+                               datingMethod="#cal_julian">13 Ādhār 1909, Friday</tei:date>
+                  </tei:imprint>
+                  <tei:biblScope from="1" to="1" unit="volume"/>
+                  <tei:biblScope from="155" to="155" unit="issue"/>
+                  <tei:biblScope from="1" to="4" unit="page"/>
+               </tei:monogr>
+               <note n="p_step" type="param">daily</note>
+               <note n="p_weekdays-published" type="param">Monday, Tuesday, Wednesday, Thursday, Friday, Saturday</note>
+               <note n="p_days-of-the-month" type="param">01,15</note>
+            </tei:biblStruct>
+            <tei:biblStruct xml:lang="en">
+               <tei:monogr xml:lang="en">
+                  <title level="j" xml:lang="ar">الاتحاد العثماني</title>
+                  <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ittiḥād al-ʿUthmānī</title>
+                  <title level="j" type="sub">جريدة يومية سياسية ادبية اجتماعية عمرانية</title>
+                  <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya adabiyya ijtimāʿiyya ʿumrāniyya</title>
+                  <idno type="OCLC" xml:lang="en">42900564</idno>
+                  <idno type="OCLC" xml:lang="en">506290085</idno>
+                  <idno type="OCLC" xml:lang="en">792755286</idno>
+                  <editor xml:lang="en">
+                            <persName xml:lang="ar">
+                                <forename>احمد</forename>
+                                <forename>حسن</forename>
+                                <surname>طبارة</surname>
+                            </persName>
+                            <persName xml:lang="ar-Latn-x-ijmes">
+                                <forename>Aḥmad</forename>
+                                <forename>Ḥasan</forename>
+                                <surname>Ṭabbāra</surname>
+                            </persName>
+                        </editor>
+                  <tei:imprint xml:lang="en">
+                     <publisher xml:lang="en">
+                                <orgName xml:lang="ar">مطبعة الاهلية</orgName>
+                                <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Ahliyya</orgName>
+                            </publisher>
+                     <pubPlace xml:lang="en">
+                                <placeName xml:lang="ar">بيروت</placeName>
+                                <placeName xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
+                                <placeName xml:lang="en">Beirut</placeName>
+                                <placeName xml:lang="fr">Beyrouth</placeName>
+                            </pubPlace>
+                     <tei:date when="1909-03-27" xml:lang="en">27 March 1909, Saturday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-03-27"
+                               when-custom="1327-03-05"
+                               calendar="#cal_islamic"
+                               datingMethod="#cal_islamic">5 Rabīʿ al-awwal 1327, Saturday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-03-27"
+                               when-custom="1909-03-14"
+                               calendar="#cal_julian"
+                               datingMethod="#cal_julian">14 Ādhār 1909, Saturday</tei:date>
+                  </tei:imprint>
+                  <tei:biblScope from="1" to="1" unit="volume"/>
+                  <tei:biblScope from="156" to="156" unit="issue"/>
+                  <tei:biblScope from="1" to="4" unit="page"/>
+               </tei:monogr>
+               <note n="p_step" type="param">daily</note>
+               <note n="p_weekdays-published" type="param">Monday, Tuesday, Wednesday, Thursday, Friday, Saturday</note>
+               <note n="p_days-of-the-month" type="param">01,15</note>
+            </tei:biblStruct>
+            <tei:biblStruct xml:lang="en">
+               <tei:monogr xml:lang="en">
+                  <title level="j" xml:lang="ar">الاتحاد العثماني</title>
+                  <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ittiḥād al-ʿUthmānī</title>
+                  <title level="j" type="sub">جريدة يومية سياسية ادبية اجتماعية عمرانية</title>
+                  <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya adabiyya ijtimāʿiyya ʿumrāniyya</title>
+                  <idno type="OCLC" xml:lang="en">42900564</idno>
+                  <idno type="OCLC" xml:lang="en">506290085</idno>
+                  <idno type="OCLC" xml:lang="en">792755286</idno>
+                  <editor xml:lang="en">
+                            <persName xml:lang="ar">
+                                <forename>احمد</forename>
+                                <forename>حسن</forename>
+                                <surname>طبارة</surname>
+                            </persName>
+                            <persName xml:lang="ar-Latn-x-ijmes">
+                                <forename>Aḥmad</forename>
+                                <forename>Ḥasan</forename>
+                                <surname>Ṭabbāra</surname>
+                            </persName>
+                        </editor>
+                  <tei:imprint xml:lang="en">
+                     <publisher xml:lang="en">
+                                <orgName xml:lang="ar">مطبعة الاهلية</orgName>
+                                <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Ahliyya</orgName>
+                            </publisher>
+                     <pubPlace xml:lang="en">
+                                <placeName xml:lang="ar">بيروت</placeName>
+                                <placeName xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
+                                <placeName xml:lang="en">Beirut</placeName>
+                                <placeName xml:lang="fr">Beyrouth</placeName>
+                            </pubPlace>
+                     <tei:date when="1909-03-29" xml:lang="en">29 March 1909, Monday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-03-29"
+                               when-custom="1327-03-07"
+                               calendar="#cal_islamic"
+                               datingMethod="#cal_islamic">7 Rabīʿ al-awwal 1327, Monday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-03-29"
+                               when-custom="1909-03-16"
+                               calendar="#cal_julian"
+                               datingMethod="#cal_julian">16 Ādhār 1909, Monday</tei:date>
+                  </tei:imprint>
+                  <tei:biblScope from="1" to="1" unit="volume"/>
+                  <tei:biblScope from="157" to="157" unit="issue"/>
+                  <tei:biblScope from="1" to="4" unit="page"/>
+               </tei:monogr>
+               <note n="p_step" type="param">daily</note>
+               <note n="p_weekdays-published" type="param">Monday, Tuesday, Wednesday, Thursday, Friday, Saturday</note>
+               <note n="p_days-of-the-month" type="param">01,15</note>
+            </tei:biblStruct>
+            <tei:biblStruct xml:lang="en">
+               <tei:monogr xml:lang="en">
+                  <title level="j" xml:lang="ar">الاتحاد العثماني</title>
+                  <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ittiḥād al-ʿUthmānī</title>
+                  <title level="j" type="sub">جريدة يومية سياسية ادبية اجتماعية عمرانية</title>
+                  <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya adabiyya ijtimāʿiyya ʿumrāniyya</title>
+                  <idno type="OCLC" xml:lang="en">42900564</idno>
+                  <idno type="OCLC" xml:lang="en">506290085</idno>
+                  <idno type="OCLC" xml:lang="en">792755286</idno>
+                  <editor xml:lang="en">
+                            <persName xml:lang="ar">
+                                <forename>احمد</forename>
+                                <forename>حسن</forename>
+                                <surname>طبارة</surname>
+                            </persName>
+                            <persName xml:lang="ar-Latn-x-ijmes">
+                                <forename>Aḥmad</forename>
+                                <forename>Ḥasan</forename>
+                                <surname>Ṭabbāra</surname>
+                            </persName>
+                        </editor>
+                  <tei:imprint xml:lang="en">
+                     <publisher xml:lang="en">
+                                <orgName xml:lang="ar">مطبعة الاهلية</orgName>
+                                <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Ahliyya</orgName>
+                            </publisher>
+                     <pubPlace xml:lang="en">
+                                <placeName xml:lang="ar">بيروت</placeName>
+                                <placeName xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
+                                <placeName xml:lang="en">Beirut</placeName>
+                                <placeName xml:lang="fr">Beyrouth</placeName>
+                            </pubPlace>
+                     <tei:date when="1909-03-30" xml:lang="en">30 March 1909, Tuesday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-03-30"
+                               when-custom="1327-03-08"
+                               calendar="#cal_islamic"
+                               datingMethod="#cal_islamic">8 Rabīʿ al-awwal 1327, Tuesday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-03-30"
+                               when-custom="1909-03-17"
+                               calendar="#cal_julian"
+                               datingMethod="#cal_julian">17 Ādhār 1909, Tuesday</tei:date>
+                  </tei:imprint>
+                  <tei:biblScope from="1" to="1" unit="volume"/>
+                  <tei:biblScope from="158" to="158" unit="issue"/>
+                  <tei:biblScope from="1" to="4" unit="page"/>
+               </tei:monogr>
+               <note n="p_step" type="param">daily</note>
+               <note n="p_weekdays-published" type="param">Monday, Tuesday, Wednesday, Thursday, Friday, Saturday</note>
+               <note n="p_days-of-the-month" type="param">01,15</note>
+            </tei:biblStruct>
+            <tei:biblStruct xml:lang="en">
+               <tei:monogr xml:lang="en">
+                  <title level="j" xml:lang="ar">الاتحاد العثماني</title>
+                  <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ittiḥād al-ʿUthmānī</title>
+                  <title level="j" type="sub">جريدة يومية سياسية ادبية اجتماعية عمرانية</title>
+                  <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya adabiyya ijtimāʿiyya ʿumrāniyya</title>
+                  <idno type="OCLC" xml:lang="en">42900564</idno>
+                  <idno type="OCLC" xml:lang="en">506290085</idno>
+                  <idno type="OCLC" xml:lang="en">792755286</idno>
+                  <editor xml:lang="en">
+                            <persName xml:lang="ar">
+                                <forename>احمد</forename>
+                                <forename>حسن</forename>
+                                <surname>طبارة</surname>
+                            </persName>
+                            <persName xml:lang="ar-Latn-x-ijmes">
+                                <forename>Aḥmad</forename>
+                                <forename>Ḥasan</forename>
+                                <surname>Ṭabbāra</surname>
+                            </persName>
+                        </editor>
+                  <tei:imprint xml:lang="en">
+                     <publisher xml:lang="en">
+                                <orgName xml:lang="ar">مطبعة الاهلية</orgName>
+                                <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Ahliyya</orgName>
+                            </publisher>
+                     <pubPlace xml:lang="en">
+                                <placeName xml:lang="ar">بيروت</placeName>
+                                <placeName xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
+                                <placeName xml:lang="en">Beirut</placeName>
+                                <placeName xml:lang="fr">Beyrouth</placeName>
+                            </pubPlace>
+                     <tei:date when="1909-03-31" xml:lang="en">31 March 1909, Wednesday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-03-31"
+                               when-custom="1327-03-09"
+                               calendar="#cal_islamic"
+                               datingMethod="#cal_islamic">9 Rabīʿ al-awwal 1327, Wednesday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-03-31"
+                               when-custom="1909-03-18"
+                               calendar="#cal_julian"
+                               datingMethod="#cal_julian">18 Ādhār 1909, Wednesday</tei:date>
+                  </tei:imprint>
+                  <tei:biblScope from="1" to="1" unit="volume"/>
+                  <tei:biblScope from="159" to="159" unit="issue"/>
+                  <tei:biblScope from="1" to="4" unit="page"/>
+               </tei:monogr>
+               <note n="p_step" type="param">daily</note>
+               <note n="p_weekdays-published" type="param">Monday, Tuesday, Wednesday, Thursday, Friday, Saturday</note>
+               <note n="p_days-of-the-month" type="param">01,15</note>
+            </tei:biblStruct>
+            <tei:biblStruct xml:lang="en">
+               <tei:monogr xml:lang="en">
+                  <title level="j" xml:lang="ar">الاتحاد العثماني</title>
+                  <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ittiḥād al-ʿUthmānī</title>
+                  <title level="j" type="sub">جريدة يومية سياسية ادبية اجتماعية عمرانية</title>
+                  <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya adabiyya ijtimāʿiyya ʿumrāniyya</title>
+                  <idno type="OCLC" xml:lang="en">42900564</idno>
+                  <idno type="OCLC" xml:lang="en">506290085</idno>
+                  <idno type="OCLC" xml:lang="en">792755286</idno>
+                  <editor xml:lang="en">
+                            <persName xml:lang="ar">
+                                <forename>احمد</forename>
+                                <forename>حسن</forename>
+                                <surname>طبارة</surname>
+                            </persName>
+                            <persName xml:lang="ar-Latn-x-ijmes">
+                                <forename>Aḥmad</forename>
+                                <forename>Ḥasan</forename>
+                                <surname>Ṭabbāra</surname>
+                            </persName>
+                        </editor>
+                  <tei:imprint xml:lang="en">
+                     <publisher xml:lang="en">
+                                <orgName xml:lang="ar">مطبعة الاهلية</orgName>
+                                <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Ahliyya</orgName>
+                            </publisher>
+                     <pubPlace xml:lang="en">
+                                <placeName xml:lang="ar">بيروت</placeName>
+                                <placeName xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
+                                <placeName xml:lang="en">Beirut</placeName>
+                                <placeName xml:lang="fr">Beyrouth</placeName>
+                            </pubPlace>
+                     <tei:date when="1909-04-01" xml:lang="en">1 April 1909, Thursday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-04-01"
+                               when-custom="1327-03-10"
+                               calendar="#cal_islamic"
+                               datingMethod="#cal_islamic">10 Rabīʿ al-awwal 1327, Thursday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-04-01"
+                               when-custom="1909-03-19"
+                               calendar="#cal_julian"
+                               datingMethod="#cal_julian">19 Ādhār 1909, Thursday</tei:date>
+                  </tei:imprint>
+                  <tei:biblScope from="1" to="1" unit="volume"/>
+                  <tei:biblScope from="160" to="160" unit="issue"/>
+                  <tei:biblScope from="1" to="4" unit="page"/>
+               </tei:monogr>
+               <note n="p_step" type="param">daily</note>
+               <note n="p_weekdays-published" type="param">Monday, Tuesday, Wednesday, Thursday, Friday, Saturday</note>
+               <note n="p_days-of-the-month" type="param">01,15</note>
+            </tei:biblStruct>
+            <tei:biblStruct xml:lang="en">
+               <tei:monogr xml:lang="en">
+                  <title level="j" xml:lang="ar">الاتحاد العثماني</title>
+                  <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ittiḥād al-ʿUthmānī</title>
+                  <title level="j" type="sub">جريدة يومية سياسية ادبية اجتماعية عمرانية</title>
+                  <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya adabiyya ijtimāʿiyya ʿumrāniyya</title>
+                  <idno type="OCLC" xml:lang="en">42900564</idno>
+                  <idno type="OCLC" xml:lang="en">506290085</idno>
+                  <idno type="OCLC" xml:lang="en">792755286</idno>
+                  <editor xml:lang="en">
+                            <persName xml:lang="ar">
+                                <forename>احمد</forename>
+                                <forename>حسن</forename>
+                                <surname>طبارة</surname>
+                            </persName>
+                            <persName xml:lang="ar-Latn-x-ijmes">
+                                <forename>Aḥmad</forename>
+                                <forename>Ḥasan</forename>
+                                <surname>Ṭabbāra</surname>
+                            </persName>
+                        </editor>
+                  <tei:imprint xml:lang="en">
+                     <publisher xml:lang="en">
+                                <orgName xml:lang="ar">مطبعة الاهلية</orgName>
+                                <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Ahliyya</orgName>
+                            </publisher>
+                     <pubPlace xml:lang="en">
+                                <placeName xml:lang="ar">بيروت</placeName>
+                                <placeName xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
+                                <placeName xml:lang="en">Beirut</placeName>
+                                <placeName xml:lang="fr">Beyrouth</placeName>
+                            </pubPlace>
+                     <tei:date when="1909-04-02" xml:lang="en">2 April 1909, Friday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-04-02"
+                               when-custom="1327-03-11"
+                               calendar="#cal_islamic"
+                               datingMethod="#cal_islamic">11 Rabīʿ al-awwal 1327, Friday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-04-02"
+                               when-custom="1909-03-20"
+                               calendar="#cal_julian"
+                               datingMethod="#cal_julian">20 Ādhār 1909, Friday</tei:date>
+                  </tei:imprint>
+                  <tei:biblScope from="1" to="1" unit="volume"/>
+                  <tei:biblScope from="161" to="161" unit="issue"/>
+                  <tei:biblScope from="1" to="4" unit="page"/>
+               </tei:monogr>
+               <note n="p_step" type="param">daily</note>
+               <note n="p_weekdays-published" type="param">Monday, Tuesday, Wednesday, Thursday, Friday, Saturday</note>
+               <note n="p_days-of-the-month" type="param">01,15</note>
+            </tei:biblStruct>
+            <tei:biblStruct xml:lang="en">
+               <tei:monogr xml:lang="en">
+                  <title level="j" xml:lang="ar">الاتحاد العثماني</title>
+                  <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ittiḥād al-ʿUthmānī</title>
+                  <title level="j" type="sub">جريدة يومية سياسية ادبية اجتماعية عمرانية</title>
+                  <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya adabiyya ijtimāʿiyya ʿumrāniyya</title>
+                  <idno type="OCLC" xml:lang="en">42900564</idno>
+                  <idno type="OCLC" xml:lang="en">506290085</idno>
+                  <idno type="OCLC" xml:lang="en">792755286</idno>
+                  <editor xml:lang="en">
+                            <persName xml:lang="ar">
+                                <forename>احمد</forename>
+                                <forename>حسن</forename>
+                                <surname>طبارة</surname>
+                            </persName>
+                            <persName xml:lang="ar-Latn-x-ijmes">
+                                <forename>Aḥmad</forename>
+                                <forename>Ḥasan</forename>
+                                <surname>Ṭabbāra</surname>
+                            </persName>
+                        </editor>
+                  <tei:imprint xml:lang="en">
+                     <publisher xml:lang="en">
+                                <orgName xml:lang="ar">مطبعة الاهلية</orgName>
+                                <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Ahliyya</orgName>
+                            </publisher>
+                     <pubPlace xml:lang="en">
+                                <placeName xml:lang="ar">بيروت</placeName>
+                                <placeName xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
+                                <placeName xml:lang="en">Beirut</placeName>
+                                <placeName xml:lang="fr">Beyrouth</placeName>
+                            </pubPlace>
+                     <tei:date when="1909-04-03" xml:lang="en">3 April 1909, Saturday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-04-03"
+                               when-custom="1327-03-12"
+                               calendar="#cal_islamic"
+                               datingMethod="#cal_islamic">12 Rabīʿ al-awwal 1327, Saturday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-04-03"
+                               when-custom="1909-03-21"
+                               calendar="#cal_julian"
+                               datingMethod="#cal_julian">21 Ādhār 1909, Saturday</tei:date>
+                  </tei:imprint>
+                  <tei:biblScope from="1" to="1" unit="volume"/>
+                  <tei:biblScope from="162" to="162" unit="issue"/>
+                  <tei:biblScope from="1" to="4" unit="page"/>
+               </tei:monogr>
+               <note n="p_step" type="param">daily</note>
+               <note n="p_weekdays-published" type="param">Monday, Tuesday, Wednesday, Thursday, Friday, Saturday</note>
+               <note n="p_days-of-the-month" type="param">01,15</note>
+            </tei:biblStruct>
+            <tei:biblStruct xml:lang="en">
+               <tei:monogr xml:lang="en">
+                  <title level="j" xml:lang="ar">الاتحاد العثماني</title>
+                  <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ittiḥād al-ʿUthmānī</title>
+                  <title level="j" type="sub">جريدة يومية سياسية ادبية اجتماعية عمرانية</title>
+                  <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya adabiyya ijtimāʿiyya ʿumrāniyya</title>
+                  <idno type="OCLC" xml:lang="en">42900564</idno>
+                  <idno type="OCLC" xml:lang="en">506290085</idno>
+                  <idno type="OCLC" xml:lang="en">792755286</idno>
+                  <editor xml:lang="en">
+                            <persName xml:lang="ar">
+                                <forename>احمد</forename>
+                                <forename>حسن</forename>
+                                <surname>طبارة</surname>
+                            </persName>
+                            <persName xml:lang="ar-Latn-x-ijmes">
+                                <forename>Aḥmad</forename>
+                                <forename>Ḥasan</forename>
+                                <surname>Ṭabbāra</surname>
+                            </persName>
+                        </editor>
+                  <tei:imprint xml:lang="en">
+                     <publisher xml:lang="en">
+                                <orgName xml:lang="ar">مطبعة الاهلية</orgName>
+                                <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Ahliyya</orgName>
+                            </publisher>
+                     <pubPlace xml:lang="en">
+                                <placeName xml:lang="ar">بيروت</placeName>
+                                <placeName xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
+                                <placeName xml:lang="en">Beirut</placeName>
+                                <placeName xml:lang="fr">Beyrouth</placeName>
+                            </pubPlace>
+                     <tei:date when="1909-04-05" xml:lang="en">5 April 1909, Monday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-04-05"
+                               when-custom="1327-03-14"
+                               calendar="#cal_islamic"
+                               datingMethod="#cal_islamic">14 Rabīʿ al-awwal 1327, Monday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-04-05"
+                               when-custom="1909-03-23"
+                               calendar="#cal_julian"
+                               datingMethod="#cal_julian">23 Ādhār 1909, Monday</tei:date>
+                  </tei:imprint>
+                  <tei:biblScope from="1" to="1" unit="volume"/>
+                  <tei:biblScope from="163" to="163" unit="issue"/>
+                  <tei:biblScope from="1" to="4" unit="page"/>
+               </tei:monogr>
+               <note n="p_step" type="param">daily</note>
+               <note n="p_weekdays-published" type="param">Monday, Tuesday, Wednesday, Thursday, Friday, Saturday</note>
+               <note n="p_days-of-the-month" type="param">01,15</note>
+            </tei:biblStruct>
+            <tei:biblStruct xml:lang="en">
+               <tei:monogr xml:lang="en">
+                  <title level="j" xml:lang="ar">الاتحاد العثماني</title>
+                  <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ittiḥād al-ʿUthmānī</title>
+                  <title level="j" type="sub">جريدة يومية سياسية ادبية اجتماعية عمرانية</title>
+                  <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya adabiyya ijtimāʿiyya ʿumrāniyya</title>
+                  <idno type="OCLC" xml:lang="en">42900564</idno>
+                  <idno type="OCLC" xml:lang="en">506290085</idno>
+                  <idno type="OCLC" xml:lang="en">792755286</idno>
+                  <editor xml:lang="en">
+                            <persName xml:lang="ar">
+                                <forename>احمد</forename>
+                                <forename>حسن</forename>
+                                <surname>طبارة</surname>
+                            </persName>
+                            <persName xml:lang="ar-Latn-x-ijmes">
+                                <forename>Aḥmad</forename>
+                                <forename>Ḥasan</forename>
+                                <surname>Ṭabbāra</surname>
+                            </persName>
+                        </editor>
+                  <tei:imprint xml:lang="en">
+                     <publisher xml:lang="en">
+                                <orgName xml:lang="ar">مطبعة الاهلية</orgName>
+                                <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Ahliyya</orgName>
+                            </publisher>
+                     <pubPlace xml:lang="en">
+                                <placeName xml:lang="ar">بيروت</placeName>
+                                <placeName xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
+                                <placeName xml:lang="en">Beirut</placeName>
+                                <placeName xml:lang="fr">Beyrouth</placeName>
+                            </pubPlace>
+                     <tei:date when="1909-04-06" xml:lang="en">6 April 1909, Tuesday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-04-06"
+                               when-custom="1327-03-15"
+                               calendar="#cal_islamic"
+                               datingMethod="#cal_islamic">15 Rabīʿ al-awwal 1327, Tuesday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-04-06"
+                               when-custom="1909-03-24"
+                               calendar="#cal_julian"
+                               datingMethod="#cal_julian">24 Ādhār 1909, Tuesday</tei:date>
+                  </tei:imprint>
+                  <tei:biblScope from="1" to="1" unit="volume"/>
+                  <tei:biblScope from="164" to="164" unit="issue"/>
+                  <tei:biblScope from="1" to="4" unit="page"/>
+               </tei:monogr>
+               <note n="p_step" type="param">daily</note>
+               <note n="p_weekdays-published" type="param">Monday, Tuesday, Wednesday, Thursday, Friday, Saturday</note>
+               <note n="p_days-of-the-month" type="param">01,15</note>
+            </tei:biblStruct>
+            <tei:biblStruct xml:lang="en">
+               <tei:monogr xml:lang="en">
+                  <title level="j" xml:lang="ar">الاتحاد العثماني</title>
+                  <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ittiḥād al-ʿUthmānī</title>
+                  <title level="j" type="sub">جريدة يومية سياسية ادبية اجتماعية عمرانية</title>
+                  <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya adabiyya ijtimāʿiyya ʿumrāniyya</title>
+                  <idno type="OCLC" xml:lang="en">42900564</idno>
+                  <idno type="OCLC" xml:lang="en">506290085</idno>
+                  <idno type="OCLC" xml:lang="en">792755286</idno>
+                  <editor xml:lang="en">
+                            <persName xml:lang="ar">
+                                <forename>احمد</forename>
+                                <forename>حسن</forename>
+                                <surname>طبارة</surname>
+                            </persName>
+                            <persName xml:lang="ar-Latn-x-ijmes">
+                                <forename>Aḥmad</forename>
+                                <forename>Ḥasan</forename>
+                                <surname>Ṭabbāra</surname>
+                            </persName>
+                        </editor>
+                  <tei:imprint xml:lang="en">
+                     <publisher xml:lang="en">
+                                <orgName xml:lang="ar">مطبعة الاهلية</orgName>
+                                <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Ahliyya</orgName>
+                            </publisher>
+                     <pubPlace xml:lang="en">
+                                <placeName xml:lang="ar">بيروت</placeName>
+                                <placeName xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
+                                <placeName xml:lang="en">Beirut</placeName>
+                                <placeName xml:lang="fr">Beyrouth</placeName>
+                            </pubPlace>
+                     <tei:date when="1909-04-07" xml:lang="en">7 April 1909, Wednesday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-04-07"
+                               when-custom="1327-03-16"
+                               calendar="#cal_islamic"
+                               datingMethod="#cal_islamic">16 Rabīʿ al-awwal 1327, Wednesday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-04-07"
+                               when-custom="1909-03-25"
+                               calendar="#cal_julian"
+                               datingMethod="#cal_julian">25 Ādhār 1909, Wednesday</tei:date>
+                  </tei:imprint>
+                  <tei:biblScope from="1" to="1" unit="volume"/>
+                  <tei:biblScope from="165" to="165" unit="issue"/>
+                  <tei:biblScope from="1" to="4" unit="page"/>
+               </tei:monogr>
+               <note n="p_step" type="param">daily</note>
+               <note n="p_weekdays-published" type="param">Monday, Tuesday, Wednesday, Thursday, Friday, Saturday</note>
+               <note n="p_days-of-the-month" type="param">01,15</note>
+            </tei:biblStruct>
+            <tei:biblStruct xml:lang="en">
+               <tei:monogr xml:lang="en">
+                  <title level="j" xml:lang="ar">الاتحاد العثماني</title>
+                  <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ittiḥād al-ʿUthmānī</title>
+                  <title level="j" type="sub">جريدة يومية سياسية ادبية اجتماعية عمرانية</title>
+                  <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya adabiyya ijtimāʿiyya ʿumrāniyya</title>
+                  <idno type="OCLC" xml:lang="en">42900564</idno>
+                  <idno type="OCLC" xml:lang="en">506290085</idno>
+                  <idno type="OCLC" xml:lang="en">792755286</idno>
+                  <editor xml:lang="en">
+                            <persName xml:lang="ar">
+                                <forename>احمد</forename>
+                                <forename>حسن</forename>
+                                <surname>طبارة</surname>
+                            </persName>
+                            <persName xml:lang="ar-Latn-x-ijmes">
+                                <forename>Aḥmad</forename>
+                                <forename>Ḥasan</forename>
+                                <surname>Ṭabbāra</surname>
+                            </persName>
+                        </editor>
+                  <tei:imprint xml:lang="en">
+                     <publisher xml:lang="en">
+                                <orgName xml:lang="ar">مطبعة الاهلية</orgName>
+                                <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Ahliyya</orgName>
+                            </publisher>
+                     <pubPlace xml:lang="en">
+                                <placeName xml:lang="ar">بيروت</placeName>
+                                <placeName xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
+                                <placeName xml:lang="en">Beirut</placeName>
+                                <placeName xml:lang="fr">Beyrouth</placeName>
+                            </pubPlace>
+                     <tei:date when="1909-04-08" xml:lang="en">8 April 1909, Thursday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-04-08"
+                               when-custom="1327-03-17"
+                               calendar="#cal_islamic"
+                               datingMethod="#cal_islamic">17 Rabīʿ al-awwal 1327, Thursday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-04-08"
+                               when-custom="1909-03-26"
+                               calendar="#cal_julian"
+                               datingMethod="#cal_julian">26 Ādhār 1909, Thursday</tei:date>
+                  </tei:imprint>
+                  <tei:biblScope from="1" to="1" unit="volume"/>
+                  <tei:biblScope from="166" to="166" unit="issue"/>
+                  <tei:biblScope from="1" to="4" unit="page"/>
+               </tei:monogr>
+               <note n="p_step" type="param">daily</note>
+               <note n="p_weekdays-published" type="param">Monday, Tuesday, Wednesday, Thursday, Friday, Saturday</note>
+               <note n="p_days-of-the-month" type="param">01,15</note>
+            </tei:biblStruct>
+            <tei:biblStruct xml:lang="en">
+               <tei:monogr xml:lang="en">
+                  <title level="j" xml:lang="ar">الاتحاد العثماني</title>
+                  <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ittiḥād al-ʿUthmānī</title>
+                  <title level="j" type="sub">جريدة يومية سياسية ادبية اجتماعية عمرانية</title>
+                  <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya adabiyya ijtimāʿiyya ʿumrāniyya</title>
+                  <idno type="OCLC" xml:lang="en">42900564</idno>
+                  <idno type="OCLC" xml:lang="en">506290085</idno>
+                  <idno type="OCLC" xml:lang="en">792755286</idno>
+                  <editor xml:lang="en">
+                            <persName xml:lang="ar">
+                                <forename>احمد</forename>
+                                <forename>حسن</forename>
+                                <surname>طبارة</surname>
+                            </persName>
+                            <persName xml:lang="ar-Latn-x-ijmes">
+                                <forename>Aḥmad</forename>
+                                <forename>Ḥasan</forename>
+                                <surname>Ṭabbāra</surname>
+                            </persName>
+                        </editor>
+                  <tei:imprint xml:lang="en">
+                     <publisher xml:lang="en">
+                                <orgName xml:lang="ar">مطبعة الاهلية</orgName>
+                                <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Ahliyya</orgName>
+                            </publisher>
+                     <pubPlace xml:lang="en">
+                                <placeName xml:lang="ar">بيروت</placeName>
+                                <placeName xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
+                                <placeName xml:lang="en">Beirut</placeName>
+                                <placeName xml:lang="fr">Beyrouth</placeName>
+                            </pubPlace>
+                     <tei:date when="1909-04-09" xml:lang="en">9 April 1909, Friday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-04-09"
+                               when-custom="1327-03-18"
+                               calendar="#cal_islamic"
+                               datingMethod="#cal_islamic">18 Rabīʿ al-awwal 1327, Friday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-04-09"
+                               when-custom="1909-03-27"
+                               calendar="#cal_julian"
+                               datingMethod="#cal_julian">27 Ādhār 1909, Friday</tei:date>
+                  </tei:imprint>
+                  <tei:biblScope from="1" to="1" unit="volume"/>
+                  <tei:biblScope from="167" to="167" unit="issue"/>
+                  <tei:biblScope from="1" to="4" unit="page"/>
+               </tei:monogr>
+               <note n="p_step" type="param">daily</note>
+               <note n="p_weekdays-published" type="param">Monday, Tuesday, Wednesday, Thursday, Friday, Saturday</note>
+               <note n="p_days-of-the-month" type="param">01,15</note>
+            </tei:biblStruct>
+            <tei:biblStruct xml:lang="en">
+               <tei:monogr xml:lang="en">
+                  <title level="j" xml:lang="ar">الاتحاد العثماني</title>
+                  <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ittiḥād al-ʿUthmānī</title>
+                  <title level="j" type="sub">جريدة يومية سياسية ادبية اجتماعية عمرانية</title>
+                  <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya adabiyya ijtimāʿiyya ʿumrāniyya</title>
+                  <idno type="OCLC" xml:lang="en">42900564</idno>
+                  <idno type="OCLC" xml:lang="en">506290085</idno>
+                  <idno type="OCLC" xml:lang="en">792755286</idno>
+                  <editor xml:lang="en">
+                            <persName xml:lang="ar">
+                                <forename>احمد</forename>
+                                <forename>حسن</forename>
+                                <surname>طبارة</surname>
+                            </persName>
+                            <persName xml:lang="ar-Latn-x-ijmes">
+                                <forename>Aḥmad</forename>
+                                <forename>Ḥasan</forename>
+                                <surname>Ṭabbāra</surname>
+                            </persName>
+                        </editor>
+                  <tei:imprint xml:lang="en">
+                     <publisher xml:lang="en">
+                                <orgName xml:lang="ar">مطبعة الاهلية</orgName>
+                                <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Ahliyya</orgName>
+                            </publisher>
+                     <pubPlace xml:lang="en">
+                                <placeName xml:lang="ar">بيروت</placeName>
+                                <placeName xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
+                                <placeName xml:lang="en">Beirut</placeName>
+                                <placeName xml:lang="fr">Beyrouth</placeName>
+                            </pubPlace>
+                     <tei:date when="1909-04-10" xml:lang="en">10 April 1909, Saturday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-04-10"
+                               when-custom="1327-03-19"
+                               calendar="#cal_islamic"
+                               datingMethod="#cal_islamic">19 Rabīʿ al-awwal 1327, Saturday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-04-10"
+                               when-custom="1909-03-28"
+                               calendar="#cal_julian"
+                               datingMethod="#cal_julian">28 Ādhār 1909, Saturday</tei:date>
+                  </tei:imprint>
+                  <tei:biblScope from="1" to="1" unit="volume"/>
+                  <tei:biblScope from="168" to="168" unit="issue"/>
+                  <tei:biblScope from="1" to="4" unit="page"/>
+               </tei:monogr>
+               <note n="p_step" type="param">daily</note>
+               <note n="p_weekdays-published" type="param">Monday, Tuesday, Wednesday, Thursday, Friday, Saturday</note>
+               <note n="p_days-of-the-month" type="param">01,15</note>
+            </tei:biblStruct>
+            <tei:biblStruct xml:lang="en">
+               <tei:monogr xml:lang="en">
+                  <title level="j" xml:lang="ar">الاتحاد العثماني</title>
+                  <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ittiḥād al-ʿUthmānī</title>
+                  <title level="j" type="sub">جريدة يومية سياسية ادبية اجتماعية عمرانية</title>
+                  <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya adabiyya ijtimāʿiyya ʿumrāniyya</title>
+                  <idno type="OCLC" xml:lang="en">42900564</idno>
+                  <idno type="OCLC" xml:lang="en">506290085</idno>
+                  <idno type="OCLC" xml:lang="en">792755286</idno>
+                  <editor xml:lang="en">
+                            <persName xml:lang="ar">
+                                <forename>احمد</forename>
+                                <forename>حسن</forename>
+                                <surname>طبارة</surname>
+                            </persName>
+                            <persName xml:lang="ar-Latn-x-ijmes">
+                                <forename>Aḥmad</forename>
+                                <forename>Ḥasan</forename>
+                                <surname>Ṭabbāra</surname>
+                            </persName>
+                        </editor>
+                  <tei:imprint xml:lang="en">
+                     <publisher xml:lang="en">
+                                <orgName xml:lang="ar">مطبعة الاهلية</orgName>
+                                <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Ahliyya</orgName>
+                            </publisher>
+                     <pubPlace xml:lang="en">
+                                <placeName xml:lang="ar">بيروت</placeName>
+                                <placeName xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
+                                <placeName xml:lang="en">Beirut</placeName>
+                                <placeName xml:lang="fr">Beyrouth</placeName>
+                            </pubPlace>
+                     <tei:date when="1909-04-12" xml:lang="en">12 April 1909, Monday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-04-12"
+                               when-custom="1327-03-21"
+                               calendar="#cal_islamic"
+                               datingMethod="#cal_islamic">21 Rabīʿ al-awwal 1327, Monday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-04-12"
+                               when-custom="1909-03-30"
+                               calendar="#cal_julian"
+                               datingMethod="#cal_julian">30 Ādhār 1909, Monday</tei:date>
+                  </tei:imprint>
+                  <tei:biblScope from="1" to="1" unit="volume"/>
+                  <tei:biblScope from="169" to="169" unit="issue"/>
+                  <tei:biblScope from="1" to="4" unit="page"/>
+               </tei:monogr>
+               <note n="p_step" type="param">daily</note>
+               <note n="p_weekdays-published" type="param">Monday, Tuesday, Wednesday, Thursday, Friday, Saturday</note>
+               <note n="p_days-of-the-month" type="param">01,15</note>
+            </tei:biblStruct>
+            <tei:biblStruct xml:lang="en">
+               <tei:monogr xml:lang="en">
+                  <title level="j" xml:lang="ar">الاتحاد العثماني</title>
+                  <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ittiḥād al-ʿUthmānī</title>
+                  <title level="j" type="sub">جريدة يومية سياسية ادبية اجتماعية عمرانية</title>
+                  <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya adabiyya ijtimāʿiyya ʿumrāniyya</title>
+                  <idno type="OCLC" xml:lang="en">42900564</idno>
+                  <idno type="OCLC" xml:lang="en">506290085</idno>
+                  <idno type="OCLC" xml:lang="en">792755286</idno>
+                  <editor xml:lang="en">
+                            <persName xml:lang="ar">
+                                <forename>احمد</forename>
+                                <forename>حسن</forename>
+                                <surname>طبارة</surname>
+                            </persName>
+                            <persName xml:lang="ar-Latn-x-ijmes">
+                                <forename>Aḥmad</forename>
+                                <forename>Ḥasan</forename>
+                                <surname>Ṭabbāra</surname>
+                            </persName>
+                        </editor>
+                  <tei:imprint xml:lang="en">
+                     <publisher xml:lang="en">
+                                <orgName xml:lang="ar">مطبعة الاهلية</orgName>
+                                <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Ahliyya</orgName>
+                            </publisher>
+                     <pubPlace xml:lang="en">
+                                <placeName xml:lang="ar">بيروت</placeName>
+                                <placeName xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
+                                <placeName xml:lang="en">Beirut</placeName>
+                                <placeName xml:lang="fr">Beyrouth</placeName>
+                            </pubPlace>
+                     <tei:date when="1909-04-13" xml:lang="en">13 April 1909, Tuesday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-04-13"
+                               when-custom="1327-03-22"
+                               calendar="#cal_islamic"
+                               datingMethod="#cal_islamic">22 Rabīʿ al-awwal 1327, Tuesday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-04-13"
+                               when-custom="1909-03-31"
+                               calendar="#cal_julian"
+                               datingMethod="#cal_julian">31 Ādhār 1909, Tuesday</tei:date>
+                  </tei:imprint>
+                  <tei:biblScope from="1" to="1" unit="volume"/>
+                  <tei:biblScope from="170" to="170" unit="issue"/>
+                  <tei:biblScope from="1" to="4" unit="page"/>
+               </tei:monogr>
+               <note n="p_step" type="param">daily</note>
+               <note n="p_weekdays-published" type="param">Monday, Tuesday, Wednesday, Thursday, Friday, Saturday</note>
+               <note n="p_days-of-the-month" type="param">01,15</note>
+            </tei:biblStruct>
+            <tei:biblStruct xml:lang="en">
+               <tei:monogr xml:lang="en">
+                  <title level="j" xml:lang="ar">الاتحاد العثماني</title>
+                  <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ittiḥād al-ʿUthmānī</title>
+                  <title level="j" type="sub">جريدة يومية سياسية ادبية اجتماعية عمرانية</title>
+                  <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya adabiyya ijtimāʿiyya ʿumrāniyya</title>
+                  <idno type="OCLC" xml:lang="en">42900564</idno>
+                  <idno type="OCLC" xml:lang="en">506290085</idno>
+                  <idno type="OCLC" xml:lang="en">792755286</idno>
+                  <editor xml:lang="en">
+                            <persName xml:lang="ar">
+                                <forename>احمد</forename>
+                                <forename>حسن</forename>
+                                <surname>طبارة</surname>
+                            </persName>
+                            <persName xml:lang="ar-Latn-x-ijmes">
+                                <forename>Aḥmad</forename>
+                                <forename>Ḥasan</forename>
+                                <surname>Ṭabbāra</surname>
+                            </persName>
+                        </editor>
+                  <tei:imprint xml:lang="en">
+                     <publisher xml:lang="en">
+                                <orgName xml:lang="ar">مطبعة الاهلية</orgName>
+                                <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Ahliyya</orgName>
+                            </publisher>
+                     <pubPlace xml:lang="en">
+                                <placeName xml:lang="ar">بيروت</placeName>
+                                <placeName xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
+                                <placeName xml:lang="en">Beirut</placeName>
+                                <placeName xml:lang="fr">Beyrouth</placeName>
+                            </pubPlace>
+                     <tei:date when="1909-04-14" xml:lang="en">14 April 1909, Wednesday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-04-14"
+                               when-custom="1327-03-23"
+                               calendar="#cal_islamic"
+                               datingMethod="#cal_islamic">23 Rabīʿ al-awwal 1327, Wednesday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-04-14"
+                               when-custom="1909-04-01"
+                               calendar="#cal_julian"
+                               datingMethod="#cal_julian">1 Nīsān 1909, Wednesday</tei:date>
+                  </tei:imprint>
+                  <tei:biblScope from="1" to="1" unit="volume"/>
+                  <tei:biblScope from="171" to="171" unit="issue"/>
+                  <tei:biblScope from="1" to="4" unit="page"/>
+               </tei:monogr>
+               <note n="p_step" type="param">daily</note>
+               <note n="p_weekdays-published" type="param">Monday, Tuesday, Wednesday, Thursday, Friday, Saturday</note>
+               <note n="p_days-of-the-month" type="param">01,15</note>
+            </tei:biblStruct>
+            <tei:biblStruct xml:lang="en">
+               <tei:monogr xml:lang="en">
+                  <title level="j" xml:lang="ar">الاتحاد العثماني</title>
+                  <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ittiḥād al-ʿUthmānī</title>
+                  <title level="j" type="sub">جريدة يومية سياسية ادبية اجتماعية عمرانية</title>
+                  <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya adabiyya ijtimāʿiyya ʿumrāniyya</title>
+                  <idno type="OCLC" xml:lang="en">42900564</idno>
+                  <idno type="OCLC" xml:lang="en">506290085</idno>
+                  <idno type="OCLC" xml:lang="en">792755286</idno>
+                  <editor xml:lang="en">
+                            <persName xml:lang="ar">
+                                <forename>احمد</forename>
+                                <forename>حسن</forename>
+                                <surname>طبارة</surname>
+                            </persName>
+                            <persName xml:lang="ar-Latn-x-ijmes">
+                                <forename>Aḥmad</forename>
+                                <forename>Ḥasan</forename>
+                                <surname>Ṭabbāra</surname>
+                            </persName>
+                        </editor>
+                  <tei:imprint xml:lang="en">
+                     <publisher xml:lang="en">
+                                <orgName xml:lang="ar">مطبعة الاهلية</orgName>
+                                <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Ahliyya</orgName>
+                            </publisher>
+                     <pubPlace xml:lang="en">
+                                <placeName xml:lang="ar">بيروت</placeName>
+                                <placeName xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
+                                <placeName xml:lang="en">Beirut</placeName>
+                                <placeName xml:lang="fr">Beyrouth</placeName>
+                            </pubPlace>
+                     <tei:date when="1909-04-15" xml:lang="en">15 April 1909, Thursday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-04-15"
+                               when-custom="1327-03-24"
+                               calendar="#cal_islamic"
+                               datingMethod="#cal_islamic">24 Rabīʿ al-awwal 1327, Thursday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-04-15"
+                               when-custom="1909-04-02"
+                               calendar="#cal_julian"
+                               datingMethod="#cal_julian">2 Nīsān 1909, Thursday</tei:date>
+                  </tei:imprint>
+                  <tei:biblScope from="1" to="1" unit="volume"/>
+                  <tei:biblScope from="172" to="172" unit="issue"/>
+                  <tei:biblScope from="1" to="4" unit="page"/>
+               </tei:monogr>
+               <note n="p_step" type="param">daily</note>
+               <note n="p_weekdays-published" type="param">Monday, Tuesday, Wednesday, Thursday, Friday, Saturday</note>
+               <note n="p_days-of-the-month" type="param">01,15</note>
+            </tei:biblStruct>
+            <tei:biblStruct xml:lang="en">
+               <tei:monogr xml:lang="en">
+                  <title level="j" xml:lang="ar">الاتحاد العثماني</title>
+                  <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ittiḥād al-ʿUthmānī</title>
+                  <title level="j" type="sub">جريدة يومية سياسية ادبية اجتماعية عمرانية</title>
+                  <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya adabiyya ijtimāʿiyya ʿumrāniyya</title>
+                  <idno type="OCLC" xml:lang="en">42900564</idno>
+                  <idno type="OCLC" xml:lang="en">506290085</idno>
+                  <idno type="OCLC" xml:lang="en">792755286</idno>
+                  <editor xml:lang="en">
+                            <persName xml:lang="ar">
+                                <forename>احمد</forename>
+                                <forename>حسن</forename>
+                                <surname>طبارة</surname>
+                            </persName>
+                            <persName xml:lang="ar-Latn-x-ijmes">
+                                <forename>Aḥmad</forename>
+                                <forename>Ḥasan</forename>
+                                <surname>Ṭabbāra</surname>
+                            </persName>
+                        </editor>
+                  <tei:imprint xml:lang="en">
+                     <publisher xml:lang="en">
+                                <orgName xml:lang="ar">مطبعة الاهلية</orgName>
+                                <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Ahliyya</orgName>
+                            </publisher>
+                     <pubPlace xml:lang="en">
+                                <placeName xml:lang="ar">بيروت</placeName>
+                                <placeName xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
+                                <placeName xml:lang="en">Beirut</placeName>
+                                <placeName xml:lang="fr">Beyrouth</placeName>
+                            </pubPlace>
+                     <tei:date when="1909-04-16" xml:lang="en">16 April 1909, Friday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-04-16"
+                               when-custom="1327-03-25"
+                               calendar="#cal_islamic"
+                               datingMethod="#cal_islamic">25 Rabīʿ al-awwal 1327, Friday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-04-16"
+                               when-custom="1909-04-03"
+                               calendar="#cal_julian"
+                               datingMethod="#cal_julian">3 Nīsān 1909, Friday</tei:date>
+                  </tei:imprint>
+                  <tei:biblScope from="1" to="1" unit="volume"/>
+                  <tei:biblScope from="173" to="173" unit="issue"/>
+                  <tei:biblScope from="1" to="4" unit="page"/>
+               </tei:monogr>
+               <note n="p_step" type="param">daily</note>
+               <note n="p_weekdays-published" type="param">Monday, Tuesday, Wednesday, Thursday, Friday, Saturday</note>
+               <note n="p_days-of-the-month" type="param">01,15</note>
+            </tei:biblStruct>
+            <tei:biblStruct xml:lang="en">
+               <tei:monogr xml:lang="en">
+                  <title level="j" xml:lang="ar">الاتحاد العثماني</title>
+                  <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ittiḥād al-ʿUthmānī</title>
+                  <title level="j" type="sub">جريدة يومية سياسية ادبية اجتماعية عمرانية</title>
+                  <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya adabiyya ijtimāʿiyya ʿumrāniyya</title>
+                  <idno type="OCLC" xml:lang="en">42900564</idno>
+                  <idno type="OCLC" xml:lang="en">506290085</idno>
+                  <idno type="OCLC" xml:lang="en">792755286</idno>
+                  <editor xml:lang="en">
+                            <persName xml:lang="ar">
+                                <forename>احمد</forename>
+                                <forename>حسن</forename>
+                                <surname>طبارة</surname>
+                            </persName>
+                            <persName xml:lang="ar-Latn-x-ijmes">
+                                <forename>Aḥmad</forename>
+                                <forename>Ḥasan</forename>
+                                <surname>Ṭabbāra</surname>
+                            </persName>
+                        </editor>
+                  <tei:imprint xml:lang="en">
+                     <publisher xml:lang="en">
+                                <orgName xml:lang="ar">مطبعة الاهلية</orgName>
+                                <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Ahliyya</orgName>
+                            </publisher>
+                     <pubPlace xml:lang="en">
+                                <placeName xml:lang="ar">بيروت</placeName>
+                                <placeName xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
+                                <placeName xml:lang="en">Beirut</placeName>
+                                <placeName xml:lang="fr">Beyrouth</placeName>
+                            </pubPlace>
+                     <tei:date when="1909-04-17" xml:lang="en">17 April 1909, Saturday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-04-17"
+                               when-custom="1327-03-26"
+                               calendar="#cal_islamic"
+                               datingMethod="#cal_islamic">26 Rabīʿ al-awwal 1327, Saturday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-04-17"
+                               when-custom="1909-04-04"
+                               calendar="#cal_julian"
+                               datingMethod="#cal_julian">4 Nīsān 1909, Saturday</tei:date>
+                  </tei:imprint>
+                  <tei:biblScope from="1" to="1" unit="volume"/>
+                  <tei:biblScope from="174" to="174" unit="issue"/>
+                  <tei:biblScope from="1" to="4" unit="page"/>
+               </tei:monogr>
+               <note n="p_step" type="param">daily</note>
+               <note n="p_weekdays-published" type="param">Monday, Tuesday, Wednesday, Thursday, Friday, Saturday</note>
+               <note n="p_days-of-the-month" type="param">01,15</note>
+            </tei:biblStruct>
+            <tei:biblStruct xml:lang="en">
+               <tei:monogr xml:lang="en">
+                  <title level="j" xml:lang="ar">الاتحاد العثماني</title>
+                  <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ittiḥād al-ʿUthmānī</title>
+                  <title level="j" type="sub">جريدة يومية سياسية ادبية اجتماعية عمرانية</title>
+                  <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya adabiyya ijtimāʿiyya ʿumrāniyya</title>
+                  <idno type="OCLC" xml:lang="en">42900564</idno>
+                  <idno type="OCLC" xml:lang="en">506290085</idno>
+                  <idno type="OCLC" xml:lang="en">792755286</idno>
+                  <editor xml:lang="en">
+                            <persName xml:lang="ar">
+                                <forename>احمد</forename>
+                                <forename>حسن</forename>
+                                <surname>طبارة</surname>
+                            </persName>
+                            <persName xml:lang="ar-Latn-x-ijmes">
+                                <forename>Aḥmad</forename>
+                                <forename>Ḥasan</forename>
+                                <surname>Ṭabbāra</surname>
+                            </persName>
+                        </editor>
+                  <tei:imprint xml:lang="en">
+                     <publisher xml:lang="en">
+                                <orgName xml:lang="ar">مطبعة الاهلية</orgName>
+                                <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Ahliyya</orgName>
+                            </publisher>
+                     <pubPlace xml:lang="en">
+                                <placeName xml:lang="ar">بيروت</placeName>
+                                <placeName xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
+                                <placeName xml:lang="en">Beirut</placeName>
+                                <placeName xml:lang="fr">Beyrouth</placeName>
+                            </pubPlace>
+                     <tei:date when="1909-04-19" xml:lang="en">19 April 1909, Monday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-04-19"
+                               when-custom="1327-03-28"
+                               calendar="#cal_islamic"
+                               datingMethod="#cal_islamic">28 Rabīʿ al-awwal 1327, Monday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-04-19"
+                               when-custom="1909-04-06"
+                               calendar="#cal_julian"
+                               datingMethod="#cal_julian">6 Nīsān 1909, Monday</tei:date>
+                  </tei:imprint>
+                  <tei:biblScope from="1" to="1" unit="volume"/>
+                  <tei:biblScope from="175" to="175" unit="issue"/>
+                  <tei:biblScope from="1" to="4" unit="page"/>
+               </tei:monogr>
+               <note n="p_step" type="param">daily</note>
+               <note n="p_weekdays-published" type="param">Monday, Tuesday, Wednesday, Thursday, Friday, Saturday</note>
+               <note n="p_days-of-the-month" type="param">01,15</note>
+            </tei:biblStruct>
+            <tei:biblStruct xml:lang="en">
+               <tei:monogr xml:lang="en">
+                  <title level="j" xml:lang="ar">الاتحاد العثماني</title>
+                  <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ittiḥād al-ʿUthmānī</title>
+                  <title level="j" type="sub">جريدة يومية سياسية ادبية اجتماعية عمرانية</title>
+                  <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya adabiyya ijtimāʿiyya ʿumrāniyya</title>
+                  <idno type="OCLC" xml:lang="en">42900564</idno>
+                  <idno type="OCLC" xml:lang="en">506290085</idno>
+                  <idno type="OCLC" xml:lang="en">792755286</idno>
+                  <editor xml:lang="en">
+                            <persName xml:lang="ar">
+                                <forename>احمد</forename>
+                                <forename>حسن</forename>
+                                <surname>طبارة</surname>
+                            </persName>
+                            <persName xml:lang="ar-Latn-x-ijmes">
+                                <forename>Aḥmad</forename>
+                                <forename>Ḥasan</forename>
+                                <surname>Ṭabbāra</surname>
+                            </persName>
+                        </editor>
+                  <tei:imprint xml:lang="en">
+                     <publisher xml:lang="en">
+                                <orgName xml:lang="ar">مطبعة الاهلية</orgName>
+                                <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Ahliyya</orgName>
+                            </publisher>
+                     <pubPlace xml:lang="en">
+                                <placeName xml:lang="ar">بيروت</placeName>
+                                <placeName xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
+                                <placeName xml:lang="en">Beirut</placeName>
+                                <placeName xml:lang="fr">Beyrouth</placeName>
+                            </pubPlace>
+                     <tei:date when="1909-04-20" xml:lang="en">20 April 1909, Tuesday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-04-20"
+                               when-custom="1327-03-29"
+                               calendar="#cal_islamic"
+                               datingMethod="#cal_islamic">29 Rabīʿ al-awwal 1327, Tuesday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-04-20"
+                               when-custom="1909-04-07"
+                               calendar="#cal_julian"
+                               datingMethod="#cal_julian">7 Nīsān 1909, Tuesday</tei:date>
+                  </tei:imprint>
+                  <tei:biblScope from="1" to="1" unit="volume"/>
+                  <tei:biblScope from="176" to="176" unit="issue"/>
+                  <tei:biblScope from="1" to="4" unit="page"/>
+               </tei:monogr>
+               <note n="p_step" type="param">daily</note>
+               <note n="p_weekdays-published" type="param">Monday, Tuesday, Wednesday, Thursday, Friday, Saturday</note>
+               <note n="p_days-of-the-month" type="param">01,15</note>
+            </tei:biblStruct>
+            <tei:biblStruct xml:lang="en">
+               <tei:monogr xml:lang="en">
+                  <title level="j" xml:lang="ar">الاتحاد العثماني</title>
+                  <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ittiḥād al-ʿUthmānī</title>
+                  <title level="j" type="sub">جريدة يومية سياسية ادبية اجتماعية عمرانية</title>
+                  <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya adabiyya ijtimāʿiyya ʿumrāniyya</title>
+                  <idno type="OCLC" xml:lang="en">42900564</idno>
+                  <idno type="OCLC" xml:lang="en">506290085</idno>
+                  <idno type="OCLC" xml:lang="en">792755286</idno>
+                  <editor xml:lang="en">
+                            <persName xml:lang="ar">
+                                <forename>احمد</forename>
+                                <forename>حسن</forename>
+                                <surname>طبارة</surname>
+                            </persName>
+                            <persName xml:lang="ar-Latn-x-ijmes">
+                                <forename>Aḥmad</forename>
+                                <forename>Ḥasan</forename>
+                                <surname>Ṭabbāra</surname>
+                            </persName>
+                        </editor>
+                  <tei:imprint xml:lang="en">
+                     <publisher xml:lang="en">
+                                <orgName xml:lang="ar">مطبعة الاهلية</orgName>
+                                <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Ahliyya</orgName>
+                            </publisher>
+                     <pubPlace xml:lang="en">
+                                <placeName xml:lang="ar">بيروت</placeName>
+                                <placeName xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
+                                <placeName xml:lang="en">Beirut</placeName>
+                                <placeName xml:lang="fr">Beyrouth</placeName>
+                            </pubPlace>
+                     <tei:date when="1909-04-21" xml:lang="en">21 April 1909, Wednesday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-04-21"
+                               when-custom="1327-03-30"
+                               calendar="#cal_islamic"
+                               datingMethod="#cal_islamic">30 Rabīʿ al-awwal 1327, Wednesday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-04-21"
+                               when-custom="1909-04-08"
+                               calendar="#cal_julian"
+                               datingMethod="#cal_julian">8 Nīsān 1909, Wednesday</tei:date>
+                  </tei:imprint>
+                  <tei:biblScope from="1" to="1" unit="volume"/>
+                  <tei:biblScope from="177" to="177" unit="issue"/>
+                  <tei:biblScope from="1" to="4" unit="page"/>
+               </tei:monogr>
+               <note n="p_step" type="param">daily</note>
+               <note n="p_weekdays-published" type="param">Monday, Tuesday, Wednesday, Thursday, Friday, Saturday</note>
+               <note n="p_days-of-the-month" type="param">01,15</note>
+            </tei:biblStruct>
+            <tei:biblStruct xml:lang="en">
+               <tei:monogr xml:lang="en">
+                  <title level="j" xml:lang="ar">الاتحاد العثماني</title>
+                  <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ittiḥād al-ʿUthmānī</title>
+                  <title level="j" type="sub">جريدة يومية سياسية ادبية اجتماعية عمرانية</title>
+                  <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya adabiyya ijtimāʿiyya ʿumrāniyya</title>
+                  <idno type="OCLC" xml:lang="en">42900564</idno>
+                  <idno type="OCLC" xml:lang="en">506290085</idno>
+                  <idno type="OCLC" xml:lang="en">792755286</idno>
+                  <editor xml:lang="en">
+                            <persName xml:lang="ar">
+                                <forename>احمد</forename>
+                                <forename>حسن</forename>
+                                <surname>طبارة</surname>
+                            </persName>
+                            <persName xml:lang="ar-Latn-x-ijmes">
+                                <forename>Aḥmad</forename>
+                                <forename>Ḥasan</forename>
+                                <surname>Ṭabbāra</surname>
+                            </persName>
+                        </editor>
+                  <tei:imprint xml:lang="en">
+                     <publisher xml:lang="en">
+                                <orgName xml:lang="ar">مطبعة الاهلية</orgName>
+                                <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Ahliyya</orgName>
+                            </publisher>
+                     <pubPlace xml:lang="en">
+                                <placeName xml:lang="ar">بيروت</placeName>
+                                <placeName xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
+                                <placeName xml:lang="en">Beirut</placeName>
+                                <placeName xml:lang="fr">Beyrouth</placeName>
+                            </pubPlace>
+                     <tei:date when="1909-04-22" xml:lang="en">22 April 1909, Thursday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-04-22"
+                               when-custom="1327-04-01"
+                               calendar="#cal_islamic"
+                               datingMethod="#cal_islamic">1 Rabīʿ al-thānī 1327, Thursday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-04-22"
+                               when-custom="1909-04-09"
+                               calendar="#cal_julian"
+                               datingMethod="#cal_julian">9 Nīsān 1909, Thursday</tei:date>
+                  </tei:imprint>
+                  <tei:biblScope from="1" to="1" unit="volume"/>
+                  <tei:biblScope from="178" to="178" unit="issue"/>
+                  <tei:biblScope from="1" to="4" unit="page"/>
+               </tei:monogr>
+               <note n="p_step" type="param">daily</note>
+               <note n="p_weekdays-published" type="param">Monday, Tuesday, Wednesday, Thursday, Friday, Saturday</note>
+               <note n="p_days-of-the-month" type="param">01,15</note>
+            </tei:biblStruct>
+            <tei:biblStruct xml:lang="en">
+               <tei:monogr xml:lang="en">
+                  <title level="j" xml:lang="ar">الاتحاد العثماني</title>
+                  <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ittiḥād al-ʿUthmānī</title>
+                  <title level="j" type="sub">جريدة يومية سياسية ادبية اجتماعية عمرانية</title>
+                  <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya adabiyya ijtimāʿiyya ʿumrāniyya</title>
+                  <idno type="OCLC" xml:lang="en">42900564</idno>
+                  <idno type="OCLC" xml:lang="en">506290085</idno>
+                  <idno type="OCLC" xml:lang="en">792755286</idno>
+                  <editor xml:lang="en">
+                            <persName xml:lang="ar">
+                                <forename>احمد</forename>
+                                <forename>حسن</forename>
+                                <surname>طبارة</surname>
+                            </persName>
+                            <persName xml:lang="ar-Latn-x-ijmes">
+                                <forename>Aḥmad</forename>
+                                <forename>Ḥasan</forename>
+                                <surname>Ṭabbāra</surname>
+                            </persName>
+                        </editor>
+                  <tei:imprint xml:lang="en">
+                     <publisher xml:lang="en">
+                                <orgName xml:lang="ar">مطبعة الاهلية</orgName>
+                                <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Ahliyya</orgName>
+                            </publisher>
+                     <pubPlace xml:lang="en">
+                                <placeName xml:lang="ar">بيروت</placeName>
+                                <placeName xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
+                                <placeName xml:lang="en">Beirut</placeName>
+                                <placeName xml:lang="fr">Beyrouth</placeName>
+                            </pubPlace>
+                     <tei:date when="1909-04-23" xml:lang="en">23 April 1909, Friday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-04-23"
+                               when-custom="1327-04-02"
+                               calendar="#cal_islamic"
+                               datingMethod="#cal_islamic">2 Rabīʿ al-thānī 1327, Friday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-04-23"
+                               when-custom="1909-04-10"
+                               calendar="#cal_julian"
+                               datingMethod="#cal_julian">10 Nīsān 1909, Friday</tei:date>
+                  </tei:imprint>
+                  <tei:biblScope from="1" to="1" unit="volume"/>
+                  <tei:biblScope from="179" to="179" unit="issue"/>
+                  <tei:biblScope from="1" to="4" unit="page"/>
+               </tei:monogr>
+               <note n="p_step" type="param">daily</note>
+               <note n="p_weekdays-published" type="param">Monday, Tuesday, Wednesday, Thursday, Friday, Saturday</note>
+               <note n="p_days-of-the-month" type="param">01,15</note>
+            </tei:biblStruct>
+            <tei:biblStruct xml:lang="en">
+               <tei:monogr xml:lang="en">
+                  <title level="j" xml:lang="ar">الاتحاد العثماني</title>
+                  <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ittiḥād al-ʿUthmānī</title>
+                  <title level="j" type="sub">جريدة يومية سياسية ادبية اجتماعية عمرانية</title>
+                  <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya adabiyya ijtimāʿiyya ʿumrāniyya</title>
+                  <idno type="OCLC" xml:lang="en">42900564</idno>
+                  <idno type="OCLC" xml:lang="en">506290085</idno>
+                  <idno type="OCLC" xml:lang="en">792755286</idno>
+                  <editor xml:lang="en">
+                            <persName xml:lang="ar">
+                                <forename>احمد</forename>
+                                <forename>حسن</forename>
+                                <surname>طبارة</surname>
+                            </persName>
+                            <persName xml:lang="ar-Latn-x-ijmes">
+                                <forename>Aḥmad</forename>
+                                <forename>Ḥasan</forename>
+                                <surname>Ṭabbāra</surname>
+                            </persName>
+                        </editor>
+                  <tei:imprint xml:lang="en">
+                     <publisher xml:lang="en">
+                                <orgName xml:lang="ar">مطبعة الاهلية</orgName>
+                                <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Ahliyya</orgName>
+                            </publisher>
+                     <pubPlace xml:lang="en">
+                                <placeName xml:lang="ar">بيروت</placeName>
+                                <placeName xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
+                                <placeName xml:lang="en">Beirut</placeName>
+                                <placeName xml:lang="fr">Beyrouth</placeName>
+                            </pubPlace>
+                     <tei:date when="1909-04-24" xml:lang="en">24 April 1909, Saturday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-04-24"
+                               when-custom="1327-04-03"
+                               calendar="#cal_islamic"
+                               datingMethod="#cal_islamic">3 Rabīʿ al-thānī 1327, Saturday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-04-24"
+                               when-custom="1909-04-11"
+                               calendar="#cal_julian"
+                               datingMethod="#cal_julian">11 Nīsān 1909, Saturday</tei:date>
+                  </tei:imprint>
+                  <tei:biblScope from="1" to="1" unit="volume"/>
+                  <tei:biblScope from="180" to="180" unit="issue"/>
+                  <tei:biblScope from="1" to="4" unit="page"/>
+               </tei:monogr>
+               <note n="p_step" type="param">daily</note>
+               <note n="p_weekdays-published" type="param">Monday, Tuesday, Wednesday, Thursday, Friday, Saturday</note>
+               <note n="p_days-of-the-month" type="param">01,15</note>
+            </tei:biblStruct>
+            <tei:biblStruct xml:lang="en">
+               <tei:monogr xml:lang="en">
+                  <title level="j" xml:lang="ar">الاتحاد العثماني</title>
+                  <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ittiḥād al-ʿUthmānī</title>
+                  <title level="j" type="sub">جريدة يومية سياسية ادبية اجتماعية عمرانية</title>
+                  <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya adabiyya ijtimāʿiyya ʿumrāniyya</title>
+                  <idno type="OCLC" xml:lang="en">42900564</idno>
+                  <idno type="OCLC" xml:lang="en">506290085</idno>
+                  <idno type="OCLC" xml:lang="en">792755286</idno>
+                  <editor xml:lang="en">
+                            <persName xml:lang="ar">
+                                <forename>احمد</forename>
+                                <forename>حسن</forename>
+                                <surname>طبارة</surname>
+                            </persName>
+                            <persName xml:lang="ar-Latn-x-ijmes">
+                                <forename>Aḥmad</forename>
+                                <forename>Ḥasan</forename>
+                                <surname>Ṭabbāra</surname>
+                            </persName>
+                        </editor>
+                  <tei:imprint xml:lang="en">
+                     <publisher xml:lang="en">
+                                <orgName xml:lang="ar">مطبعة الاهلية</orgName>
+                                <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Ahliyya</orgName>
+                            </publisher>
+                     <pubPlace xml:lang="en">
+                                <placeName xml:lang="ar">بيروت</placeName>
+                                <placeName xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
+                                <placeName xml:lang="en">Beirut</placeName>
+                                <placeName xml:lang="fr">Beyrouth</placeName>
+                            </pubPlace>
+                     <tei:date when="1909-04-26" xml:lang="en">26 April 1909, Monday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-04-26"
+                               when-custom="1327-04-05"
+                               calendar="#cal_islamic"
+                               datingMethod="#cal_islamic">5 Rabīʿ al-thānī 1327, Monday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-04-26"
+                               when-custom="1909-04-13"
+                               calendar="#cal_julian"
+                               datingMethod="#cal_julian">13 Nīsān 1909, Monday</tei:date>
+                  </tei:imprint>
+                  <tei:biblScope from="1" to="1" unit="volume"/>
+                  <tei:biblScope from="181" to="181" unit="issue"/>
+                  <tei:biblScope from="1" to="4" unit="page"/>
+               </tei:monogr>
+               <note n="p_step" type="param">daily</note>
+               <note n="p_weekdays-published" type="param">Monday, Tuesday, Wednesday, Thursday, Friday, Saturday</note>
+               <note n="p_days-of-the-month" type="param">01,15</note>
+            </tei:biblStruct>
+            <tei:biblStruct xml:lang="en">
+               <tei:monogr xml:lang="en">
+                  <title level="j" xml:lang="ar">الاتحاد العثماني</title>
+                  <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ittiḥād al-ʿUthmānī</title>
+                  <title level="j" type="sub">جريدة يومية سياسية ادبية اجتماعية عمرانية</title>
+                  <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya adabiyya ijtimāʿiyya ʿumrāniyya</title>
+                  <idno type="OCLC" xml:lang="en">42900564</idno>
+                  <idno type="OCLC" xml:lang="en">506290085</idno>
+                  <idno type="OCLC" xml:lang="en">792755286</idno>
+                  <editor xml:lang="en">
+                            <persName xml:lang="ar">
+                                <forename>احمد</forename>
+                                <forename>حسن</forename>
+                                <surname>طبارة</surname>
+                            </persName>
+                            <persName xml:lang="ar-Latn-x-ijmes">
+                                <forename>Aḥmad</forename>
+                                <forename>Ḥasan</forename>
+                                <surname>Ṭabbāra</surname>
+                            </persName>
+                        </editor>
+                  <tei:imprint xml:lang="en">
+                     <publisher xml:lang="en">
+                                <orgName xml:lang="ar">مطبعة الاهلية</orgName>
+                                <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Ahliyya</orgName>
+                            </publisher>
+                     <pubPlace xml:lang="en">
+                                <placeName xml:lang="ar">بيروت</placeName>
+                                <placeName xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
+                                <placeName xml:lang="en">Beirut</placeName>
+                                <placeName xml:lang="fr">Beyrouth</placeName>
+                            </pubPlace>
+                     <tei:date when="1909-04-27" xml:lang="en">27 April 1909, Tuesday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-04-27"
+                               when-custom="1327-04-06"
+                               calendar="#cal_islamic"
+                               datingMethod="#cal_islamic">6 Rabīʿ al-thānī 1327, Tuesday</tei:date>
+                     <tei:date xml:lang="ar-Latn-x-ijmes"
+                               when="1909-04-27"
+                               when-custom="1909-04-14"
+                               calendar="#cal_julian"
+                               datingMethod="#cal_julian">14 Nīsān 1909, Tuesday</tei:date>
+                  </tei:imprint>
+                  <tei:biblScope from="1" to="1" unit="volume"/>
+                  <tei:biblScope from="182" to="182" unit="issue"/>
+                  <tei:biblScope from="1" to="4" unit="page"/>
+               </tei:monogr>
+               <note n="p_step" type="param">daily</note>
+               <note n="p_weekdays-published" type="param">Monday, Tuesday, Wednesday, Thursday, Friday, Saturday</note>
+               <note n="p_days-of-the-month" type="param">01,15</note>
+            </tei:biblStruct>
+            <!-- #183: 29 April -->
           </tei:listBibl>
         </body>
       </text>
