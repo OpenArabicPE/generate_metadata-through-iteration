@@ -22,7 +22,7 @@
                         <idno type="OCLC" xml:lang="en">42900564</idno>
                         <idno type="OCLC" xml:lang="en">506290085</idno>
                         <idno type="OCLC" xml:lang="en">792755286</idno>
-                        <editor ref="viaf:79119650" xml:lang="en">
+                        <editor xml:lang="en">
                             <persName xml:lang="ar">
                                 <forename>احمد</forename>
                                 <forename>حسن</forename>
@@ -47,12 +47,12 @@
                             </pubPlace>
                             <!-- use @from and @to to designate the timespan you want to generate bibliographic metadata for -->
                             <!-- to designate different calendars in the masthead, add <date @type='official'>nodes pointing to them -->
-                            <date datingMethod="#cal_gregorian" from="1908-09-22" to="1910-09-13" type="official"/>
+                            <date datingMethod="#cal_gregorian" from="1909-10-19" to="1910-09-14" type="official"/>
                              <date datingMethod="#cal_islamic" type="official"/>
                              <date datingMethod="#cal_julian" type="official"/>
                         </imprint>
-                        <biblScope from="1" to="1" unit="volume"/>
-                        <biblScope from="1" to="200" unit="issue"/>
+                        <biblScope from="2" to="2" unit="volume"/>
+                        <biblScope from="329" to="200" unit="issue"/>
                         <biblScope from="1" to="4" unit="page"/>
                     </monogr>
                     <!-- this can be used to provide a base URL for digital surrogates, the file naming scheme must be provided through additional means -->
