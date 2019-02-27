@@ -243,66 +243,19 @@
                     <!-- add calendars depending on the input -->
                     <!-- Gregorian -->
                     <xsl:if test="$p_input//tei:monogr/tei:imprint/tei:date[@datingMethod='#cal_gregorian']">
-                        <!--<tei:date type="{$p_input//tei:monogr/tei:imprint/tei:date[@datingMethod='#cal_gregorian']/@type}" when="{$p_date}" datingMethod="#cal_gregorian" calendar="#cal_gregorian" xml:lang="ar-Latn-x-ijmes">
-                            <xsl:value-of select="format-date($p_date,'[D1]')"/>
-                            <xsl:text> </xsl:text>
-                            <xsl:call-template name="funcDateMonthNameNumber">
-                                <xsl:with-param name="pDate" select="$p_date"/>
-                                <xsl:with-param name="pLang" select="'GEnFull'"/>
-                                <xsl:with-param name="pMode" select="'name'"/>
-                            </xsl:call-template>
-                            <xsl:text> </xsl:text>
-                            <xsl:value-of select="format-date($p_date,'[Y1]')"/>
-                        </tei:date>-->
-                        <xsl:copy-of select="oape:date-format-iso-string-to-tei($p_date, '#cal_gregorian',true(), true())"/>
+                        <xsl:copy-of select="oape:date-format-iso-string-to-tei($p_date, '#cal_gregorian',true(), true(), 'en')"/>
                     </xsl:if>
                     <!-- Islamic Hijri -->
                     <xsl:if test="$p_input//tei:monogr/tei:imprint/tei:date[@datingMethod='#cal_islamic']">
-                        <xsl:variable name="v_date-hijri" select="oape:date-convert-gregorian-to-islamic($p_date)"/>
-                        <!--<tei:date type="computed" when="{$p_date}" datingMethod="#cal_islamic" calendar="#cal_islamic" when-custom="{$v_date-hijri}" xml:lang="ar-Latn-x-ijmes">
-                            <xsl:value-of select="format-number(number(tokenize($v_date-hijri,'-')[3]),'0')"/>
-                            <xsl:text> </xsl:text>
-                            <xsl:call-template name="funcDateMonthNameNumber">
-                                <xsl:with-param name="pDate" select="$v_date-hijri"/>
-                                <xsl:with-param name="pLang" select="'HIjmesFull'"/>
-                                <xsl:with-param name="pMode" select="'name'"/>
-                            </xsl:call-template>
-                            <xsl:text> </xsl:text>
-                            <xsl:value-of select="format-number(number(tokenize($v_date-hijri,'-')[1]),'0')"/>
-                        </tei:date>-->
-                        <xsl:copy-of select="oape:date-format-iso-string-to-tei($v_date-hijri, '#cal_islamic',true(), true())"/>
+                        <xsl:copy-of select="oape:date-format-iso-string-to-tei( oape:date-convert-calendars($p_date,'#cal_gregorian','#cal_islamic'), '#cal_islamic',true(), true(),'ar-Latn-x-ijmes')"/>
                     </xsl:if>
                     <!-- Julian or Rūmī -->
                     <xsl:if test="$p_input//tei:monogr/tei:imprint/tei:date[@datingMethod='#cal_julian']">
-                        <xsl:variable name="v_date-julian" select="oape:date-convert-gregorian-to-julian($p_date)"/>
-                        <!--<tei:date type="{$p_input//tei:monogr/tei:imprint/tei:date[@datingMethod='#cal_julian']/@type}" when="{$p_date}" datingMethod="#cal_julian" calendar="#cal_julian" when-custom="{$v_date-julian}" xml:lang="ar-Latn-x-ijmes">
-                            <xsl:value-of select="format-number(number(tokenize($v_date-julian,'-')[3]),'0')"/>
-                            <xsl:text> </xsl:text>
-                            <xsl:call-template name="funcDateMonthNameNumber">
-                                <xsl:with-param name="pDate" select="$v_date-julian"/>
-                                <xsl:with-param name="pLang" select="'JIjmesFull'"/>
-                                <xsl:with-param name="pMode" select="'name'"/>
-                            </xsl:call-template>
-                            <xsl:text> </xsl:text>
-                            <xsl:value-of select="format-number(number(tokenize($v_date-julian,'-')[1]),'0')"/>
-                        </tei:date>-->
-                        <xsl:copy-of select="oape:date-format-iso-string-to-tei($p_date, '#cal_julian',true(), true())"/>
+                        <xsl:copy-of select="oape:date-format-iso-string-to-tei(oape:date-convert-calendars($p_date,'#cal_gregorian','#cal_julian'), '#cal_julian',true(), true(), 'ar-Latn-x-ijmes')"/>
                     </xsl:if>
                     <!-- Ottoman fiscal, mālī calendar -->
                     <xsl:if test="$p_input//tei:monogr/tei:imprint/tei:date[@datingMethod='#cal_ottomanfiscal']">
-                        <xsl:variable name="v_date-mali" select="oape:date-convert-gregorian-to-ottoman-fiscal($p_date)"/>
-                        <!--<tei:date type="{$p_input//tei:monogr/tei:imprint/tei:date[@datingMethod='#cal_ottomanfiscal']/@type}" when="{$p_date}" datingMethod="#cal_ottomanfiscal" calendar="#cal_ottomanfiscal" when-custom="{$v_date-mali}" xml:lang="ar-Latn-x-ijmes">
-                            <xsl:value-of select="format-number(number(tokenize($v_date-mali,'-')[3]),'0')"/>
-                            <xsl:text> </xsl:text>
-                            <xsl:call-template name="funcDateMonthNameNumber">
-                                <xsl:with-param name="pDate" select="$v_date-mali"/>
-                                <xsl:with-param name="pLang" select="'MIjmesFull'"/>
-                                <xsl:with-param name="pMode" select="'name'"/>
-                            </xsl:call-template>
-                            <xsl:text> </xsl:text>
-                            <xsl:value-of select="format-number(number(tokenize($v_date-mali,'-')[1]),'0')"/>
-                        </tei:date>-->
-                        <xsl:copy-of select="oape:date-format-iso-string-to-tei($p_date, '#cal_ottomanfiscal',true(), true())"/>
+                        <xsl:copy-of select="oape:date-format-iso-string-to-tei(oape:date-convert-calendars($p_date,'#cal_gregorian','#cal_ottomanfiscal'), '#cal_ottomanfiscal',true(), true(),'ar-Latn-x-ijmes')"/>
                     </xsl:if>
                 </tei:imprint>
                 <tei:biblScope from="{$p_volume}" to="{$p_volume}" unit="volume"/>
