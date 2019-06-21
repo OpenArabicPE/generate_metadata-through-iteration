@@ -3,14 +3,14 @@
     xmlns:tei="http://www.tei-c.org/ns/1.0"
     xmlns="http://www.tei-c.org/ns/1.0"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    exclude-result-prefixes="xs" version="2.0">
+    exclude-result-prefixes="xs" version="3.0">
     <xsl:output method="xml" encoding="UTF-8" indent="yes" omit-xml-declaration="no"/>
     
     <!-- param to toggle certain links -->
     <xsl:param name="p_file-local" select="true()"/>
     
     <xsl:variable name="v_source-url" select="base-uri()"/>
-    <xsl:variable name="v_base-url" select="'https://github.com/openarabicpe/journal_al-jinan/blob/master/tei/'"/>
+    <xsl:variable name="v_base-url" select="'https://github.com/openarabicpe/newspaper_al-asr-al-jadid/blob/master/tei/'"/>
     <xsl:variable name="v_id-facs" select="'facs_'"/>
     
     <xsl:template match="/">
@@ -21,8 +21,11 @@
         <xsl:variable name="v_oclc" select="tei:monogr/tei:idno[@type='OCLC'][1]"/>
         <xsl:variable name="v_issue" select="number(tei:monogr/tei:biblScope[@unit='issue']/@from)"/>
         <xsl:variable name="v_volume" select="number(tei:monogr/tei:biblScope[@unit='volume']/@from)"/>
+        <xsl:variable name="v_date" select="tei:monogr/tei:imprint/tei:date[@when][1]/@when"/>
         <xsl:variable name="v_id" select="if(@xml:id) then(@xml:id) else(generate-id())"/>
-        <xsl:variable name="v_file-name" select="concat('oclc_',$v_oclc,'-v_',$v_volume,'-i_',$v_issue)"/>
+        <!-- full identifier of this publication, usually oclc_\d+ -->
+        <xsl:variable name="v_publication-id" select="concat('oclc_',$v_oclc)"/>
+        <xsl:variable name="v_file-name" select="concat($v_publication-id,'-i_',$v_issue)"/>
         <xsl:result-document href="../_output/xml/{$v_file-name}.TEIP5.xml">
             <!-- link schema and TEI boilerplate -->
             <xsl:text disable-output-escaping="yes">&lt;?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?></xsl:text>
@@ -32,9 +35,9 @@
             <tei:TEI xml:id="{$v_file-name}">
                 <!-- add @next and @prev: data type is data.pointer, which means a full URI. In our case this should link to a XML file -->
                 <xsl:if test="$v_issue &gt; 1">
-                    <xsl:attribute name="prev" select="concat('oclc_',$v_oclc,'-v_',$v_volume,'-i_',$v_issue - 1,'.TEIP5.xml')"/>
+                    <xsl:attribute name="prev" select="concat($v_publication-id,'-i_',$v_issue - 1,'.TEIP5.xml')"/>
                 </xsl:if>
-                <xsl:attribute name="next" select="concat('oclc_',$v_oclc,'-v_',$v_volume,'-i_',$v_issue + 1,'.TEIP5.xml')"/>
+                <xsl:attribute name="next" select="concat($v_publication-id,'-i_',$v_issue + 1,'.TEIP5.xml')"/>
                 <!-- generate teiHeader -->
                 <xsl:call-template name="t_generate-teiHeader">
                     <xsl:with-param name="p_input" select="."/>
@@ -44,9 +47,7 @@
                     <xsl:call-template name="t_generate-facsimile">
                         <xsl:with-param name="p_page-start" select="number(tei:monogr/tei:biblScope[@unit='page']/@from)"/>
                         <xsl:with-param name="p_page-stop" select="number(tei:monogr/tei:biblScope[@unit='page']/@to)"/>
-                        <xsl:with-param name="p_path-file">
-                            <xsl:value-of select="concat('../images/issues/oclc_',$v_oclc,'-i_',$v_issue,'-p_')"/>
-                        </xsl:with-param>
+                        <xsl:with-param name="p_path-file" select="concat('../images/',$v_publication-id,'-i_',$v_issue,    '-p_')"/>
                     </xsl:call-template>
                 </tei:facsimile>
                 <tei:text xml:lang="ar">
@@ -54,6 +55,7 @@
                         <xsl:with-param name="p_page-start" select="number(tei:monogr/tei:biblScope[@unit='page']/@from)"/>
                         <xsl:with-param name="p_page-stop" select="number(tei:monogr/tei:biblScope[@unit='page']/@from)"/>
                     </xsl:call-template>
+                    <front/>
                     <tei:body>
                         <tei:div type="item">
                         <xsl:call-template name="t_generate-pb">
@@ -136,6 +138,15 @@
                         <xsl:attribute name="xml:id" select="concat($v_id-facs,$p_page-start,'-g_2')"/>
                         <xsl:attribute name="url" select="$v_image-url"/>
                         <xsl:attribute name="mimeType" select="'image/jpeg'"/>
+                    </xsl:element>
+                </xsl:if>
+                <!-- tiffs -->
+                <xsl:variable name="v_image-url" select="concat($p_path-file,format-number($p_page-start,'0'),'.tif')"/>
+                <xsl:if test="fs:exists(fs:new(resolve-uri($v_image-url, base-uri(.))))" xmlns:fs="java.io.File">
+                    <xsl:element name="tei:graphic">
+                        <xsl:attribute name="xml:id" select="concat($v_id-facs,$p_page-start,'-g_3')"/>
+                        <xsl:attribute name="url" select="$v_image-url"/>
+                        <xsl:attribute name="mimeType" select="'image/tiff'"/>
                     </xsl:element>
                 </xsl:if>
             </xsl:if>
