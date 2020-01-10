@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+  schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Title</title>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc>
+                <biblStruct xml:lang="en">
+                    <monogr xml:lang="en">
+                        <title level="j" xml:lang="ar">العصر الجديد</title>
+                        <title level="j" xml:lang="ar-Latn-x-ijmes">al-ʿAṣr al-Jadīd</title>
+                        <title level="j" type="sub" xml:lang="ar">جريدة سياسية تجارية علمية صناعية  ادبية زراعية</title>
+                        <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda siyāsiyya tujāriyya ʿilmiyya ṣināʿiyya adabiyya zirāʿiyya</title>
+                        <!-- use as many identifiers as appropriate -->
+                        <idno type="OCLC" xml:lang="en"></idno>
+                        <editor xml:lang="en">
+                            <persName xml:lang="ar">
+                                <forename>ناصيف</forename>
+                                <surname>ابو زيد</surname>
+                            </persName>
+                            <persName xml:lang="ar-Latn-x-ijmes">
+                                <forename>Nāṣīf</forename>
+                                <surname>Abū Zayd</surname>
+                            </persName>
+                        </editor>
+                        <imprint xml:lang="en">
+                            <publisher xml:lang="en">
+                                <orgName xml:lang="ar">مطبعة العلمية</orgName>
+                                <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-ʿilmiyya</orgName>
+                            </publisher>
+                            <pubPlace xml:lang="en">
+                                <placeName xml:lang="ar">الشام</placeName>
+                                <placeName xml:lang="ar-Latn-x-ijmes">al-Shām</placeName>
+                                <placeName xml:lang="en">Damascus</placeName>
+                                <placeName xml:lang="fr">Damas</placeName>
+                            </pubPlace>
+                            <!-- use @from and @to to designate the timespan you want to generate bibliographic metadata for -->
+                            <!-- to designate different calendars in the masthead, add <date @type='official'>nodes pointing to them -->
+                            <date datingMethod="#cal_gregorian" from="1910-05-03" to="1910-06-01" type="official"/>
+                            <date datingMethod="#cal_islamic" type="official"/>
+                            <date datingMethod="#cal_ottomanfiscal" type="official"/>
+                        </imprint>
+                        <biblScope from="2" to="2" unit="volume"/>
+                        <biblScope from="224" to="200" unit="issue"/>
+                        <biblScope from="1" to="4" unit="page"/>
+                    </monogr>
+                    <!-- this can be used to provide a base URL for digital surrogates, the file naming scheme must be provided through additional means -->
+                    <!--          <ref target="http://www.palestine.mei.columbia.edu/alquds-issues/2017/2/23/" type="url"/>-->
+                    <!-- additional parameters  -->
+                    <!--  $p_step sets incremental steps for the input to be iterated upon. Values are:
+        - daily: this includes any publication cycle that is at least weekly
+        - fortnightly: assumes continued pagination
+        - monthly: -->
+                    <note n="p_step" type="param">daily</note>
+                    <!-- $p_weekdays-published contains a comma-separated list of weekdays in English -->
+                    <note n="p_weekdays-published" type="param">Monday, Tuesday, Wednesday, Thursday, Friday, Saturday</note>
+                    <note n="p_days-of-the-month" type="param">01,15</note>
+                    <!-- additional parameters  -->
+                 <note type="tagList">
+                    <list>
+                        <item>frequency_daily</item>
+<!--                        <item>frequency_fortnightly</item>-->
+<!--                        <item>frequency_monthly</item>-->
+                        <item>days_monday</item>
+                        <item>days_tuesday</item>
+                        <item>days_wednesday</item>
+                        <item>days_thursday</item>
+                        <item>days_friday</item>
+                        <item>days_saturday</item>
+<!--                        <item>days_sunday</item>-->
+                    </list>
+                </note>
+                    <!-- other notes -->
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <p>Some text here.</p>
+        </body>
+    </text>
+</TEI>
