@@ -11,6 +11,10 @@ The main stylesheet in this repository (`xslt/generate_tei-from-biblstruct.xsl`)
 
 1. Input:
 	- Input is a TEI file with at least one `<biblStruct>` element upon which the iteration is run.
+    - The input file can either be written manually or
+        1. Enter reference data to a Zotero library and make use of the below tagging scheme
+        2. Export data from Zotero as MODS
+        3. Automatically convert MODS to `<tei:biblStruct>` using [`convert_mods-to-tei_functions.xsl`](https://github.com/OpenArabicPE/convert_tei-to-bibliographic-data/blob/master/xslt/convert_mods-to-tei_functions.xsl) in the repository [https://github.com/OpenArabicPE/convert_tei-to-bibliographic-data](https://github.com/OpenArabicPE/convert_tei-to-bibliographic-data)
 2. Iteration:
 	- Based on the input file
 	- A small set of parameters (that could potentially be integrated into the TEI input):
@@ -40,5 +44,5 @@ The main stylesheet in this repository (`xslt/generate_tei-from-biblstruct.xsl`)
     ```
 
 3. Output:
-    - add a `<listBibl>` with `<biblStruct>` children based on the input file
+    - a `<listBibl>` with `<biblStruct>` children based on the input file
     - save everything as TEI xml
