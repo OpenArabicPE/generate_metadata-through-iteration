@@ -62,6 +62,21 @@
                     <!-- $p_weekdays-published contains a comma-separated list of weekdays in English -->
                     <note n="p_weekdays-published" type="param">Monday, Tuesday, Wednesday, Thursday, Friday, Saturday</note>
                     <note n="p_days-of-the-month" type="param">01,15</note>
+                    <!-- additional parameters  -->
+                 <note type="tagList">
+                    <list>
+                        <item>frequency_daily</item>
+<!--                        <item>frequency_fortnightly</item>-->
+<!--                        <item>frequency_monthly</item>-->
+                        <item>days_monday</item>
+                        <item>days_tuesday</item>
+                        <item>days_wednesday</item>
+                        <item>days_thursday</item>
+                        <item>days_friday</item>
+                        <item>days_saturday</item>
+<!--                        <item>days_sunday</item>-->
+                    </list>
+                </note>
                     <!-- other notes -->
                 </biblStruct>
             </sourceDesc>

@@ -61,7 +61,7 @@
                          </pubPlace>
                          <!-- use @from and @to to designate the timespan you want to generate bibliographic metadata for -->
                          <!-- to designate different calendars in the masthead, add <date @type='official'> nodes pointing to them -->
-                         <date type="official" from="1908-09-18" to="1908-10-18" xml:lang="ar-Latn-x-ijmes" when-custom="1329-01-01" datingMethod="#cal_islamic" calendar="#cal_islamic" when="1911-01-02">1 Muḥ 1329</date>
+                         <date type="official" from="1908-09-18" to="1908-10-18" datingMethod="#cal_islamic"/>
                          <date type="official" datingMethod="#cal_julian"/>
                          <date type="official" datingMethod="#cal_ottomanfiscal"/>
                      </imprint>
@@ -72,13 +72,25 @@
                  <!-- this can be used to provide a base URL for digital surrogates, the file naming scheme must be provided through additional means -->
                  <ref type="url"></ref>
                  <!-- additional parameters  -->
-                 <!-- $p_weekdays-published contains a comma-separated list of weekdays in English -->
-                 <note type="param" n="p_weekdays-published">Tuesday, Friday</note>
-                 <!--  $p_step sets incremental steps for the input to be iterated upon. Values are:
-        - daily: this includes any publication cycle that is at least weekly
-        - fortnightly:
-        - monthly: -->
-                 <note type="param" n="p_step">daily</note>
+                 <note type="tagList">
+                    <list>
+                        <!-- select one of the frequencies -->
+<!--                        <item>frequency_daily</item>-->
+<!--                        <item>frequency_fortnightly</item>-->
+                        <item>frequency_monthly</item>
+                        <!-- frequency_daily also requires a selection of weekdays -->
+                        <item>days_monday</item>
+                        <item>days_tuesday</item>
+                        <item>days_wednesday</item>
+                        <item>days_thursday</item>
+                        <item>days_friday</item>
+                        <item>days_saturday</item>
+                        <item>days_sunday</item>
+                        <!-- frequency_monthly can take additional input, for instance each 1st and 15th -->
+                        <item>days_01</item>
+                        <item>days_15</item>
+                    </list>
+                </note>
              </biblStruct>
          </sourceDesc>
       </fileDesc>

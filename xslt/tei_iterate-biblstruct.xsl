@@ -54,17 +54,65 @@
         <xsl:param name="p_date-terminus" select="$p_input//tei:monogr/tei:imprint/tei:date[@type='official']/@to"/>
         <xsl:param name="p_issue" select="$p_input//tei:monogr/tei:biblScope[@unit='issue']/@from"/>
         <xsl:param name="p_volume" select="$p_input//tei:monogr/tei:biblScope[@unit='volume']/@from"/>
-        <xsl:param name="p_step" select="$p_input/descendant-or-self::tei:biblStruct/tei:note[@type='param'][@n='p_step']"/>
-        <xsl:param name="p_weekdays-published" select="$p_input/descendant-or-self::tei:biblStruct/tei:note[@type='param'][@n='p_weekdays-published']"/>
-        <xsl:param name="p_days-of-the-month" select="$p_input/descendant-or-self::tei:biblStruct/tei:note[@type='param'][@n='p_days-of-the-month']"/>
+<!--        <xsl:param name="p_step" select="$p_input/descendant-or-self::tei:biblStruct/tei:note[@type='param'][@n='p_step']"/>-->
+<!--        <xsl:param name="p_weekdays-published" select="$p_input/descendant-or-self::tei:biblStruct/tei:note[@type='param'][@n='p_weekdays-published']"/>-->
+<!--        <xsl:param name="p_days-of-the-month" select="$p_input/descendant-or-self::tei:biblStruct/tei:note[@type='param'][@n='p_days-of-the-month']"/>-->
         <xsl:param name="p_page-from" select="$p_input//tei:monogr/tei:biblScope[@unit='page']/@from"/>
         <xsl:param name="p_page-to" select="$p_input//tei:monogr/tei:biblScope[@unit='page']/@to"/>
         <xsl:param name="p_pages" select="$p_page-to - $p_page-from +1"/>
+        <xsl:param name="p_frequency">
+            <xsl:choose>
+                <xsl:when test="$p_input/tei:note[@type = 'tagList']/tei:list/tei:item[matches(.,'frequency_.+')]">
+                    <xsl:value-of select="replace($p_input/tei:note[@type = 'tagList']/tei:list/tei:item[matches(.,'frequency_.+')],'frequency_','')"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:message>
+                        <xsl:text>Parameter $p_frequency is missing</xsl:text>
+                    </xsl:message>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:param>
+        <!-- generates a comma-separated list of weekdays in English -->
+        <xsl:param name="p_weekdays-published">
+            <xsl:choose>
+                <xsl:when test="$p_input/tei:note[@type = 'tagList']/tei:list/tei:item[matches(.,'days_\w+')]">
+                    <xsl:for-each select="$p_input/tei:note[@type = 'tagList']/tei:list/tei:item[matches(.,'days_\w+')]">
+                        <xsl:value-of select="replace(.,'days_','')"/>
+                        <xsl:text>,</xsl:text>
+                    </xsl:for-each>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:if test="$p_frequency = 'daily'">
+                        <xsl:message>
+                        <xsl:text>Parameter $p_weekdays-published is missing</xsl:text>
+                    </xsl:message>
+                    </xsl:if>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:param>
+        <!-- generates a comma-separated list of days of the month -->
+        <xsl:param name="p_days-of-the-month">
+            <xsl:choose>
+                <xsl:when test="$p_input/tei:note[@type = 'tagList']/tei:list/tei:item[matches(.,'days_\d+')]">
+                    <xsl:for-each select="$p_input/tei:note[@type = 'tagList']/tei:list/tei:item[matches(.,'days_\d+')]">
+                        <xsl:value-of select="replace(.,'days_','')"/>
+                        <xsl:text>,</xsl:text>
+                    </xsl:for-each>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:if test="$p_frequency = 'daily'">
+                        <xsl:message>
+                        <xsl:text>Parameter $p_days-of-the-month is missing</xsl:text>
+                    </xsl:message>
+                    </xsl:if>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:param>
         <xsl:variable name="vDateJD" select="oape:date-convert-gregorian-to-julian-day($p_date-onset)"/>
         <xsl:choose>
-            <xsl:when test="$p_step='daily'">
+            <xsl:when test="$p_frequency = 'daily'">
                 <xsl:variable name="v_date-incremented" select="oape:date-convert-julian-day-to-gregorian($vDateJD + 1)"/>
-                <xsl:variable name="v_date-weekday" select="format-date(xs:date($p_date-onset),'[FNn]')"/>
+                <xsl:variable name="v_date-weekday" select="lower-case(format-date(xs:date($p_date-onset),'[FNn]'))"/>
                 <xsl:variable name="v_date-incremented-weekday" select="format-date(xs:date($v_date-incremented),'[FNn]')"/>
                 <!-- prevent output for weekdays not published -->
                 <xsl:if test="contains($p_weekdays-published,$v_date-weekday)">
@@ -109,7 +157,7 @@
                                 </xsl:otherwise>
                             </xsl:choose>-->
                         </xsl:with-param>
-                        <xsl:with-param name="p_step" select="$p_step"/>
+                        <xsl:with-param name="p_frequency" select="$p_frequency"/>
                         <xsl:with-param name="p_weekdays-published" select="$p_weekdays-published"/>
                         <xsl:with-param name="p_page-from" select="$p_page-from"/>
                         <xsl:with-param name="p_page-to" select="$p_page-to"/>
@@ -117,7 +165,7 @@
                 </xsl:if>
             </xsl:when>
             <!-- fortnightly has been implemented! -->
-            <xsl:when test="$p_step = 'fortnightly'">
+            <xsl:when test="$p_frequency = 'fortnightly'">
                 <xsl:variable name="v_date-incremented" select="oape:date-convert-julian-day-to-gregorian($vDateJD + 14)"/>
                  <xsl:if test="$p_verbose = true()">
                         <xsl:message>
@@ -139,7 +187,7 @@
                         <xsl:with-param name="p_date-terminus" select="$p_date-terminus"/>
                         <xsl:with-param name="p_issue" select="$p_issue + 1"/>
                         <xsl:with-param name="p_volume" select="$p_volume"/>
-                        <xsl:with-param name="p_step" select="$p_step"/>
+                        <xsl:with-param name="p_frequency" select="$p_frequency"/>
                         <xsl:with-param name="p_weekdays-published" select="$p_weekdays-published"/>
                         <!-- increment pagination -->
                         <xsl:with-param name="p_page-from" select="$p_page-to + 1"/>
@@ -148,7 +196,7 @@
                 </xsl:if>
             </xsl:when>
             <!-- monthly should be implemented: incremented by date of the month, such as every fifth of the month or every 5th, 11th and 26th of a month -->
-            <xsl:when test="$p_step = 'monthly'">
+            <xsl:when test="$p_frequency = 'monthly'">
                 <xsl:variable name="v_date-incremented" select="oape:date-convert-julian-day-to-gregorian($vDateJD + 1)"/>
                 <xsl:variable name="v_day-of-the-month-input" select="format-date(xs:date($p_date-onset),'[D01]')"/>
                 <xsl:variable name="v_day-of-the-month-incremented" select="format-date(xs:date($v_date-incremented),'[D01]')"/>
@@ -185,7 +233,7 @@
                             </xsl:choose>
                         </xsl:with-param>
                         <xsl:with-param name="p_volume" select="$p_volume"/>
-                        <xsl:with-param name="p_step" select="$p_step"/>
+                        <xsl:with-param name="p_frequency" select="$p_frequency"/>
                         <xsl:with-param name="p_weekdays-published" select="$p_weekdays-published"/>
                         <!-- increment pagination -->
                         <xsl:with-param name="p_page-from">
@@ -214,7 +262,7 @@
             </xsl:when>
             <xsl:otherwise>
                 <xsl:message terminate="yes">
-                    <xsl:text>This value of $p_step has not been implemented</xsl:text>
+                    <xsl:text>The value </xsl:text><xsl:value-of select="$p_frequency"/><xsl:text> of $p_step has not been implemented</xsl:text>
                 </xsl:message>
             </xsl:otherwise>
         </xsl:choose>
