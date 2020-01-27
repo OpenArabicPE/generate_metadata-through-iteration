@@ -11,9 +11,9 @@
    
    <!-- this stylesheets runs on a tei:biblStruct as input -->
     
-    <!-- provides calendar conversion -->
-
-    <xsl:include href="https://tillgrallert.github.io/xslt-calendar-conversion/functions/date-functions.xsl"/>
+    <!-- provides calendar conversion: local is better -->
+    <xsl:include href="../../../xslt-calendar-conversion/functions/date-functions.xsl"/>
+<!--    <xsl:include href="https://tillgrallert.github.io/xslt-calendar-conversion/functions/date-functions.xsl"/>-->
 <!--    <xsl:include href="al-quds_find-links-to-facsimile.xsl"/>-->
     
     <xsl:variable name="v_date-today" select="current-date()"/>
@@ -61,13 +61,30 @@
         <xsl:param name="p_page-to" select="$p_input//tei:monogr/tei:biblScope[@unit='page']/@to"/>
         <xsl:param name="p_pages" select="$p_page-to - $p_page-from +1"/>
         <xsl:param name="p_frequency">
+            <!-- read the frequency from the  input tagList -->
+            <xsl:variable name="v_interim">
             <xsl:choose>
                 <xsl:when test="$p_input/tei:note[@type = 'tagList']/tei:list/tei:item[matches(.,'frequency_.+')]">
                     <xsl:value-of select="replace($p_input/tei:note[@type = 'tagList']/tei:list/tei:item[matches(.,'frequency_.+')],'frequency_','')"/>
                 </xsl:when>
                 <xsl:otherwise>
-                    <xsl:message>
+                    <xsl:message terminate="yes">
                         <xsl:text>Parameter $p_frequency is missing</xsl:text>
+                    </xsl:message>
+                </xsl:otherwise>
+            </xsl:choose>
+            </xsl:variable>
+            <!-- normalise weekly to daily for internal usage -->
+            <xsl:variable name="v_interim" select="replace($v_interim, 'weekly', 'daily')"/>
+            <!-- test if the input is expected -->
+            <xsl:variable name="v_expected-values" select="'daily,weekly,fortnightly,monthly'"/>
+            <xsl:choose>
+                <xsl:when test="contains($v_expected-values,$v_interim)">
+                    <xsl:value-of select="$v_interim"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:message terminate="yes">
+                        <xsl:text>Parameter $p_frequency does not contain the allowed values of </xsl:text><xsl:value-of select="$v_expected-values"/>
                     </xsl:message>
                 </xsl:otherwise>
             </xsl:choose>
@@ -83,7 +100,7 @@
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:if test="$p_frequency = 'daily'">
-                        <xsl:message>
+                        <xsl:message terminate="yes">
                         <xsl:text>Parameter $p_weekdays-published is missing</xsl:text>
                     </xsl:message>
                     </xsl:if>
@@ -113,7 +130,7 @@
             <xsl:when test="$p_frequency = 'daily'">
                 <xsl:variable name="v_date-incremented" select="oape:date-convert-julian-day-to-gregorian($vDateJD + 1)"/>
                 <xsl:variable name="v_date-weekday" select="lower-case(format-date(xs:date($p_date-onset),'[FNn]'))"/>
-                <xsl:variable name="v_date-incremented-weekday" select="format-date(xs:date($v_date-incremented),'[FNn]')"/>
+                <xsl:variable name="v_date-incremented-weekday" select="lower-case(format-date(xs:date($v_date-incremented),'[FNn]'))"/>
                 <!-- prevent output for weekdays not published -->
                 <xsl:if test="contains($p_weekdays-published,$v_date-weekday)">
                     <xsl:if test="$p_verbose = true()">
@@ -121,6 +138,7 @@
                             <xsl:text>#</xsl:text><xsl:value-of select="$p_issue"/><xsl:text> was published on </xsl:text><xsl:value-of select="$p_date-onset"/>
                         </xsl:message>
                     </xsl:if>
+                    <!-- generate output -->
                     <xsl:call-template name="t_boilerplate-biblstruct">
                         <xsl:with-param name="p_input" select="$p_input"/>
                         <xsl:with-param name="p_date" select="$p_date-onset"/>
@@ -130,6 +148,7 @@
                         <xsl:with-param name="p_page-to" select="$p_page-to"/>
                     </xsl:call-template>
                 </xsl:if>
+                <!-- increment to the next issue -->
                 <xsl:if test="$v_date-incremented &lt; $p_date-terminus">
                     <xsl:call-template name="t_iterate-tei">
                         <xsl:with-param name="p_input" select="$p_input"/>
@@ -277,14 +296,16 @@
         <xsl:param name="p_page-to"/>
         <!-- $p_url is dysfunctional for Thamarāt al-Funūn  -->
         <xsl:param name="p_url" select="concat($p_input/descendant-or-self::tei:biblStruct/tei:ref[@type='url']/@target,'issue-',$p_issue)"/>
-        <tei:biblStruct xml:lang="en">
-            <tei:monogr xml:lang="en">
+        <tei:biblStruct>
+            <tei:monogr>
                 <!-- title -->
                 <xsl:apply-templates select="$p_input//tei:monogr/tei:title"/>
                 <!-- idnos on journal level -->
                 <xsl:apply-templates select="$p_input//tei:monogr/tei:idno"/>
                 <!-- editor -->
                 <xsl:apply-templates select="$p_input//tei:monogr/tei:editor"/>
+                <!-- languages -->
+                <xsl:apply-templates select="$p_input//tei:monogr/tei:textLang"/>
                 <tei:imprint xml:lang="en">
                     <xsl:apply-templates select="$p_input//tei:monogr/tei:imprint/tei:publisher"/>
                     <xsl:apply-templates select="$p_input//tei:monogr/tei:imprint/tei:pubPlace"/>

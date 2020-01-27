@@ -13,8 +13,8 @@
             <p>Publication Information</p>
          </publicationStmt>
          <sourceDesc>
-             <biblStruct xml:lang="en">
-                 <monogr xml:lang="en">
+             <biblStruct>
+                 <monogr>
                      <title level="j" xml:lang="ar">المقتبس</title>
                      <title level="j" type="sub" xml:lang="ar">مجلة تبحث في التربية والتعليم
                          والاجتماع والاقتصاد والاداب والتاريخ والآثار واللغة و تدبير المنزل
@@ -34,12 +34,12 @@
                          politique, littérature, histoire, archéologie, philologie, ménagerie,
                          hygiène, bibliographie, civilisation arabe et occidentale</title>
                      <!-- use as many identifiers as appropriate -->
-                     <idno type="OCLC" xml:lang="en">4770057679</idno>
-                     <idno type="OCLC" xml:lang="en">79440195</idno>
-                     <idno type="aucr" xml:lang="en">07201136864</idno>
-                     <idno type="shamela" xml:lang="en">26523</idno>
-                     <idno type="zenodo" xml:lang="en">45922152</idno>
-                     <editor ref="viaf:32272677" xml:lang="en">
+                     <idno type="OCLC">4770057679</idno>
+                     <idno type="OCLC">79440195</idno>
+                     <idno type="aucr">07201136864</idno>
+                     <idno type="shamela">26523</idno>
+                     <idno type="zenodo">45922152</idno>
+                     <editor ref="viaf:32272677">
                          <persName xml:lang="ar">
                              <forename xml:lang="ar">محمد</forename>
                              <surname xml:lang="ar">كرد علي</surname>
@@ -49,12 +49,13 @@
                              <surname xml:lang="ar-Latn-x-ijmes">Kurd ʿAlī</surname>
                          </persName>
                      </editor>
-                     <imprint xml:lang="en">
-                         <publisher xml:lang="en">
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                         <publisher>
                              <orgName xml:lang="ar">مطبعة المقتبس</orgName> 
                              <orgName notAfter="1914" notBefore="1908" xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Muqtabas</orgName> 
                          </publisher>
-                         <pubPlace xml:lang="en"> 
+                         <pubPlace> 
                              <placeName xml:lang="ar">دمشق</placeName>
                              <placeName xml:lang="ar-Latn-x-ijmes">Dimashq</placeName> 
                              <placeName xml:lang="en">Damascus</placeName> 
@@ -75,15 +76,16 @@
                  <note type="tagList">
                     <list>
                         <!-- select one of the frequencies -->
-<!--                        <item>frequency_daily</item>-->
+                        <item>frequency_daily</item>
+<!--                        <item>frequency_weekly</item>-->
 <!--                        <item>frequency_fortnightly</item>-->
-                        <item>frequency_monthly</item>
+<!--                        <item>frequency_monthly</item>-->
                         <!-- frequency_daily also requires a selection of weekdays -->
                         <item>days_monday</item>
-                        <item>days_tuesday</item>
+<!--                        <item>days_tuesday</item>-->
                         <item>days_wednesday</item>
                         <item>days_thursday</item>
-                        <item>days_friday</item>
+<!--                        <item>days_friday</item>-->
                         <item>days_saturday</item>
                         <item>days_sunday</item>
                         <!-- frequency_monthly can take additional input, for instance each 1st and 15th -->
