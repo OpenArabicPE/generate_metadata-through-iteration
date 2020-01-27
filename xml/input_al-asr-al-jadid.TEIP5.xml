@@ -12,15 +12,15 @@
                 <p>Publication Information</p>
             </publicationStmt>
             <sourceDesc>
-                <biblStruct xml:lang="en">
-                    <monogr xml:lang="en">
+                <biblStruct>
+                    <monogr>
                         <title level="j" xml:lang="ar">العصر الجديد</title>
                         <title level="j" xml:lang="ar-Latn-x-ijmes">al-ʿAṣr al-Jadīd</title>
                         <title level="j" type="sub" xml:lang="ar">جريدة سياسية تجارية علمية صناعية  ادبية زراعية</title>
                         <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda siyāsiyya tujāriyya ʿilmiyya ṣināʿiyya adabiyya zirāʿiyya</title>
                         <!-- use as many identifiers as appropriate -->
-                        <idno type="OCLC" xml:lang="en"></idno>
-                        <editor xml:lang="en">
+                        <idno type="OCLC"></idno>
+                        <editor>
                             <persName xml:lang="ar">
                                 <forename>ناصيف</forename>
                                 <surname>ابو زيد</surname>
@@ -30,12 +30,12 @@
                                 <surname>Abū Zayd</surname>
                             </persName>
                         </editor>
-                        <imprint xml:lang="en">
-                            <publisher xml:lang="en">
+                        <imprint>
+                            <publisher>
                                 <orgName xml:lang="ar">مطبعة العلمية</orgName>
                                 <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-ʿilmiyya</orgName>
                             </publisher>
-                            <pubPlace xml:lang="en">
+                            <pubPlace>
                                 <placeName xml:lang="ar">الشام</placeName>
                                 <placeName xml:lang="ar-Latn-x-ijmes">al-Shām</placeName>
                                 <placeName xml:lang="en">Damascus</placeName>
