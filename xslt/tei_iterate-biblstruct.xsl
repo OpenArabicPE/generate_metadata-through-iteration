@@ -120,7 +120,7 @@
                     </xsl:for-each>
                 </xsl:when>
                 <xsl:otherwise>
-                    <xsl:if test="$p_frequency = 'daily'">
+                    <xsl:if test="$p_frequency = 'monthly'">
                         <xsl:message>
                         <xsl:text>Parameter $p_days-of-the-month is missing</xsl:text>
                     </xsl:message>
@@ -212,10 +212,28 @@
                         <xsl:with-param name="p_volume" select="$p_volume"/>
                         <xsl:with-param name="p_frequency" select="$p_frequency"/>
                         <xsl:with-param name="p_weekdays-published" select="$p_weekdays-published"/>
-                        <!-- increment pagination -->
-                        <xsl:with-param name="p_page-from" select="$p_page-to + 1"/>
-                        <xsl:with-param name="p_page-to" select="$p_page-to + $p_pages"/>
                         <xsl:with-param name="p_subtype" select="$p_subtype"/>
+                        <!-- increment pagination -->
+                        <xsl:with-param name="p_page-from">
+                            <xsl:choose>
+                                <xsl:when test="$p_subtype = 'journal'">
+                                    <xsl:value-of select="$p_page-to + 1"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:value-of select="$p_page-from"/>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </xsl:with-param>
+                        <xsl:with-param name="p_page-to">
+                             <xsl:choose>
+                                <xsl:when test="$p_subtype = 'journal'">
+                                    <xsl:value-of select="$p_page-to + $p_pages"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:value-of select="$p_page-to"/>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </xsl:with-param>
                     </xsl:call-template>
                 </xsl:if>
             </xsl:when>
