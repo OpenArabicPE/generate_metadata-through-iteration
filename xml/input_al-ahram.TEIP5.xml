@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>-->
+<?xml-model href="https://rawgit.com/OpenArabicPE/OpenArabicPE_ODD/v0.1/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+    schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Title</title>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc>
+                <biblStruct>
+                    <monogr>
+                        <title level="j" xml:lang="ar">الاهرام</title>
+                        <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ahrām</title>
+                        <editor>
+                            <persName xml:lang="ar">
+                                <forename xml:lang="ar">سليم</forename>
+                                <surname xml:lang="ar">تقلا</surname>
+                            </persName>
+                        </editor>
+                        <editor>
+                            <persName xml:lang="ar">
+                                <forename xml:lang="ar">بشارة</forename>
+                                <surname xml:lang="ar">تقلا</surname>
+                            </persName>
+                        </editor>
+                        <editor source="file:/BachUni/BachBibliothek/GitHub/TEI/oclc_618896732/tei/oclc_618896732-div_6.TEIP5.xml#p_4597.d2e28319">
+                            <persName xml:lang="ar">نجيب الحداد</persName>
+                        </editor>
+                        <textLang mainLang="ar"/>
+                        <editor source="file:/BachUni/BachBibliothek/GitHub/TEI/oclc_618896732/tei/oclc_618896732-div_7.TEIP5.xml#p_5149.d2e32656">
+                            <persName xml:lang="ar">داغر اسعد</persName>
+                        </editor>
+                        <imprint>
+                            <pubPlace>
+                                <placeName xml:lang="en">Alexandria</placeName>
+                            </pubPlace>
+                            <date calendar="#cal_gregorian" from="1876-08-05" to="1898">1876</date>
+                            <date calendar="#cal_islamic" datingMethod="#cal_islamic" from="1876-08-05" to="1898" when-custom="1293-07-14">1293</date>
+                        </imprint>
+                        <biblScope from="1" unit="volume"/>
+                        <biblScope from="1" unit="issue"/>
+                        <biblScope from="1" to="4" unit="page"/>
+                    </monogr>
+                    <note type="tagList" xml:lang="ar">
+                        <list xml:lang="en">
+                            <item xml:lang="en">record_primary</item>
+                            <item xml:lang="en">status_complete</item>
+                            <item xml:lang="en">frequency_weekly</item>
+                            <item xml:lang="en">days_friday</item>
+                        </list>
+                    </note>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <p>Some text here.</p>
+        </body>
+    </text>
+</TEI>

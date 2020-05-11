@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>-->
+<?xml-model href="https://rawgit.com/OpenArabicPE/OpenArabicPE_ODD/v0.1/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+    schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Title</title>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc>
+                 <biblStruct oape:frequency="weekly" subtype="newspaper" type="periodical" xml:lang="ar">
+                  <monogr xml:lang="ar">
+                     <title level="j" xml:lang="ar">الإقبال</title>
+                     <title level="j" type="sub" xml:lang="ar">جريدة علمية تاريخية اخبارية فنية</title>
+                     <title level="j" xml:lang="ar-Latn-x-ijmes">al-Iqbāl</title>
+                     <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda ʿilmiyya tārīkhiyya akhbāriyya fanniyya</title>
+                     <idno type="oape">96</idno>
+                     <idno type="OCLC">1086411815</idno>
+                     <editor type="owner"> 
+                        <persName ref="oape:pers:288" xml:lang="ar"><forename xml:lang="ar">عبد الباسط</forename> <surname xml:lang="ar">الانسي</surname></persName>
+                        <persName ref="oape:pers:288" xml:lang="ar-Latn-x-ijmes"><forename xml:lang="ar-Latn-x-ijmes">ʿAbd al-Bāsiṭ</forename> <surname xml:lang="ar">al-Unsī</surname></persName>
+                    </editor>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <date from="1902-04-09" datingMethod="#cal_gregorian" type="official"/>
+                        <date calendar="#cal_islamic" datingMethod="#cal_islamic" from="1902-04-09" when-custom="1320-01-01">١ محرم سنة ١٣٢٠</date>
+                        <date calendar="#cal_ottomanfiscal" datingMethod="#cal_ottomanfiscal" from="1902-04-09" when-custom="1318-01-27">٢٧ مارت ١٣١٨</date>
+                        <pubPlace>
+                            <placeName ref="oape:place:26 geon:276781" xml:lang="en">Beirut</placeName> 
+                            <placeName ref="oape:place:26 geon:276781">بيروت</placeName> 
+                        </pubPlace>
+                        <publisher>
+                            <orgName xml:lang="ar">المكتبة الانسية</orgName>
+                            <orgName xml:lang="ar-Latn-x-ijmes">al-Maktaba al-Unsiyya</orgName>
+                        </publisher>
+                     </imprint>
+                     <biblScope from="1" to="1" unit="volume"/>
+                     <biblScope from="1" to="1" unit="issue"/>
+                     <biblScope from="1" to="8" unit="page">1-8</biblScope>
+                  </monogr>
+                  <note type="tagList" xml:lang="ar">
+                        <list xml:lang="en">
+                            <item xml:lang="en">frequency_fortnightly</item>
+                            <item xml:lang="en">days_wednesday</item>
+                        </list>
+                    </note>
+               </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <p>Some text here.</p>
+        </body>
+    </text>
+</TEI>
