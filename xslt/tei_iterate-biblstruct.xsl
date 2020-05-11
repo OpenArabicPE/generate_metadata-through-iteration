@@ -2,9 +2,11 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     version="3.0"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs xsi oape"
+    xmlns="http://www.tei-c.org/ns/1.0"
     xmlns:tei="http://www.tei-c.org/ns/1.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:oape="https://openarabicpe.github.io/ns"
+    xpath-default-namespace="http://www.tei-c.org/ns/1.0"
     >
     <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="no"  name="xml"/>
     <xsl:output method="text" encoding="UTF-8" omit-xml-declaration="yes"  name="text"/>
@@ -60,6 +62,7 @@
         <xsl:param name="p_page-from" select="$p_input//tei:monogr/tei:biblScope[@unit='page']/@from"/>
         <xsl:param name="p_page-to" select="$p_input//tei:monogr/tei:biblScope[@unit='page']/@to"/>
         <xsl:param name="p_pages" select="$p_page-to - $p_page-from +1"/>
+        <xsl:param name="p_subtype" select="$p_input/@subtype"/>
         <xsl:param name="p_frequency">
             <!-- read the frequency from the  input tagList -->
             <xsl:variable name="v_interim">
@@ -180,6 +183,7 @@
                         <xsl:with-param name="p_weekdays-published" select="$p_weekdays-published"/>
                         <xsl:with-param name="p_page-from" select="$p_page-from"/>
                         <xsl:with-param name="p_page-to" select="$p_page-to"/>
+                        <xsl:with-param name="p_subtype" select="$p_subtype"/>
                     </xsl:call-template>
                 </xsl:if>
             </xsl:when>
@@ -211,6 +215,7 @@
                         <!-- increment pagination -->
                         <xsl:with-param name="p_page-from" select="$p_page-to + 1"/>
                         <xsl:with-param name="p_page-to" select="$p_page-to + $p_pages"/>
+                        <xsl:with-param name="p_subtype" select="$p_subtype"/>
                     </xsl:call-template>
                 </xsl:if>
             </xsl:when>
@@ -276,6 +281,7 @@
                                 </xsl:otherwise>
                             </xsl:choose>
                         </xsl:with-param>
+                        <xsl:with-param name="p_subtype" select="$p_subtype"/>
                     </xsl:call-template>
                 </xsl:if>
             </xsl:when>
@@ -296,8 +302,8 @@
         <xsl:param name="p_page-to"/>
         <!-- $p_url is dysfunctional for Thamarāt al-Funūn  -->
         <xsl:param name="p_url" select="concat($p_input/descendant-or-self::tei:biblStruct/tei:ref[@type='url']/@target,'issue-',$p_issue)"/>
-        <tei:biblStruct>
-            <tei:monogr>
+        <biblStruct type="periodical" subtype="{$p_input/@subtype}">
+            <monogr>
                 <!-- title -->
                 <xsl:apply-templates select="$p_input//tei:monogr/tei:title"/>
                 <!-- idnos on journal level -->
@@ -306,7 +312,7 @@
                 <xsl:apply-templates select="$p_input//tei:monogr/tei:editor"/>
                 <!-- languages -->
                 <xsl:apply-templates select="$p_input//tei:monogr/tei:textLang"/>
-                <tei:imprint xml:lang="en">
+                <imprint xml:lang="en">
                     <xsl:apply-templates select="$p_input//tei:monogr/tei:imprint/tei:publisher"/>
                     <xsl:apply-templates select="$p_input//tei:monogr/tei:imprint/tei:pubPlace"/>
                     <!-- add calendars depending on the input -->
@@ -326,11 +332,11 @@
                     <xsl:if test="$p_input//tei:monogr/tei:imprint/tei:date[@datingMethod='#cal_ottomanfiscal']">
                         <xsl:copy-of select="oape:date-format-iso-string-to-tei(oape:date-convert-calendars($p_date,'#cal_gregorian','#cal_ottomanfiscal'), '#cal_ottomanfiscal',true(), true(),'ar-Latn-x-ijmes')"/>
                     </xsl:if>
-                </tei:imprint>
-                <tei:biblScope from="{$p_volume}" to="{$p_volume}" unit="volume"/>
-                <tei:biblScope from="{$p_issue}" to="{$p_issue}" unit="issue"/>
-                <tei:biblScope from="{$p_page-from}" to="{$p_page-to}" unit="page"/>
-            </tei:monogr>
+                </imprint>
+                <biblScope from="{$p_volume}" to="{$p_volume}" unit="volume"/>
+                <biblScope from="{$p_issue}" to="{$p_issue}" unit="issue"/>
+                <biblScope from="{$p_page-from}" to="{$p_page-to}" unit="page"/>
+            </monogr>
             <xsl:apply-templates select="$p_input/descendant-or-self::tei:biblStruct/tei:ref"/>
             <!-- links for al-Quds -->
             <!--<tei:ref type="url">
@@ -345,7 +351,7 @@
                 </xsl:attribute>
             </tei:ref>-->
             <xsl:apply-templates select="$p_input/descendant-or-self::tei:biblStruct/tei:note"/>
-        </tei:biblStruct>
+        </biblStruct>
     </xsl:template>
     
     <!-- pages -->
