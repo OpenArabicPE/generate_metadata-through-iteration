@@ -19,7 +19,7 @@
 <!--    <xsl:include href="al-quds_find-links-to-facsimile.xsl"/>-->
     
     <xsl:variable name="v_date-today" select="current-date()"/>
-    
+    <xsl:param name="p_local-authority" select="'oape'"/>
     <!-- debugging -->
     <xsl:param name="p_verbose" select="true()"/>
     
@@ -320,34 +320,49 @@
         <xsl:param name="p_page-to"/>
         <!-- $p_url is dysfunctional for Thamarāt al-Funūn  -->
         <xsl:param name="p_url" select="concat($p_input/descendant-or-self::tei:biblStruct/tei:ref[@type='url']/@target,'issue-',$p_issue)"/>
+        <xsl:variable name="v_monogr" select="$p_input/tei:monogr"/>
         <biblStruct type="periodical" subtype="{$p_input/@subtype}">
             <monogr>
                 <!-- title -->
-                <xsl:apply-templates select="$p_input//tei:monogr/tei:title"/>
+                <xsl:apply-templates select="$v_monogr/tei:title"/>
                 <!-- idnos on journal level -->
-                <xsl:apply-templates select="$p_input//tei:monogr/tei:idno"/>
+                <xsl:apply-templates select="$v_monogr/tei:idno"/>
+                <!-- construct BibTeX key -->
+                <xsl:variable name="v_id-base">
+                    <xsl:choose>
+                        <xsl:when test="$v_monogr/tei:idno[@type = 'OCLC']">
+                            <xsl:value-of select="concat('oclc_', $v_monogr/tei:idno[@type = 'OCLC'][1])"/>
+                        </xsl:when>
+                        <xsl:when test="$v_monogr/tei:idno[@type = $p_local-authority]">
+                            <xsl:value-of select="concat($p_local-authority, '_', tei:idno[@type = $p_local-authority][1])"/>
+                        </xsl:when>
+                    </xsl:choose>
+                </xsl:variable>
+                <idno type="BibTeX">
+                    <xsl:value-of select="concat($v_id-base, '-v_', $p_volume, '-i_', $p_issue)"/>
+                </idno>
                 <!-- editor -->
-                <xsl:apply-templates select="$p_input//tei:monogr/tei:editor"/>
+                <xsl:apply-templates select="$v_monogr/tei:editor"/>
                 <!-- languages -->
-                <xsl:apply-templates select="$p_input//tei:monogr/tei:textLang"/>
+                <xsl:apply-templates select="$v_monogr/tei:textLang"/>
                 <imprint xml:lang="en">
-                    <xsl:apply-templates select="$p_input//tei:monogr/tei:imprint/tei:publisher"/>
-                    <xsl:apply-templates select="$p_input//tei:monogr/tei:imprint/tei:pubPlace"/>
+                    <xsl:apply-templates select="$v_monogr/tei:imprint/tei:publisher"/>
+                    <xsl:apply-templates select="$v_monogr/tei:imprint/tei:pubPlace"/>
                     <!-- add calendars depending on the input -->
                     <!-- Gregorian -->
-                    <xsl:if test="$p_input//tei:monogr/tei:imprint/tei:date[@datingMethod='#cal_gregorian']">
+                    <xsl:if test="$v_monogr/tei:imprint/tei:date[@datingMethod='#cal_gregorian']">
                         <xsl:copy-of select="oape:date-format-iso-string-to-tei($p_date, '#cal_gregorian',true(), true(), 'en')"/>
                     </xsl:if>
                     <!-- Islamic Hijri -->
-                    <xsl:if test="$p_input//tei:monogr/tei:imprint/tei:date[@datingMethod='#cal_islamic']">
+                    <xsl:if test="$v_monogr/tei:imprint/tei:date[@datingMethod='#cal_islamic']">
                         <xsl:copy-of select="oape:date-format-iso-string-to-tei( oape:date-convert-calendars($p_date,'#cal_gregorian','#cal_islamic'), '#cal_islamic',true(), true(),'ar-Latn-x-ijmes')"/>
                     </xsl:if>
                     <!-- Julian or Rūmī -->
-                    <xsl:if test="$p_input//tei:monogr/tei:imprint/tei:date[@datingMethod='#cal_julian']">
+                    <xsl:if test="$v_monogr/tei:imprint/tei:date[@datingMethod='#cal_julian']">
                         <xsl:copy-of select="oape:date-format-iso-string-to-tei(oape:date-convert-calendars($p_date,'#cal_gregorian','#cal_julian'), '#cal_julian',true(), true(), 'ar-Latn-x-ijmes')"/>
                     </xsl:if>
                     <!-- Ottoman fiscal, mālī calendar -->
-                    <xsl:if test="$p_input//tei:monogr/tei:imprint/tei:date[@datingMethod='#cal_ottomanfiscal']">
+                    <xsl:if test="$v_monogr/tei:imprint/tei:date[@datingMethod='#cal_ottomanfiscal']">
                         <xsl:copy-of select="oape:date-format-iso-string-to-tei(oape:date-convert-calendars($p_date,'#cal_gregorian','#cal_ottomanfiscal'), '#cal_ottomanfiscal',true(), true(),'ar-Latn-x-ijmes')"/>
                     </xsl:if>
                 </imprint>
