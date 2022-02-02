@@ -24,21 +24,23 @@
                         <idno type="OCLC">1086411815</idno>
                         <editor type="owner"> <persName ref="oape:pers:288" xml:lang="ar"> <forename xml:lang="ar">عبد الباسط</forename> <surname xml:lang="ar">الانسي</surname> </persName> <persName
                             ref="oape:pers:288" xml:lang="ar-Latn-x-ijmes"> <forename xml:lang="ar-Latn-x-ijmes">ʿAbd al-Bāsiṭ</forename> <surname xml:lang="ar">al-Unsī</surname> </persName> </editor>
+                        <editor> <persName xml:lang="ar"><forename>محيي الدين</forename> <surname>الخياط</surname></persName> <persName xml:lang="ar-Latn-x-ijmes"><forename>Muḥiyī al-Dīn</forename>
+                            <surname>al-Khayyāṭ</surname></persName> </editor>
                         <textLang mainLang="ar"/>
                         <imprint>
-                            <date datingMethod="#cal_gregorian" from="1902-04-09" to="1902-05-10" type="official" xml:lang="ar-Latn-x-ijmes"/>
+                            <date datingMethod="#cal_gregorian" from="1909-01-11" to="1909-02-10" type="official" xml:lang="ar-Latn-x-ijmes"/>
                             <date calendar="#cal_islamic" datingMethod="#cal_islamic" type="official" when-custom="1320-01-01" xml:lang="ar-Latn-x-ijmes">١ محرم سنة ١٣٢٠</date>
                             <date calendar="#cal_ottomanfiscal" datingMethod="#cal_ottomanfiscal" type="official" when-custom="1318-01-27" xml:lang="ar-Latn-x-ijmes">٢٧ مارت ١٣١٨</date>
                             <pubPlace> <placeName ref="oape:place:26 geon:276781" xml:lang="en">Beirut</placeName> <placeName ref="oape:place:26 geon:276781">بيروت</placeName> </pubPlace>
                             <publisher> <orgName xml:lang="ar">المكتبة الانسية</orgName> <orgName xml:lang="ar-Latn-x-ijmes">al-Maktaba al-Unsiyya</orgName> </publisher>
                         </imprint>
-                        <biblScope from="1" to="1" unit="volume"/>
-                        <biblScope from="1" to="1" unit="issue"/>
+                        <biblScope from="7" to="1" unit="volume"/>
+                        <biblScope from="279" to="4" unit="issue"/>
                         <biblScope from="1" to="8" unit="page">1-8</biblScope>
                     </monogr>
                     <note type="tagList" xml:lang="ar"> <list xml:lang="en">
-                        <item xml:lang="en">frequency_fortnightly</item>
-                        <item xml:lang="en">days_wednesday</item>
+                        <item xml:lang="en">frequency_weekly</item>
+                        <item xml:lang="en">days_monday</item>
                         </list> </note>
                 </biblStruct>
             </sourceDesc>
